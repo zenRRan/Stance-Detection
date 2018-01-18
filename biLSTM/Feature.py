@@ -11,9 +11,14 @@ import torch
 import torch.nn as nn
 
 
-class   extractFeature:
+class extractFeature:
 
     def __init__(self, sentances):
         self.sentances = sentances
 
+
+a = [[1,2,3]]
+b = [6]
+a.append(b)
+print(a)
 

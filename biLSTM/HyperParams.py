@@ -13,15 +13,48 @@ class HyperParams:
     def __init__(self):
         self.maxSentlen = 0
         self.labelSize = 0
-        self.EmbedSize = 100
+        self.EmbedSize = 64
         self.Steps = 50
-        self.learningRate = 0.1
+        self.learningRate = 0.001
+        self.dropout = 0.5
+        self.wordNum = 0
+        self.topicSize = 0
 
-        self.mainAddress = '/Users/zhenranran/Desktop/zenRRan.github.com/Stance Detection/'
+        #biLSTM
+        self.hiddenSize = 128
+        self.hiddenNum = 32
+
+        #CNN
+        self.kernelSizes = [2, 3, 4]
+        self.kernelNum = 100
+
+
+        self.mainAddress = '/Users/zhenranran/Desktop/zenRRan.github.com/Stance Detection/CNN/Data/'
+        self.trainFile = self.mainAddress+"train.sd"
+        self.devFile = self.mainAddress + "dev.sd"
+        self.testFile = self.mainAddress + "test.sd"
+
+        self.trainLen = 0
+        self.devLen = 0
+        self.testLen = 0
 
         self.wordAlpha = Alphabet()
         self.labelAlpha = Alphabet()
-
+    def printArgs(self):
+        print("----------args----------")
+        print("labelSize    ", self.labelSize)
+        print("EmbedSize    ", self.EmbedSize)
+        print("Steps        ", self.Steps)
+        print("learningRate ", self.learningRate)
+        print("dropout      ", self.dropout)
+        print("wordNum      ", self.wordNum)
+        print("topicSize    ", self.topicSize)
+        print("hiddenSize   ", self.hiddenSize)
+        print("hiddenNum    ", self.hiddenNum)
+        print("trainLen     ", self.trainLen)
+        print("devLen       ", self.devLen)
+        print("testLen      ", self.testLen)
+        print()
 
 class Alphabet:
     def __init__(self):
