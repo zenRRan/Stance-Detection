@@ -13,26 +13,28 @@ class HyperParams:
     def __init__(self):
         self.maxSentlen = 0
         self.labelSize = 0
-        self.EmbedSize = 64
-        self.Steps = 50
+        self.EmbedSize = 50
+        self.Steps = 100
         self.learningRate = 0.001
         self.dropout = 0.5
         self.wordNum = 0
         self.topicSize = 0
+        self.batchSize = 1
 
         #biLSTM
-        self.hiddenSize = 128
-        self.hiddenNum = 32
+        self.hiddenSize = 100
+        self.hiddenNum = 1
 
         #CNN
         self.kernelSizes = [2, 3, 4]
         self.kernelNum = 100
 
 
-        self.mainAddress = '/Users/zhenranran/Desktop/zenRRan.github.com/Stance Detection/CNN/Data/'
+        self.mainAddress = '/Users/zhenranran/Desktop/zenRRan.github.com/Stance-Detection/biLSTM/Data/'
         self.trainFile = self.mainAddress+"train.sd"
         self.devFile = self.mainAddress + "dev.sd"
         self.testFile = self.mainAddress + "test.sd"
+        self.writeFileName = '../data.txt'
 
         self.trainLen = 0
         self.devLen = 0
@@ -40,21 +42,23 @@ class HyperParams:
 
         self.wordAlpha = Alphabet()
         self.labelAlpha = Alphabet()
-    def printArgs(self):
-        print("----------args----------")
-        print("labelSize    ", self.labelSize)
-        print("EmbedSize    ", self.EmbedSize)
-        print("Steps        ", self.Steps)
-        print("learningRate ", self.learningRate)
-        print("dropout      ", self.dropout)
-        print("wordNum      ", self.wordNum)
-        print("topicSize    ", self.topicSize)
-        print("hiddenSize   ", self.hiddenSize)
-        print("hiddenNum    ", self.hiddenNum)
-        print("trainLen     ", self.trainLen)
-        print("devLen       ", self.devLen)
-        print("testLen      ", self.testLen)
-        print()
+
+    def args(self):
+        args = "----------args----------\n"
+        args += "labelSize    " + str(self.labelSize) + "\n"
+        args += "EmbedSize    " + str(self.EmbedSize) + "\n"
+        args += "Steps        " + str(self.Steps) + "\n"
+        args += "learningRate " + str(self.learningRate) + "\n"
+        args += "dropout      " + str(self.dropout) + "\n"
+        args += "batchSize    " + str(self.batchSize) + "\n"
+        args += "wordNum      " + str(self.wordNum) + "\n"
+        args += "topicSize    " + str(self.topicSize) + "\n"
+        args += "hiddenSize   " + str(self.hiddenSize) + "\n"
+        args += "hiddenNum    " + str(self.hiddenNum) + "\n"
+        args += "trainLen     " + str(self.trainLen) + "\n"
+        args += "devLen       " + str(self.devLen) + "\n"
+        args += "testLen      " + str(self.testLen) + "\n\n"
+        return args
 
 class Alphabet:
     def __init__(self):

@@ -33,6 +33,7 @@ class Model(nn.Module):
         topic, _ = self.biLSTM(topic)   #[1, 1, 200]
         text,  _ = self.biLSTM(text)    #[1, 17, 200]
 
+        # print("----biLSTM----")
         # print("topic.size ", topic.size())
         # print("text.size ", text.size())
 
@@ -45,13 +46,27 @@ class Model(nn.Module):
         topic = F.max_pool1d(topic, topic.size(2))  #[1, 200, 1]
         text = F.max_pool1d(text, text.size(2))     #[1, 200, 1]
 
+        # print("----maxpooling----")
+        # print("topic.size ", topic.size())
+        # print("text.size ", text.size())
         topic_text = torch.cat([topic, text], 1)    #[1, 400, 1]
+
+        # print("----cat----")
+        # print("topic_text.size ", topic_text.size())
 
         topic_text = topic_text.squeeze(2)          #[1, 400]
 
+        # print("----squeeze(2)----")
+        # print("topic_text.size ", topic_text.size())
+
         output = self.linear1(topic_text)
+
+        # print("----linear1----")
+        # print("output.size ", output.size())
         output = F.tanh(output)
         output = self.linear2(output)
+        # print("----linear2----")
+        # print("output.size ", output.size())
 
         return output
 
