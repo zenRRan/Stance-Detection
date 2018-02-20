@@ -16,15 +16,20 @@ from HyperParams import HyperParams
 from Model import biLSTM
 import random
 from Evaluate import Eval
+from Common import unk_key
+from Common import padding_key
+from Common import topics
+import collections
 
 class Labeler:
 
     def __init__(self):
         self.HyperParams = HyperParams()
-        self.word_stat_dic = {}
-        self.label_stat_dic = {}
-        self.topics = ['atheism', 'feminist movement', 'hillary clinton',
-                  'legalization of abortion', 'climate change is a real concern']
+        self.word_stat_dic = collections.OrderedDict()
+        self.label_stat_dic = collections.OrderedDict()
+        self.topics = topics
+        self.padID = 0
+        self.unkID = 0
 
     def createAlphabet(self, text):
         print("Creating Alphabet......")
@@ -40,10 +45,18 @@ class Labeler:
             else:
                 self.label_stat_dic[line[-1]] += 1
 
+        self.HyperParams.wordAlpha.from_string(unk_key)
+        self.HyperParams.wordAlpha.from_string(padding_key)
 
+        self.word_stat_dic[unk_key] = self.HyperParams.wordCutOff + 1
+        self.word_stat_dic[padding_key] = self.HyperParams.wordCutOff + 1
 
-        self.HyperParams.wordAlpha.initial(self.word_stat_dic)
+        self.HyperParams.wordAlpha.initial(self.word_stat_dic, self.HyperParams.wordCutOff)
         self.HyperParams.labelAlpha.initial(self.label_stat_dic)
+
+        self.padID = self.HyperParams.wordAlpha.from_string(padding_key)
+        self.unkID = self.HyperParams.wordAlpha.from_string(unk_key)
+
         self.HyperParams.wordNum = self.HyperParams.wordAlpha.m_size + 1
         self.HyperParams.labelSize = self.HyperParams.labelAlpha.m_size
         print("Created over")
@@ -54,6 +67,7 @@ class Labeler:
     def seq2id(self, seqs):
         idList = []
         maxLen = 0
+
         for seq in seqs:
             maxLen = max(maxLen, len(seq))
         for seq in seqs:
@@ -63,12 +77,9 @@ class Labeler:
                 if degit >= 0:
                     id.append(degit)
                 else:
-                    '''
-                        add unknow str
-                    '''
-                    id.append(self.HyperParams.wordAlpha.m_size)
+                    id.append(self.unkID)
             for _ in range(maxLen-len(seq)):
-                id.append(self.HyperParams.wordAlpha.m_size)
+                id.append(self.padID)
             idList.append(id)
         return idList
 
@@ -113,6 +124,12 @@ class Labeler:
                 return -1
         return topics, texts, labels
 
+    def cutSentFromText(self, text):
+        newText = []
+        for line in text:
+            newText.append(line[:self.HyperParams.setSentlen])
+        return newText
+
     def train(self, trainFile, devFile, testFile):
 
         readerTrain = Reader.reader(trainFile)
@@ -123,6 +140,9 @@ class Labeler:
         sentsDev = readerDev.getWholeText()
         sentsTest = readerTest.getWholeText()
 
+        sentsTrain = self.cutSentFromText(sentsTrain)
+        sentsDev = self.cutSentFromText(sentsDev)
+        sentsTest = self.cutSentFromText(sentsTest)
 
         self.HyperParams.trainLen = len(sentsTrain)
         self.HyperParams.devLen = len(sentsDev)
@@ -140,9 +160,6 @@ class Labeler:
         Optimizer = oprim.Adam(model.parameters(), lr=LearningRate)
 
         def accuracy(model, sents):
-            pred_list = []
-            label_list = []
-            C = 0
             pred_right_num_idx = 0
             pred_num_idx = 1
             gold_num_idx = 2
@@ -158,7 +175,7 @@ class Labeler:
             label = Variable(torch.LongTensor(label))
 
             Y = model(topic, text)
-            C += (torch.max(Y, 1)[1].data == label.data[0]).sum()
+            C = (torch.max(Y, 1)[1].view(label.size()).data == label.data).sum()
 
             pred_list = torch.max(Y, 1)[1].view(label.size()).data.tolist()
             label_list = label.data.tolist()
@@ -185,7 +202,6 @@ class Labeler:
             if textBatchNum - 1 < 0:
                 print("wrong: func getTextBatchList's text's length is 0!!!")
                 return []
-            begin = 0
             end = 0
             for i in range(textBatchNum-1):
                 begin = end
@@ -236,7 +252,7 @@ class Labeler:
                     print(cnt)
 
                 totalLoss += Loss.data
-                trainCorrect += (torch.max(Y, 1)[1].view(label.size()).data == label.data[0]).sum()
+                trainCorrect += (torch.max(Y, 1)[1].view(label.size()).data == label.data).sum()
 
             totalLoss /= len(sentsTrain)
             TrainAcc = float(trainCorrect)/len(sentsTrain) * 100

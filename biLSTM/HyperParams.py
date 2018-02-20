@@ -12,6 +12,7 @@ import collections
 class HyperParams:
     def __init__(self):
         self.maxSentlen = 0
+        self.setSentlen = 50
         self.labelSize = 0
         self.EmbedSize = 50
         self.Steps = 100
@@ -19,7 +20,9 @@ class HyperParams:
         self.dropout = 0.5
         self.wordNum = 0
         self.topicSize = 0
-        self.batchSize = 1
+        self.batchSize = 8
+        self.using_embedding = False
+        self.wordCutOff = 0
 
         #biLSTM
         self.hiddenSize = 100
@@ -35,6 +38,10 @@ class HyperParams:
         self.devFile = self.mainAddress + "dev.sd"
         self.testFile = self.mainAddress + "test.sd"
         self.writeFileName = '../data.txt'
+        self.pred_embedding_25_path = '/Users/zhenranran/Desktop/立场检测/glove.twitter.27B/glove.twitter.27B.25d.txt'
+        self.pred_embedding_50_path = '/Users/zhenranran/Desktop/立场检测/glove.twitter.27B/glove.twitter.27B.50d.txt'
+        self.pred_embedding_100_path = '/Users/zhenranran/Desktop/立场检测/glove.twitter.27B/glove.twitter.27B.100d.txt'
+        self.pred_embedding_200_path = '/Users/zhenranran/Desktop/立场检测/glove.twitter.27B/glove.twitter.27B.200d.txt'
 
         self.trainLen = 0
         self.devLen = 0
@@ -45,19 +52,20 @@ class HyperParams:
 
     def args(self):
         args = "----------args----------\n"
-        args += "labelSize    " + str(self.labelSize) + "\n"
-        args += "EmbedSize    " + str(self.EmbedSize) + "\n"
-        args += "Steps        " + str(self.Steps) + "\n"
-        args += "learningRate " + str(self.learningRate) + "\n"
-        args += "dropout      " + str(self.dropout) + "\n"
-        args += "batchSize    " + str(self.batchSize) + "\n"
-        args += "wordNum      " + str(self.wordNum) + "\n"
-        args += "topicSize    " + str(self.topicSize) + "\n"
-        args += "hiddenSize   " + str(self.hiddenSize) + "\n"
-        args += "hiddenNum    " + str(self.hiddenNum) + "\n"
-        args += "trainLen     " + str(self.trainLen) + "\n"
-        args += "devLen       " + str(self.devLen) + "\n"
-        args += "testLen      " + str(self.testLen) + "\n\n"
+        args += "labelSize    " + str(self.labelSize) + '\n'
+        args += "EmbedSize    " + str(self.EmbedSize) + '\n'
+        args += "Steps        " + str(self.Steps) + '\n'
+        args += "learningRate " + str(self.learningRate) + '\n'
+        args += "dropout      " + str(self.dropout) + '\n'
+        args += "batchSize    " + str(self.batchSize) + '\n'
+        args += "wordNum      " + str(self.wordNum) + '\n'
+        args += "topicSize    " + str(self.topicSize) + '\n'
+        args += "hiddenSize   " + str(self.hiddenSize) + '\n'
+        args += "hiddenNum    " + str(self.hiddenNum) + '\n'
+        args += "trainLen     " + str(self.trainLen) + '\n'
+        args += "devLen       " + str(self.devLen) + '\n'
+        args += "setSentlen   " + str(self.setSentlen) + '\n'
+        args += "testLen      " + str(self.testLen) + '\n\n'
         return args
 
 class Alphabet:

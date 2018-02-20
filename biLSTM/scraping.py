@@ -6,7 +6,7 @@
 # @File    : scraping.py
 # @Software: PyCharm Community Edition
 
-l = []
-l.append([0])
-l.append([1])
-print(l)
+
+a = [[1, 2, 3], [5, 6, 7]]
+print(a[1])
+

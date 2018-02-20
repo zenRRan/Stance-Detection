@@ -9,12 +9,19 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import Embedding
 
 class Model(nn.Module):
     def __init__(self, args):
         super(Model, self).__init__()
         self.embedingTopic = nn.Embedding(args.topicSize, args.EmbedSize)
         self.embedingText = nn.Embedding(args.wordNum, args.EmbedSize)
+        if args.using_embedding is True:
+            load_embedding_data = Embedding.load_predtrained_embedding(args.pred_embedding_50_path,
+                                                                          args.wordAlpha.string2id,
+                                                                          avg=True)
+            self.embedingTopic.weight = nn.Parameter(load_embedding_data)
+            self.embedingText.weight = nn.Parameter(load_embedding_data)
 
         self.biLSTM = nn.LSTM(
             args.EmbedSize,
@@ -33,9 +40,6 @@ class Model(nn.Module):
         topic, _ = self.biLSTM(topic)   #[1, 1, 200]
         text,  _ = self.biLSTM(text)    #[1, 17, 200]
 
-        # print("----biLSTM----")
-        # print("topic.size ", topic.size())
-        # print("text.size ", text.size())
 
         topic = torch.transpose(topic, 1, 2)
         text = torch.transpose(text, 1, 2)
@@ -46,27 +50,13 @@ class Model(nn.Module):
         topic = F.max_pool1d(topic, topic.size(2))  #[1, 200, 1]
         text = F.max_pool1d(text, text.size(2))     #[1, 200, 1]
 
-        # print("----maxpooling----")
-        # print("topic.size ", topic.size())
-        # print("text.size ", text.size())
         topic_text = torch.cat([topic, text], 1)    #[1, 400, 1]
-
-        # print("----cat----")
-        # print("topic_text.size ", topic_text.size())
 
         topic_text = topic_text.squeeze(2)          #[1, 400]
 
-        # print("----squeeze(2)----")
-        # print("topic_text.size ", topic_text.size())
-
         output = self.linear1(topic_text)
-
-        # print("----linear1----")
-        # print("output.size ", output.size())
         output = F.tanh(output)
         output = self.linear2(output)
-        # print("----linear2----")
-        # print("output.size ", output.size())
 
         return output
 
