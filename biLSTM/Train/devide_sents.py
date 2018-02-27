@@ -1,12 +1,10 @@
 # Version python3.6
 # -*- coding: utf-8 -*-
-# @Time    : 2018/1/19 下午3:13
+# @Time    : 26/02/2018 6:26 PM
 # @Author  : zenRRan
 # @Email   : zenrran@qq.com
-# @File    : scraping.py
+# @File    : devide_sents.py
 # @Software: PyCharm Community Edition
 
-
-a = [1, 2, 3, 5, 6, 7]
-print(a[:-1])
+import jieba
 

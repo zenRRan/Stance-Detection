@@ -18,7 +18,8 @@ import random
 from Evaluate import Eval
 from Common import unk_key
 from Common import padding_key
-from Common import topics
+from Common import English_topics
+from Common import Chinese_topics
 import collections
 
 class Labeler:
@@ -27,7 +28,13 @@ class Labeler:
         self.HyperParams = HyperParams()
         self.word_stat_dic = collections.OrderedDict()
         self.label_stat_dic = collections.OrderedDict()
-        self.topics = topics
+        self.topic_stat_dic = collections.OrderedDict()
+
+        if self.HyperParams.using_English_data:
+            self.topics = English_topics
+        else:
+            self.topics = Chinese_topics
+
         self.padID = 0
         self.unkID = 0
 
@@ -44,6 +51,10 @@ class Labeler:
                 self.label_stat_dic[line[-1]] = 1
             else:
                 self.label_stat_dic[line[-1]] += 1
+
+        for line in self.topics:
+            line = line.strip().split()
+
 
         self.HyperParams.wordAlpha.from_string(unk_key)
         self.HyperParams.wordAlpha.from_string(padding_key)

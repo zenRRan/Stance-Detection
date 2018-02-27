@@ -16,16 +16,18 @@ class Model(nn.Module):
         super(Model, self).__init__()
         self.embedingTopic = nn.Embedding(args.topicSize, args.EmbedSize)
         self.embedingText = nn.Embedding(args.wordNum, args.EmbedSize)
-        if args.using_embedding is True:
-            load_embedding_data = Embedding.load_predtrained_embedding(args.pred_embedding_50_path,
-                                                                          args.wordAlpha.string2id,
-                                                                          avg=True)
-            self.embedingTopic.weight = nn.Parameter(load_embedding_data)
-            self.embedingText.weight = nn.Parameter(load_embedding_data)
+        if args.using_pred_emb:
+            load_emb_text = Embedding.load_predtrained_emb_avg(args.pred_embedding_50_path,
+                                                                          args.wordAlpha.string2id)
+            load_emb_topic = Embedding.load_predtrained_emb_avg(args.pred_embedding_50_path,
+                                                               args.wordAlpha.string2id)
+            self.embedingTopic.weight.data.copy_(load_emb_topic)
+            self.embedingText.weight.data.copy_(load_emb_text)
 
         self.biLSTM = nn.LSTM(
             args.EmbedSize,
             args.hiddenSize,
+            dropout=args.dropout,
             num_layers=args.hiddenNum,
             batch_first=True,
             bidirectional=True
@@ -55,7 +57,8 @@ class Model(nn.Module):
         topic_text = topic_text.squeeze(2)          #[1, 400]
 
         output = self.linear1(topic_text)
-        output = F.tanh(output)
+        # output = F.tanh(output)
+        output = F.relu(output)
         output = self.linear2(output)
 
         return output

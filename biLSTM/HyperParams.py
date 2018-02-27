@@ -17,12 +17,15 @@ class HyperParams:
         self.EmbedSize = 50
         self.Steps = 100
         self.learningRate = 0.001
-        self.dropout = 0.5
+        self.dropout = 1
         self.wordNum = 0
         self.topicSize = 0
         self.batchSize = 8
-        self.using_embedding = False
         self.wordCutOff = 0
+        self.using_pred_emb = False
+        self.using_Chinese_data = False
+        self.using_English_data = True
+
 
         #biLSTM
         self.hiddenSize = 100
@@ -34,9 +37,9 @@ class HyperParams:
 
 
         self.mainAddress = '/Users/zhenranran/Desktop/zenRRan.github.com/Stance-Detection/biLSTM/Data/'
-        self.trainFile = self.mainAddress+"train.sd"
-        self.devFile = self.mainAddress + "dev.sd"
-        self.testFile = self.mainAddress + "test.sd"
+        self.trainFile = self.mainAddress+"English/train.sd"
+        self.devFile = self.mainAddress + "English/dev.sd"
+        self.testFile = self.mainAddress + "English/test.sd"
         self.writeFileName = '../data.txt'
         self.pred_embedding_25_path = '/Users/zhenranran/Desktop/立场检测/glove.twitter.27B/glove.twitter.27B.25d.txt'
         self.pred_embedding_50_path = '/Users/zhenranran/Desktop/立场检测/glove.twitter.27B/glove.twitter.27B.50d.txt'
@@ -49,6 +52,7 @@ class HyperParams:
 
         self.wordAlpha = Alphabet()
         self.labelAlpha = Alphabet()
+        self.topicAlpha = Alphabet()
 
     def args(self):
         args = "----------args----------\n"
