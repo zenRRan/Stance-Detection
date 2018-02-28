@@ -14,18 +14,32 @@ import Embedding
 class Model(nn.Module):
     def __init__(self, args):
         super(Model, self).__init__()
-        self.embedingTopic = nn.Embedding(args.topicSize, args.EmbedSize)
-        self.embedingText = nn.Embedding(args.wordNum, args.EmbedSize)
+        self.EmbedSize = args.EmbedSize
+        self.embedingTopic = nn.Embedding(args.topicWordNum, self.EmbedSize)
+        self.embedingText = nn.Embedding(args.wordNum, self.EmbedSize)
         if args.using_pred_emb:
-            load_emb_text = Embedding.load_predtrained_emb_avg(args.pred_embedding_50_path,
-                                                                          args.wordAlpha.string2id)
-            load_emb_topic = Embedding.load_predtrained_emb_avg(args.pred_embedding_50_path,
-                                                               args.wordAlpha.string2id)
+            path = ''
+            if args.pred_emd_dim == 25:
+                self.EmbedSize = 25
+                path = args.pred_embedding_25_path
+            elif args.pred_emd_dim == 50:
+                self.EmbedSize = 50
+                path = args.pred_embedding_50_path
+            elif args.pred_emd_dim == 100:
+                self.EmbedSize = 100
+                path = args.pred_embedding_100_path
+            elif args.pred_emd_dim == 200:
+                self.EmbedSize = 200
+                path = args.pred_embedding_200_path
+            self.embedingTopic = nn.Embedding(args.topicWordNum, self.EmbedSize)
+            self.embedingText = nn.Embedding(args.wordNum, self.EmbedSize)
+            load_emb_text = Embedding.load_predtrained_emb_avg(path, args.wordAlpha.string2id, padding=True)
+            load_emb_topic = Embedding.load_predtrained_emb_avg(path, args.topicAlpha.string2id, padding=False)
             self.embedingTopic.weight.data.copy_(load_emb_topic)
             self.embedingText.weight.data.copy_(load_emb_text)
 
         self.biLSTM = nn.LSTM(
-            args.EmbedSize,
+            self.EmbedSize,
             args.hiddenSize,
             dropout=args.dropout,
             num_layers=args.hiddenNum,
@@ -36,7 +50,7 @@ class Model(nn.Module):
         self.linear2 = nn.Linear(args.hiddenSize // 2, args.labelSize)
 
     def forward(self, topic, text):
-        topic = self.embedingTopic(topic)
+        topic = self.embedingText(topic)
         text = self.embedingText(text)
 
         topic, _ = self.biLSTM(topic)   #[1, 1, 200]

@@ -54,7 +54,11 @@ class Labeler:
 
         for line in self.topics:
             line = line.strip().split()
-
+            for word in line:
+                if word not in self.topic_stat_dic:
+                    self.topic_stat_dic[word] = 1
+                else:
+                    self.topic_stat_dic[word] += 1
 
         self.HyperParams.wordAlpha.from_string(unk_key)
         self.HyperParams.wordAlpha.from_string(padding_key)
@@ -64,12 +68,14 @@ class Labeler:
 
         self.HyperParams.wordAlpha.initial(self.word_stat_dic, self.HyperParams.wordCutOff)
         self.HyperParams.labelAlpha.initial(self.label_stat_dic)
+        self.HyperParams.topicAlpha.initial(self.topic_stat_dic)
 
         self.padID = self.HyperParams.wordAlpha.from_string(padding_key)
         self.unkID = self.HyperParams.wordAlpha.from_string(unk_key)
 
-        self.HyperParams.wordNum = self.HyperParams.wordAlpha.m_size + 1
+        self.HyperParams.wordNum = self.HyperParams.wordAlpha.m_size
         self.HyperParams.labelSize = self.HyperParams.labelAlpha.m_size
+        self.HyperParams.topicWordNum = self.HyperParams.topicAlpha.m_size
         print("Created over")
 
         # print("wordNum: ", self.HyperParams.wordNum)
@@ -112,26 +118,32 @@ class Labeler:
         labels = []
         for line in textList:
             if line[0] == self.topics[0]:
-                topics.append([0])
+                # topics.append([0])
+                topics.append(line[0])
                 texts.append(line[1:-1])
                 labels.append(line[-1])
             elif " ".join(line[:2]) == self.topics[1]:
-                topics.append([1])
+                # topics.append([1])
+                topics.append(line[:2])
                 texts.append(line[2:-1])
                 labels.append(line[-1])
             elif " ".join(line[:2]) == self.topics[2]:
-                topics.append([2])
+                # topics.append([2])
+                topics.append(line[:2])
                 texts.append(line[2:-1])
                 labels.append(line[-1])
             elif " ".join(line[:3]) == self.topics[3]:
-                topics.append([3])
+                # topics.append([3])
+                topics.append(line[:3])
                 texts.append(line[3:-1])
                 labels.append(line[-1])
             elif " ".join(line[:6]) == self.topics[4]:
-                topics.append([4])
+                # topics.append([4])
+                topics.append(line[:6])
                 texts.append(line[6:-1])
                 labels.append(line[-1])
             else:
+                print("wrong: def -> processingRawStanceData")
                 return -1
         return topics, texts, labels
 
@@ -164,10 +176,13 @@ class Labeler:
 
         args = self.HyperParams.args()
 
+        print(args)
+
         LearningRate = self.HyperParams.learningRate
         Steps = self.HyperParams.Steps
 
         model = biLSTM.Model(self.HyperParams)
+        # print(model)
         Optimizer = oprim.Adam(model.parameters(), lr=LearningRate)
 
         def accuracy(model, sents):
@@ -179,8 +194,10 @@ class Labeler:
 
             # for sent in sents:
             topic, text, label = self.processingRawStanceData(sents)
+            topic = self.seq2id(topic)
             text = self.seq2id(text)
             label = self.label2id(label)
+
             topic = Variable(torch.LongTensor(topic))
             text = Variable(torch.LongTensor(text))
             label = Variable(torch.LongTensor(label))
@@ -244,6 +261,7 @@ class Labeler:
                 Optimizer.zero_grad()
 
                 topic, text, label = self.processingRawStanceData(batch)
+                topic = self.seq2id(topic)
                 text = self.seq2id(text)
                 label = self.label2id(label)
 

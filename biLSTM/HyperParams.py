@@ -15,17 +15,18 @@ class HyperParams:
         self.setSentlen = 50
         self.labelSize = 0
         self.EmbedSize = 50
-        self.Steps = 100
+        self.Steps = 30
         self.learningRate = 0.001
-        self.dropout = 1
+        self.dropout = 0.9
         self.wordNum = 0
         self.topicSize = 0
         self.batchSize = 8
         self.wordCutOff = 0
-        self.using_pred_emb = False
+        self.using_pred_emb = True
         self.using_Chinese_data = False
         self.using_English_data = True
-
+        self.topicWordNum = 0
+        self.pred_emd_dim = 25
 
         #biLSTM
         self.hiddenSize = 100
@@ -36,15 +37,16 @@ class HyperParams:
         self.kernelNum = 100
 
 
-        self.mainAddress = '/Users/zhenranran/Desktop/zenRRan.github.com/Stance-Detection/biLSTM/Data/'
+        self.mainAddress = 'C:/Users/zenRRan/Desktop/Stance-Detection/biLSTM/Data/'
         self.trainFile = self.mainAddress+"English/train.sd"
         self.devFile = self.mainAddress + "English/dev.sd"
         self.testFile = self.mainAddress + "English/test.sd"
         self.writeFileName = '../data.txt'
-        self.pred_embedding_25_path = '/Users/zhenranran/Desktop/立场检测/glove.twitter.27B/glove.twitter.27B.25d.txt'
-        self.pred_embedding_50_path = '/Users/zhenranran/Desktop/立场检测/glove.twitter.27B/glove.twitter.27B.50d.txt'
-        self.pred_embedding_100_path = '/Users/zhenranran/Desktop/立场检测/glove.twitter.27B/glove.twitter.27B.100d.txt'
-        self.pred_embedding_200_path = '/Users/zhenranran/Desktop/立场检测/glove.twitter.27B/glove.twitter.27B.200d.txt'
+
+        self.pred_embedding_25_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.25d.txt'
+        self.pred_embedding_50_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.50d.txt'
+        self.pred_embedding_100_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.100d.txt'
+        self.pred_embedding_200_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.200d.txt'
 
         self.trainLen = 0
         self.devLen = 0
@@ -56,20 +58,31 @@ class HyperParams:
 
     def args(self):
         args = "----------args----------\n"
-        args += "labelSize    " + str(self.labelSize) + '\n'
-        args += "EmbedSize    " + str(self.EmbedSize) + '\n'
-        args += "Steps        " + str(self.Steps) + '\n'
-        args += "learningRate " + str(self.learningRate) + '\n'
-        args += "dropout      " + str(self.dropout) + '\n'
-        args += "batchSize    " + str(self.batchSize) + '\n'
-        args += "wordNum      " + str(self.wordNum) + '\n'
-        args += "topicSize    " + str(self.topicSize) + '\n'
-        args += "hiddenSize   " + str(self.hiddenSize) + '\n'
-        args += "hiddenNum    " + str(self.hiddenNum) + '\n'
-        args += "trainLen     " + str(self.trainLen) + '\n'
-        args += "devLen       " + str(self.devLen) + '\n'
-        args += "setSentlen   " + str(self.setSentlen) + '\n'
-        args += "testLen      " + str(self.testLen) + '\n\n'
+        args += "labelSize      " + str(self.labelSize) + '\n'
+        args += "EmbedSize      " + str(self.EmbedSize) + '\n'
+        args += "Steps          " + str(self.Steps) + '\n'
+        args += "learningRate   " + str(self.learningRate) + '\n'
+        args += "dropout        " + str(self.dropout) + '\n'
+        args += "batchSize      " + str(self.batchSize) + '\n'
+        args += "wordNum        " + str(self.wordNum) + '\n'
+        args += "wordCutOff     " + str(self.wordCutOff) + '\n'
+        args += "topicSize      " + str(self.topicSize) + '\n'
+        args += "hiddenSize     " + str(self.hiddenSize) + '\n'
+        args += "hiddenNum      " + str(self.hiddenNum) + '\n'
+        args += "trainLen       " + str(self.trainLen) + '\n'
+        args += "devLen         " + str(self.devLen) + '\n'
+        args += "setSentlen     " + str(self.setSentlen) + '\n'
+        args += "using_pred_emb " + str(self.using_pred_emb) + '\n'
+        if self.using_pred_emb:
+            args += "pred_emd_dim   " + str(self.pred_emd_dim) + '\n'
+        lg = ''
+        if self.using_Chinese_data:
+            lg = "Chinese"
+        else:
+            lg = "English"
+        args += "language       " + lg + '\n'
+        args += "testLen        " + str(self.testLen) + '\n\n'
+
         return args
 
 class Alphabet:
