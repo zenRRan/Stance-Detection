@@ -10,13 +10,14 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import Embedding
+from Embedding import ConstEmbedding
 
 class Model(nn.Module):
     def __init__(self, args):
         super(Model, self).__init__()
         self.EmbedSize = args.EmbedSize
-        self.embedingTopic = nn.Embedding(args.topicWordNum, self.EmbedSize)
-        self.embedingText = nn.Embedding(args.wordNum, self.EmbedSize)
+        self.embeddingTopic = nn.Embedding(args.topicWordNum, self.EmbedSize)
+        self.embeddingText = nn.Embedding(args.wordNum, self.EmbedSize)
         if args.using_pred_emb:
             path = ''
             if args.using_English_data:
@@ -33,13 +34,19 @@ class Model(nn.Module):
             elif args.using_Chinese_data:
                 self.EmbedSize = 64
                 path = args.chn_pred_embedding_64_path
-            self.embedingTopic = nn.Embedding(args.topicWordNum, self.EmbedSize)
-            self.embedingText = nn.Embedding(args.wordNum, self.EmbedSize)
+
             load_emb_text = Embedding.load_predtrained_emb_avg(path, args.wordAlpha.string2id, padding=True)
             load_emb_topic = Embedding.load_predtrained_emb_avg(path, args.topicAlpha.string2id, padding=False)
-            self.embedingTopic.weight.data.copy_(load_emb_topic)
-            self.embedingText.weight.data.copy_(load_emb_text)
-
+            self.embeddingTopic = ConstEmbedding(load_emb_topic)
+            self.embeddingText = ConstEmbedding(load_emb_text)
+            # self.embeddingTopic = nn.Embedding(args.topicWordNum, self.EmbedSize)
+            # self.embeddingText = nn.Embedding(args.wordNum, self.EmbedSize)
+            # load_emb_text = Embedding.load_predtrained_emb_avg(path, args.wordAlpha.string2id, padding=True)
+            # load_emb_topic = Embedding.load_predtrained_emb_avg(path, args.topicAlpha.string2id, padding=False)
+            # self.embeddingTopic.weight.data.copy_(load_emb_topic)
+            # self.embeddingText.weight.data.copy_(load_emb_text)
+            # self.embeddingText.weight.requires_grad = False
+            # self.embeddingTopic.weight.requires_grad = False
         self.biLSTM = nn.LSTM(
             self.EmbedSize,
             args.hiddenSize,
@@ -52,8 +59,8 @@ class Model(nn.Module):
         self.linear2 = nn.Linear(args.hiddenSize // 2, args.labelSize)
 
     def forward(self, topic, text):
-        topic = self.embedingText(topic)
-        text = self.embedingText(text)
+        topic = self.embeddingText(topic)
+        text = self.embeddingText(text)
 
         topic, _ = self.biLSTM(topic)   #[1, 1, 200]
         text,  _ = self.biLSTM(text)    #[1, 17, 200]

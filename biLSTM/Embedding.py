@@ -11,6 +11,85 @@ from Common import padding_key
 import numpy as np
 import torch.nn as nn
 
+class Embedding(nn.Embedding):
+    def reset_parameters(self):
+        print("Use uniform to initialize the embedding")
+        self.weight.data.uniform_(-0.01, 0.01)
+
+        if self.padding_idx is not None:
+            self.weight.data[self.padding_idx].fill_(0)
+
+class ConstEmbedding(nn.Module):
+    def __init__(self, pretrained_embedding, padding_idx=0):
+        super(ConstEmbedding, self).__init__()
+        self.vocab_size = pretrained_embedding.size(0)
+        self.embedding_size = pretrained_embedding.size(1)
+        self.embedding = nn.Embedding(self.vocab_size, self.embedding_size, padding_idx=padding_idx, sparse=True)
+        self.embedding.weight = nn.Parameter(pretrained_embedding, requires_grad=False)
+
+    def cuda(self, device_id=None):
+        """
+           The weights should be always on cpu
+       """
+        return self._apply(lambda t: t.cpu())
+
+    def forward(self, input):
+        """
+           return cpu tensor
+       """
+        # is_cuda = next(input).is_cuda
+        is_cuda = input.is_cuda
+        if is_cuda: input = input.cpu()
+        self.embedding._apply(lambda t: t.cpu())
+
+        x = self.embedding(input)
+        if is_cuda: x = x.cuda()
+
+        return x
+
+class VarEmbeddingCuda(nn.Module):
+    def __init__(self, pretrained_embedding, padding_idx=0):
+        super(VarEmbeddingCuda, self).__init__()
+        self.vocab_size = pretrained_embedding.size(0)
+        self.embedding_size = pretrained_embedding.size(1)
+        self.embedding = nn.Embedding(self.vocab_size, self.embedding_size, padding_idx=padding_idx)
+        self.embedding.weight = nn.Parameter(pretrained_embedding, requires_grad=True)
+        # self.embedding.weight.data.copy_(torch.from_numpy(pretrained_embedding))
+        # self.embedding.weight.requires_grad = True
+
+    def forward(self, input):
+        x = self.embedding(input)
+        return x
+
+class VarEmbeddingCPU(nn.Module):
+    def __init__(self, pretrained_embedding, padding_idx=0):
+        super(VarEmbeddingCPU, self).__init__()
+        self.vocab_size = pretrained_embedding.size(0)
+        self.embedding_size = pretrained_embedding.size(1)
+        self.embedding = nn.Embedding(self.vocab_size, self.embedding_size, padding_idx=padding_idx)
+        self.embedding.weight = nn.Parameter(pretrained_embedding, requires_grad=True)
+        # self.embedding.weight.data.copy_(torch.from_numpy(pretrained_embedding))
+        # self.embedding.weight.requires_grad = True
+
+    def forward(self, input):
+        is_cuda = input.is_cuda
+        if is_cuda: input = input.cpu()
+        self.embedding._apply(lambda t: t.cpu())
+
+        x = self.embedding(input)
+        if is_cuda: x = x.cuda()
+        return x
+
+
+class LSTM(nn.LSTM):
+    def reset_parameters(self):
+        for name, param in self.named_parameters():
+            if "weight" in name:
+                for i in range(4):
+                    nn.init.orthogonal(self.__getattr__(name)[self.hidden_size*i:self.hidden_size*(i+1),:])
+            if "bias" in name:
+                nn.init.constant(self.__getattr__(name), 0)
+
 
 def load_predtrained_emb_zero(path, words_dic, padding=False):
     print("start load predtrained embedding...")
@@ -44,7 +123,7 @@ def load_predtrained_emb_zero(path, words_dic, padding=False):
     return torch.from_numpy(embedding).float()
 
 
-def load_predtrained_emb_avg(path, words_dic, padding=False):
+def load_predtrained_emb_avg(path, words_dic, padding=False, save=''):
     print("start load predtrained embedding...")
     if padding:
         padID = words_dic[padding_key]
@@ -82,6 +161,15 @@ def load_predtrained_emb_avg(path, words_dic, padding=False):
         elif i in in_word_list and i != padID:
             embedding[i] = avg_col
     print("done")
+
+    '''
+        save
+    '''
+    if save != '':
+        with open(save) as f:
+            for line in embedding:
+                f.write(line+'/n')
+    
     return torch.from_numpy(embedding).float()
 
 

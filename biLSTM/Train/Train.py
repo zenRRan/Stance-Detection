@@ -217,7 +217,8 @@ class Labeler:
 
         model = biLSTM.Model(self.HyperParams)
         # print(model)
-        Optimizer = oprim.Adam(model.parameters(), lr=LearningRate)
+        param = [i for i in model.parameters() if i.requires_grad]
+        Optimizer = oprim.Adam(param, lr=LearningRate)
 
         def accuracy(model, sents):
             pred_right_num_idx = 0
@@ -275,10 +276,10 @@ class Labeler:
         file.write(args)
         file.close()
 
-        sentsTrain = sentsTrain
+        sentsTrain = sentsTrain[:1]
         if self.HyperParams.using_English_data:
             sentsDev = sentsDev
-        sentsTest = sentsTest
+        sentsTest = sentsTest[:1]
         batchSize = self.HyperParams.batchSize
 
         best_F1 = 0
