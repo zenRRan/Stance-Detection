@@ -9,9 +9,9 @@
 class Eval:
 
     def __init__(self, pred_right_num=0., pred_num=0., gold_num=0.):
-        self.pred_right_num = pred_right_num
-        self.pred_num = pred_num
-        self.gold_num = gold_num
+        self.pred_right_num = float(pred_right_num)
+        self.pred_num = float(pred_num)
+        self.gold_num = float(gold_num)
 
         if self.pred_num != 0:
             self.P = self.pred_right_num/self.pred_num

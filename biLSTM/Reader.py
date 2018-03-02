@@ -20,10 +20,9 @@ class reader:
         self.fileText = []
         self.maxLen = 0
         print("Reading "+filename)
-        file = open(filename, "r")
+        file = open(filename, "r",encoding='utf-8')
         self.fileText = file.readlines()
         file.close()
-
         if needFresh:
             for i in range(len(self.fileText)):
                 # print(i, " raw ", self.fileText[i])
@@ -50,7 +49,7 @@ class reader:
         return self.fileText
 
     def freshData(self, string):
-        string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string)
+        # string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string)
         string = re.sub(r"\'s", " \'s", string)
         string = re.sub(r"\'ve", " \'ve", string)
         string = re.sub(r"n\'t", " n\'t", string)

@@ -12,21 +12,21 @@ import collections
 class HyperParams:
     def __init__(self):
         self.maxSentlen = 0
-        self.setSentlen = 50
+        self.setSentlen = 1
         self.labelSize = 0
-        self.EmbedSize = 50
-        self.Steps = 30
+        self.EmbedSize = 64
+        self.Steps = 40
         self.learningRate = 0.001
-        self.dropout = 0.9
+        self.dropout = 0.5
         self.wordNum = 0
         self.topicSize = 0
-        self.batchSize = 8
+        self.batchSize = 16
         self.wordCutOff = 0
         self.using_pred_emb = True
-        self.using_Chinese_data = False
-        self.using_English_data = True
+        self.using_Chinese_data =True
+        self.using_English_data = False
         self.topicWordNum = 0
-        self.pred_emd_dim = 25
+        self.pred_emd_dim = 64
 
         #biLSTM
         self.hiddenSize = 100
@@ -36,17 +36,27 @@ class HyperParams:
         self.kernelSizes = [2, 3, 4]
         self.kernelNum = 100
 
+        lg = ''
+        if self.using_English_data:
+            lg = '英文'
+        else:
+            lg = '中文'
+        self.mainAddress = 'D:/语料/立场检测/'
+        self.trainFile = self.mainAddress + lg + "/train.sd"
+        if self.using_English_data:
+            self.devFile = self.mainAddress + lg + "/dev.sd"
+        self.testFile = self.mainAddress + lg + "/test.sd"
+        if self.using_English_data:
+            self.writeFileName = '../eng_data.txt'
+        else:
+            self.writeFileName = '../chn_data.txt'
 
-        self.mainAddress = 'C:/Users/zenRRan/Desktop/Stance-Detection/biLSTM/Data/'
-        self.trainFile = self.mainAddress+"English/train.sd"
-        self.devFile = self.mainAddress + "English/dev.sd"
-        self.testFile = self.mainAddress + "English/test.sd"
-        self.writeFileName = '../data.txt'
+        self.eng_pred_embedding_25_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.25d.txt'
+        self.eng_pred_embedding_50_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.50d.txt'
+        self.eng_pred_embedding_100_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.100d.txt'
+        self.eng_pred_embedding_200_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.200d.txt'
 
-        self.pred_embedding_25_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.25d.txt'
-        self.pred_embedding_50_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.50d.txt'
-        self.pred_embedding_100_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.100d.txt'
-        self.pred_embedding_200_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.200d.txt'
+        self.chn_pred_embedding_64_path = 'D:/Pred_Emdding/news12g_bdbk20g_nov90g_dim64.txt'
 
         self.trainLen = 0
         self.devLen = 0
@@ -58,20 +68,20 @@ class HyperParams:
 
     def args(self):
         args = "----------args----------\n"
-        args += "labelSize      " + str(self.labelSize) + '\n'
+        # args += "labelSize      " + str(self.labelSize) + '\n'
         args += "EmbedSize      " + str(self.EmbedSize) + '\n'
         args += "Steps          " + str(self.Steps) + '\n'
         args += "learningRate   " + str(self.learningRate) + '\n'
         args += "dropout        " + str(self.dropout) + '\n'
         args += "batchSize      " + str(self.batchSize) + '\n'
-        args += "wordNum        " + str(self.wordNum) + '\n'
+        # args += "wordNum        " + str(self.wordNum) + '\n'
         args += "wordCutOff     " + str(self.wordCutOff) + '\n'
-        args += "topicSize      " + str(self.topicSize) + '\n'
+        # args += "topicSize      " + str(self.topicSize) + '\n'
         args += "hiddenSize     " + str(self.hiddenSize) + '\n'
         args += "hiddenNum      " + str(self.hiddenNum) + '\n'
-        args += "trainLen       " + str(self.trainLen) + '\n'
-        args += "devLen         " + str(self.devLen) + '\n'
-        args += "setSentlen     " + str(self.setSentlen) + '\n'
+        # args += "trainLen       " + str(self.trainLen) + '\n'
+        # args += "devLen         " + str(self.devLen) + '\n'
+        # args += "setSentlen     " + str(self.setSentlen) + '\n'
         args += "using_pred_emb " + str(self.using_pred_emb) + '\n'
         if self.using_pred_emb:
             args += "pred_emd_dim   " + str(self.pred_emd_dim) + '\n'
@@ -80,8 +90,9 @@ class HyperParams:
             lg = "Chinese"
         else:
             lg = "English"
-        args += "language       " + lg + '\n'
-        args += "testLen        " + str(self.testLen) + '\n\n'
+        # args += "testLen        " + str(self.testLen) + '\n'
+        args += "language       " + lg + '\n\n'
+
 
         return args
 

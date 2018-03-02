@@ -11,4 +11,4 @@ unk_key = '-unk-'
 padding_key = '-padding-'
 English_topics = ['atheism', 'feminist movement', 'hillary clinton',
           'legalization of abortion', 'climate change is a real concern']
-Chinese_topics = ['春节 放 鞭炮', 'iphone se', '俄罗斯 叙利亚 反恐 行动', '开放 二胎', '深圳 禁摩 限电']
+Chinese_topics = ['春节 放鞭炮', 'iphonese', '俄罗斯 在 叙利亚 的 反恐 行动', '开放 二胎', '深圳 禁摩 限电']

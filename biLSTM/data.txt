@@ -1231,3 +1231,16 @@ Step: 26 - loss: 0.000008  Train  acc: 100.0000%2414/2414     Dev  acc: 56.7500%
 Step: 27 - loss: 0.000006  Train  acc: 100.0000%2414/2414     Dev  acc: 56.5000%226/400     Test  acc: 47.2378%590/1249  F1=0.4774
 Step: 28 - loss: 0.000005  Train  acc: 100.0000%2414/2414     Dev  acc: 56.7500%227/400     Test  acc: 47.0777%588/1249  F1=0.4756
 Step: 29 - loss: 0.000004  Train  acc: 100.0000%2414/2414     Dev  acc: 56.2500%225/400     Test  acc: 46.7574%584/1249  F1=0.4727
+----------args----------
+EmbedSize      50
+Steps          30
+learningRate   0.001
+dropout        0.9
+batchSize      8
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+using_pred_emb False
+language       Chinese
+testLen        1249
+

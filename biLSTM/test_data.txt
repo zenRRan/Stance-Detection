@@ -1,0 +1,128 @@
+----------args----------
+EmbedSize      50
+Steps          50
+learningRate   0.001
+dropout        0.9
+batchSize      8
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 0 - loss: 0.149160  Train  acc: 41.4667%1244/3000     Test  acc: 48.9000%489/1000  F1=0.3284
+Step: 1 - loss: 0.131950  Train  acc: 47.1333%1414/3000     Test  acc: 49.1000%491/1000  F1=0.3772
+Step: 2 - loss: 0.110939  Train  acc: 59.9000%1797/3000     Test  acc: 52.3000%523/1000  F1=0.5513
+Step: 3 - loss: 0.080611  Train  acc: 73.9667%2219/3000     Test  acc: 51.2000%512/1000  F1=0.5190
+Step: 4 - loss: 0.050338  Train  acc: 85.4667%2564/3000     Test  acc: 51.8000%518/1000  F1=0.5495
+Step: 5 - loss: 0.026259  Train  acc: 93.5333%2806/3000     Test  acc: 51.6000%516/1000  F1=0.5398
+Step: 6 - loss: 0.012779  Train  acc: 97.2333%2917/3000     Test  acc: 50.5000%505/1000  F1=0.5439
+Step: 7 - loss: 0.007937  Train  acc: 98.5000%2955/3000     Test  acc: 50.7000%507/1000  F1=0.5420
+Step: 8 - loss: 0.004517  Train  acc: 99.1333%2974/3000     Test  acc: 49.6000%496/1000  F1=0.5413
+Step: 9 - loss: 0.003445  Train  acc: 99.2333%2977/3000     Test  acc: 52.1000%521/1000  F1=0.5560
+Step: 10 - loss: 0.002782  Train  acc: 99.4667%2984/3000     Test  acc: 50.9000%509/1000  F1=0.5450
+Step: 11 - loss: 0.002373  Train  acc: 99.5333%2986/3000     Test  acc: 52.5000%525/1000  F1=0.5649
+Step: 12 - loss: 0.001674  Train  acc: 99.6000%2988/3000     Test  acc: 51.4000%514/1000  F1=0.5662
+Step: 13 - loss: 0.001432  Train  acc: 99.6000%2988/3000     Test  acc: 52.7000%527/1000  F1=0.5726
+Step: 14 - loss: 0.001339  Train  acc: 99.6333%2989/3000     Test  acc: 51.8000%518/1000  F1=0.5685
+Step: 15 - loss: 0.001223  Train  acc: 99.6333%2989/3000     Test  acc: 52.4000%524/1000  F1=0.5684
+Step: 16 - loss: 0.001335  Train  acc: 99.6667%2990/3000     Test  acc: 52.9000%529/1000  F1=0.5680
+Step: 17 - loss: 0.001129  Train  acc: 99.6667%2990/3000     Test  acc: 51.3000%513/1000  F1=0.5587
+Step: 18 - loss: 0.001072  Train  acc: 99.6667%2990/3000     Test  acc: 52.3000%523/1000  F1=0.5738
+Step: 19 - loss: 0.001146  Train  acc: 99.6333%2989/3000     Test  acc: 52.2000%522/1000  F1=0.5480
+Step: 20 - loss: 0.001016  Train  acc: 99.8000%2994/3000     Test  acc: 53.4000%534/1000  F1=0.5708
+Step: 21 - loss: 0.005765  Train  acc: 98.7667%2963/3000     Test  acc: 54.9000%549/1000  F1=0.5868
+Step: 22 - loss: 0.002986  Train  acc: 99.3667%2981/3000     Test  acc: 51.1000%511/1000  F1=0.5554
+Step: 23 - loss: 0.001706  Train  acc: 99.5333%2986/3000     Test  acc: 52.6000%526/1000  F1=0.5677
+Step: 24 - loss: 0.001193  Train  acc: 99.6667%2990/3000     Test  acc: 51.2000%512/1000  F1=0.5565
+Step: 25 - loss: 0.000987  Train  acc: 99.7333%2992/3000     Test  acc: 49.4000%494/1000  F1=0.5513
+Step: 26 - loss: 0.000790  Train  acc: 99.8000%2994/3000     Test  acc: 51.4000%514/1000  F1=0.5517
+Step: 27 - loss: 0.000751  Train  acc: 99.8333%2995/3000     Test  acc: 52.5000%525/1000  F1=0.5593
+Step: 28 - loss: 0.001316  Train  acc: 99.8000%2994/3000     Test  acc: 53.3000%533/1000  F1=0.5786
+Step: 29 - loss: 0.000507  Train  acc: 99.8333%2995/3000     Test  acc: 47.9000%479/1000  F1=0.5084
+Step: 30 - loss: 0.000449  Train  acc: 99.9000%2997/3000     Test  acc: 54.5000%545/1000  F1=0.5781
+Step: 31 - loss: 0.001357  Train  acc: 99.8000%2994/3000     Test  acc: 53.3000%533/1000  F1=0.5621
+Step: 32 - loss: 0.000266  Train  acc: 99.9333%2998/3000     Test  acc: 54.0000%540/1000  F1=0.5831
+Step: 33 - loss: 0.000166  Train  acc: 99.9667%2999/3000     Test  acc: 53.8000%538/1000  F1=0.5745
+Step: 34 - loss: 0.000101  Train  acc: 100.0000%3000/3000     Test  acc: 54.1000%541/1000  F1=0.5785
+Step: 35 - loss: 0.000069  Train  acc: 100.0000%3000/3000     Test  acc: 53.3000%533/1000  F1=0.5726
+Step: 36 - loss: 0.000045  Train  acc: 100.0000%3000/3000     Test  acc: 53.5000%535/1000  F1=0.5719
+Step: 37 - loss: 0.000030  Train  acc: 100.0000%3000/3000     Test  acc: 53.3000%533/1000  F1=0.5696
+Step: 38 - loss: 0.000021  Train  acc: 100.0000%3000/3000     Test  acc: 53.6000%536/1000  F1=0.5744
+Step: 39 - loss: 0.000018  Train  acc: 100.0000%3000/3000     Test  acc: 53.4000%534/1000  F1=0.5733
+Step: 40 - loss: 0.000012  Train  acc: 100.0000%3000/3000     Test  acc: 53.0000%530/1000  F1=0.5664
+Step: 41 - loss: 0.000008  Train  acc: 100.0000%3000/3000     Test  acc: 53.4000%534/1000  F1=0.5714
+Step: 42 - loss: 0.000005  Train  acc: 100.0000%3000/3000     Test  acc: 53.6000%536/1000  F1=0.5724
+Step: 43 - loss: 0.000004  Train  acc: 100.0000%3000/3000     Test  acc: 53.5000%535/1000  F1=0.5703
+Step: 44 - loss: 0.000003  Train  acc: 100.0000%3000/3000     Test  acc: 53.5000%535/1000  F1=0.5711
+Step: 45 - loss: 0.000003  Train  acc: 100.0000%3000/3000     Test  acc: 53.3000%533/1000  F1=0.5678
+Step: 46 - loss: 0.000003  Train  acc: 100.0000%3000/3000     Test  acc: 53.4000%534/1000  F1=0.5704
+Step: 47 - loss: 0.000010  Train  acc: 100.0000%3000/3000     Test  acc: 53.9000%539/1000  F1=0.5651
+Step: 48 - loss: 0.002244  Train  acc: 99.4667%2984/3000     Test  acc: 52.5000%525/1000  F1=0.5531
+Step: 49 - loss: 0.001417  Train  acc: 99.6667%2990/3000     Test  acc: 53.8000%538/1000  F1=0.5652
+Total: best F1 = 0.5868 acc = 54.900000000000006
+----------args----------
+EmbedSize      50
+Steps          50
+learningRate   0.001
+dropout        0.5
+batchSize      16
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 0 - loss: 0.148915  Train  acc: 40.9667%1229/3000     Test  acc: 48.9000%489/1000  F1=0.3284
+Step: 1 - loss: 0.131916  Train  acc: 46.2000%1386/3000     Test  acc: 48.9000%489/1000  F1=0.3780
+Step: 2 - loss: 0.114187  Train  acc: 58.6000%1758/3000     Test  acc: 49.7000%497/1000  F1=0.4589
+Step: 3 - loss: 0.094882  Train  acc: 68.3000%2049/3000     Test  acc: 50.2000%502/1000  F1=0.4980
+Step: 4 - loss: 0.060812  Train  acc: 81.9333%2458/3000     Test  acc: 50.7000%507/1000  F1=0.5440
+Step: 5 - loss: 0.031075  Train  acc: 92.3333%2770/3000     Test  acc: 51.9000%519/1000  F1=0.5408
+Step: 6 - loss: 0.013867  Train  acc: 97.1000%2913/3000     Test  acc: 49.6000%496/1000  F1=0.5413
+Step: 7 - loss: 0.007412  Train  acc: 98.5333%2956/3000     Test  acc: 46.3000%463/1000  F1=0.5194
+Step: 8 - loss: 0.004352  Train  acc: 99.1333%2974/3000     Test  acc: 48.0000%480/1000  F1=0.5197
+Step: 9 - loss: 0.003006  Train  acc: 99.3333%2980/3000     Test  acc: 55.0000%550/1000  F1=0.5776
+Step: 10 - loss: 0.002262  Train  acc: 99.5000%2985/3000     Test  acc: 54.9000%549/1000  F1=0.5800
+Step: 11 - loss: 0.002321  Train  acc: 99.4667%2984/3000     Test  acc: 56.7000%567/1000  F1=0.5987
+Step: 12 - loss: 0.002635  Train  acc: 99.3000%2979/3000     Test  acc: 55.1000%551/1000  F1=0.5825
+Step: 13 - loss: 0.002315  Train  acc: 99.4333%2983/3000     Test  acc: 56.3000%563/1000  F1=0.6062
+Step: 14 - loss: 0.003705  Train  acc: 99.1000%2973/3000     Test  acc: 53.7000%537/1000  F1=0.5939
+Step: 15 - loss: 0.002095  Train  acc: 99.5000%2985/3000     Test  acc: 55.0000%550/1000  F1=0.5940
+Step: 16 - loss: 0.001751  Train  acc: 99.5333%2986/3000     Test  acc: 53.7000%537/1000  F1=0.5799
+Step: 17 - loss: 0.001199  Train  acc: 99.6667%2990/3000     Test  acc: 55.7000%557/1000  F1=0.5920
+Step: 18 - loss: 0.001093  Train  acc: 99.6667%2990/3000     Test  acc: 56.1000%561/1000  F1=0.5890
+Step: 19 - loss: 0.000986  Train  acc: 99.7667%2993/3000     Test  acc: 56.1000%561/1000  F1=0.5917
+Step: 20 - loss: 0.000952  Train  acc: 99.7000%2991/3000     Test  acc: 55.7000%557/1000  F1=0.5927
+Step: 21 - loss: 0.000807  Train  acc: 99.8000%2994/3000     Test  acc: 55.5000%555/1000  F1=0.5848
+Step: 22 - loss: 0.000703  Train  acc: 99.7667%2993/3000     Test  acc: 56.0000%560/1000  F1=0.5912
+Step: 23 - loss: 0.000616  Train  acc: 99.8000%2994/3000     Test  acc: 54.5000%545/1000  F1=0.5860
+Step: 24 - loss: 0.000525  Train  acc: 99.8667%2996/3000     Test  acc: 54.7000%547/1000  F1=0.5877
+Step: 25 - loss: 0.000562  Train  acc: 99.8333%2995/3000     Test  acc: 56.9000%569/1000  F1=0.6027
+Step: 26 - loss: 0.001212  Train  acc: 99.7000%2991/3000     Test  acc: 54.7000%547/1000  F1=0.5492
+Step: 27 - loss: 0.001960  Train  acc: 99.4333%2983/3000     Test  acc: 51.1000%511/1000  F1=0.5438
+Step: 28 - loss: 0.001865  Train  acc: 99.5000%2985/3000     Test  acc: 50.1000%501/1000  F1=0.5563
+Step: 29 - loss: 0.001015  Train  acc: 99.8000%2994/3000     Test  acc: 52.9000%529/1000  F1=0.5801
+Step: 30 - loss: 0.000471  Train  acc: 99.9667%2999/3000     Test  acc: 54.1000%541/1000  F1=0.5806
+Step: 31 - loss: 0.000178  Train  acc: 100.0000%3000/3000     Test  acc: 53.8000%538/1000  F1=0.5825
+Step: 32 - loss: 0.000114  Train  acc: 100.0000%3000/3000     Test  acc: 53.3000%533/1000  F1=0.5741
+Step: 33 - loss: 0.000088  Train  acc: 100.0000%3000/3000     Test  acc: 53.7000%537/1000  F1=0.5789
+Step: 34 - loss: 0.000059  Train  acc: 100.0000%3000/3000     Test  acc: 54.1000%541/1000  F1=0.5831
+Step: 35 - loss: 0.000043  Train  acc: 100.0000%3000/3000     Test  acc: 54.1000%541/1000  F1=0.5815
+Step: 36 - loss: 0.000032  Train  acc: 100.0000%3000/3000     Test  acc: 54.3000%543/1000  F1=0.5826
+Step: 37 - loss: 0.000024  Train  acc: 100.0000%3000/3000     Test  acc: 54.1000%541/1000  F1=0.5830
+Step: 38 - loss: 0.000016  Train  acc: 100.0000%3000/3000     Test  acc: 53.9000%539/1000  F1=0.5814
+Step: 39 - loss: 0.000012  Train  acc: 100.0000%3000/3000     Test  acc: 54.1000%541/1000  F1=0.5817
+Step: 40 - loss: 0.000008  Train  acc: 100.0000%3000/3000     Test  acc: 54.0000%540/1000  F1=0.5800
+Step: 41 - loss: 0.000007  Train  acc: 100.0000%3000/3000     Test  acc: 53.6000%536/1000  F1=0.5774
+Step: 42 - loss: 0.000005  Train  acc: 100.0000%3000/3000     Test  acc: 53.5000%535/1000  F1=0.5755
+Step: 43 - loss: 0.000004  Train  acc: 100.0000%3000/3000     Test  acc: 53.4000%534/1000  F1=0.5760
+Step: 44 - loss: 0.000003  Train  acc: 100.0000%3000/3000     Test  acc: 53.2000%532/1000  F1=0.5744
+Step: 45 - loss: 0.000002  Train  acc: 100.0000%3000/3000     Test  acc: 53.6000%536/1000  F1=0.5767
+Step: 46 - loss: 0.000002  Train  acc: 100.0000%3000/3000     Test  acc: 53.2000%532/1000  F1=0.5727
+Step: 47 - loss: 0.000002  Train  acc: 100.0000%3000/3000     Test  acc: 53.7000%537/1000  F1=0.5770
+Step: 48 - loss: 0.000001  Train  acc: 100.0000%3000/3000     Test  acc: 53.5000%535/1000  F1=0.5737
+Step: 49 - loss: 0.000001  Train  acc: 100.0000%3000/3000     Test  acc: 53.4000%534/1000  F1=0.5724
+Total: best F1 = 0.6062000000000001 acc = 56.3

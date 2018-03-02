@@ -13,7 +13,7 @@ import torch.nn as nn
 
 
 def load_predtrained_emb_zero(path, words_dic, padding=False):
-    print("start load predtrained embeding...")
+    print("start load predtrained embedding...")
     if padding:
         padID = words_dic[padding_key]
     embeding_dim = -1
@@ -33,7 +33,7 @@ def load_predtrained_emb_zero(path, words_dic, padding=False):
     embedding = np.zeros((word_size, embeding_dim))
     in_word_list = []
     with open(path, encoding='utf-8') as f:
-        for line in f.readlines():
+        for line in f.readlines()[:1]:
             line = line.strip().split(' ')
             index = words_dic.get(line[0])
             if index:
@@ -45,12 +45,12 @@ def load_predtrained_emb_zero(path, words_dic, padding=False):
 
 
 def load_predtrained_emb_avg(path, words_dic, padding=False):
-    print("start load predtrained embeding...")
+    print("start load predtrained embedding...")
     if padding:
         padID = words_dic[padding_key]
     embeding_dim = -1
     with open(path, encoding='utf-8') as f:
-        for line in f.readlines():
+        for line in f.readlines()[1:]:
             line = line.strip().split(" ")
             if len(line) <= 1:
                 print("load_predtrained_embedding text is wrong!  -> len(line) <= 1")

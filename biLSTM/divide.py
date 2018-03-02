@@ -12,8 +12,10 @@
 import random
 import jieba
 
-testfile = open("/Users/zhenranran/Desktop/zenRRan.github.com/Stance-Detection/biLSTM/Data/Chinese/NLPCC2016_Stance_Detection_Task_A_Testdata.txt", "r", encoding="utf-8")
-trainfile = open('/Users/zhenranran/Desktop/zenRRan.github.com/Stance-Detection/biLSTM/Data/Chinese/NLPCC2016_Stance_Detection_Task_A_Traindata.txt', "r", encoding="utf-8")
+train_path = 'C:/Users/zenRRan/Desktop/Stance-Detection/biLSTM/Data/Chinese/NLPCC2016_Stance_Detection_Task_A_Traindata.txt'
+test_path = 'C:/Users/zenRRan/Desktop/Stance-Detection/biLSTM/Data/Chinese/NLPCC_2016_Stance_Detection_Task_A_gold.txt'
+testfile = open(test_path, 'r', encoding='utf-8')
+trainfile = open(train_path, 'r', encoding='utf-8')
 testtext = []
 traintext = []
 for line in testfile.readlines():
@@ -26,15 +28,33 @@ testfile.close()
 trainfile.close()
 
 # random.shuffle(text)
-testNewFile = open("/Users/zhenranran/Desktop/zenRRan.github.com/Stance-Detection/biLSTM/Data/Chinese/test.sd", "w", encoding="utf-8")
-trainNewFile = open("/Users/zhenranran/Desktop/zenRRan.github.com/Stance-Detection/biLSTM/Data/Chinese/train.sd", "w", encoding="utf-8")
+new_train_path = 'C:/Users/zenRRan/Desktop/Stance-Detection/biLSTM/Data/Chinese/train.sd'
+new_test_path = 'C:/Users/zenRRan/Desktop/Stance-Detection/biLSTM/Data/Chinese/test.sd'
+testNewFile = open(new_test_path, 'w', encoding='utf-8')
+trainNewFile = open(new_train_path, 'w', encoding='utf-8')
 # dev = text[:400]
 # train = text[400:]
 # dev = sorted(dev, key=lambda dev:dev[0])
 # train = sorted(train, key=lambda train:train[0])
 for line in testtext:
-    testNewFile.write(" ".join(line)+"\n")
+    line = ' '.join(line)
+    line = jieba.cut(line)
+    line = [item for item in filter(lambda x: x != ' ', line)]
+    line = ' '.join(line)
+    testNewFile.write(line + '\n')
 for line in traintext:
-    trainNewFile.write(" ".join(line)+"\n")
+    line = ' '.join(line)
+    line = jieba.cut(line)
+    line = [item for item in filter(lambda x: x != ' ', line)]
+    line = ' '.join(line)
+    trainNewFile.write(line + '\n')
 testNewFile.close()
 trainNewFile.close()
+
+# sent = ['phone', 'se']
+# sent = jieba.cut(sent)
+# print(sent)
+# sent = [item for item in filter(lambda x: x != '', sent)]
+# print(sent)
+# sent = [item for item in filter(lambda x: x != ' ', sent)]
+# print(' '.join(sent))
