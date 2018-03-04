@@ -10,6 +10,9 @@ import torch
 from Common import padding_key
 import numpy as np
 import torch.nn as nn
+import random
+random.seed(23)
+torch.manual_seed(23)
 
 class Embedding(nn.Embedding):
     def reset_parameters(self):
@@ -112,7 +115,7 @@ def load_predtrained_emb_zero(path, words_dic, padding=False):
     embedding = np.zeros((word_size, embeding_dim))
     in_word_list = []
     with open(path, encoding='utf-8') as f:
-        for line in f.readlines()[:1]:
+        for line in f.readlines():
             line = line.strip().split(' ')
             index = words_dic.get(line[0])
             if index:
@@ -129,7 +132,7 @@ def load_predtrained_emb_avg(path, words_dic, padding=False, save=''):
         padID = words_dic[padding_key]
     embeding_dim = -1
     with open(path, encoding='utf-8') as f:
-        for line in f.readlines()[1:]:
+        for line in f.readlines():
             line = line.strip().split(" ")
             if len(line) <= 1:
                 print("load_predtrained_embedding text is wrong!  -> len(line) <= 1")
@@ -141,13 +144,16 @@ def load_predtrained_emb_avg(path, words_dic, padding=False, save=''):
     # print("The word size is ", word_size)
     # print("The dim of predtrained embedding is ", embeding_dim, "\n")
 
+    lines = []
     embedding = np.zeros((word_size, embeding_dim))
     in_word_list = []
     with open(path, encoding='utf-8') as f:
         for line in f.readlines():
+            rawline = line
             line = line.strip().split(' ')
             index = words_dic.get(line[0])
             if index:
+                lines.append(rawline)
                 vector = np.array(line[1:], dtype='float32')
                 embedding[index] = vector
                 in_word_list.append(index)
@@ -166,11 +172,12 @@ def load_predtrained_emb_avg(path, words_dic, padding=False, save=''):
         save
     '''
     if save != '':
-        with open(save) as f:
-            for line in embedding:
+        with open(save, 'a') as f:
+            for line in lines:
                 f.write(line+'/n')
-    
+            print("save successful! path=", save)
     return torch.from_numpy(embedding).float()
+
 
 
 

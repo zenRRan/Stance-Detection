@@ -15,18 +15,21 @@ class HyperParams:
         self.setSentlen = 1
         self.labelSize = 0
         self.EmbedSize = 64
-        self.Steps = 40
+        self.Steps = 30
         self.learningRate = 0.001
         self.dropout = 0.5
         self.wordNum = 0
         self.topicSize = 0
-        self.batchSize = 16
+        self.batchSize = 13
         self.wordCutOff = 0
         self.using_pred_emb = True
         self.using_Chinese_data =True
         self.using_English_data = False
         self.topicWordNum = 0
         self.pred_emd_dim = 64
+        self.decay = 1e-7
+        self.lr_decay = True
+        self.clip_grad = False
 
         #biLSTM
         self.hiddenSize = 100
@@ -49,14 +52,18 @@ class HyperParams:
         if self.using_English_data:
             self.writeFileName = '../eng_data.txt'
         else:
-            self.writeFileName = '../chn_data.txt'
+            self.writeFileName = '../test_data.txt'
 
-        self.eng_pred_embedding_25_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.25d.txt'
-        self.eng_pred_embedding_50_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.50d.txt'
-        self.eng_pred_embedding_100_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.100d.txt'
-        self.eng_pred_embedding_200_path = 'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.200d.txt'
+        eng_pred_embedding_path_list = ['D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.25d.txt',
+                                        'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.50d.txt',
+                                        'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.100d.txt',
+                                        'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.200d.txt']
+        self.Eng_pred_embedding_path = eng_pred_embedding_path_list[1]
+        self.chn_pred_embedding_path = 'D:/Pred_Emdding/news12g_bdbk20g_nov90g_dim64.txt'
 
-        self.chn_pred_embedding_64_path = 'D:/Pred_Emdding/news12g_bdbk20g_nov90g_dim64.txt'
+        self.save_pred_emd_path = '../Data/Chinese/pred_emd.txt'
+        if self.using_English_data:
+            self.save_pred_emd_path = self.Eng_pred_embedding_path
 
         self.trainLen = 0
         self.devLen = 0
@@ -82,6 +89,8 @@ class HyperParams:
         # args += "trainLen       " + str(self.trainLen) + '\n'
         # args += "devLen         " + str(self.devLen) + '\n'
         # args += "setSentlen     " + str(self.setSentlen) + '\n'
+        args += "lr_decay       " + str(self.lr_decay) + '\n'
+        args += "clip_grad      " + str(self.clip_grad) + '\n'
         args += "using_pred_emb " + str(self.using_pred_emb) + '\n'
         if self.using_pred_emb:
             args += "pred_emd_dim   " + str(self.pred_emd_dim) + '\n'

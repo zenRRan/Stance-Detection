@@ -1,0 +1,13 @@
+----------args----------
+EmbedSize      50
+Steps          40
+learningRate   0.001
+dropout        0.5
+batchSize      16
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       English
+

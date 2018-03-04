@@ -6,6 +6,7 @@
 # @File    : scraping.py
 # @Software: PyCharm Community Edition
 
-a = [1, 2, 3, 5, 6, 7]
-print(a[:-1])
+import numpy as np
+a = np.zeros((2, 2))
+print(str(a[0]))
 

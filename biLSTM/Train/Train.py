@@ -20,6 +20,10 @@ from Common import unk_key
 from Common import padding_key
 from Common import English_topics
 from Common import Chinese_topics
+import random
+random.seed(23)
+torch.manual_seed(23)
+
 import collections
 
 class Labeler:
@@ -184,8 +188,8 @@ class Labeler:
 
     def train(self, trainFile, devFile=None, testFile=None):
 
-        readerTrain = Reader.reader(trainFile)
-        readerTest = Reader.reader(testFile)
+        readerTrain = Reader.reader(trainFile, language='chn')
+        readerTest = Reader.reader(testFile, language='chn')
 
         sentsTrain = readerTrain.getWholeText()
         sentsTest = readerTest.getWholeText()
@@ -197,7 +201,7 @@ class Labeler:
         self.HyperParams.testLen = len(sentsTest)
 
         if self.HyperParams.using_English_data:
-            readerDev = Reader.reader(devFile)
+            readerDev = Reader.reader(devFile, language='eng')
             sentsDev = readerDev.getWholeText()
             sentsDev = self.cutSentFromText(sentsDev)
             self.HyperParams.devLen = len(sentsDev)
@@ -217,9 +221,13 @@ class Labeler:
 
         model = biLSTM.Model(self.HyperParams)
         # print(model)
-        param = [i for i in model.parameters() if i.requires_grad]
-        Optimizer = oprim.Adam(param, lr=LearningRate)
-
+        # param = [i for i in model.parameters() if i.requires_grad]
+        # param = [i for i in model.parameters() if i.sparse]
+        # sparseParam = [i for i in model.parameters() if not i.sparse]
+        # Optimizer = oprim.Adam(param, lr=LearningRate)
+        # SparseOprimizer = oprim.SparseAdam(sparseParam)
+        # model.
+        Optimizer = oprim.Adam(model.parameters(), lr=LearningRate, weight_decay=self.HyperParams.decay)
         def accuracy(model, sents):
             pred_right_num_idx = 0
             pred_num_idx = 1
@@ -276,10 +284,10 @@ class Labeler:
         file.write(args)
         file.close()
 
-        sentsTrain = sentsTrain[:1]
+        sentsTrain = sentsTrain
         if self.HyperParams.using_English_data:
             sentsDev = sentsDev
-        sentsTest = sentsTest[:1]
+        sentsTest = sentsTest
         batchSize = self.HyperParams.batchSize
 
         best_F1 = 0
@@ -289,13 +297,14 @@ class Labeler:
             totalLoss = torch.Tensor([0])
             cnt = 0
             trainCorrect = 0
-            # random.shuffle(sentsTrain)
+            random.shuffle(sentsTrain)
             textBatchList = getTextBatchList(sentsTrain, batchSize)
 
 
             for batch in textBatchList:
                 model.train()
                 Optimizer.zero_grad()
+                # SparseOprimizer.zero_grad()
 
                 topic, text, label = self.processingRawStanceData(batch)
                 topic = self.seq2id(topic)
@@ -310,7 +319,8 @@ class Labeler:
 
                 Loss = F.cross_entropy(Y, label)
                 Loss.backward()
-                #torch.nn.utils.clip_grad_norm(model.parameters(), 10)
+                if self.HyperParams.clip_grad:
+                    torch.nn.utils.clip_grad_norm(model.parameters(), 10)
                 Optimizer.step()
 
                 cnt += 1
@@ -319,6 +329,8 @@ class Labeler:
 
                 totalLoss += Loss.data
                 trainCorrect += (torch.max(Y, 1)[1].view(label.size()).data == label.data).sum()
+            if self.HyperParams.lr_decay:
+                adjust_learning_rate(Optimizer, self.HyperParams.learningRate / (1 + (step + 1) * self.HyperParams.decay))
 
             totalLoss /= len(sentsTrain)
             TrainAcc = float(trainCorrect)/len(sentsTrain) * 100
@@ -373,6 +385,13 @@ class Labeler:
 # def printList(list):
 #     for line in list:
 #         print(" ".join(line))
+def adjust_learning_rate(optimizer, lr):
+    """
+    shrink learning rate for pytorch
+    """
+    for param_group in optimizer.param_groups:
+        param_group['lr'] = lr
+
 l = Labeler()
 if l.HyperParams.using_English_data:
     l.train(l.HyperParams.trainFile, l.HyperParams.devFile, l.HyperParams.testFile)

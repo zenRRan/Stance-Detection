@@ -126,3 +126,1275 @@ Step: 47 - loss: 0.000002  Train  acc: 100.0000%3000/3000     Test  acc: 53.7000
 Step: 48 - loss: 0.000001  Train  acc: 100.0000%3000/3000     Test  acc: 53.5000%535/1000  F1=0.5737
 Step: 49 - loss: 0.000001  Train  acc: 100.0000%3000/3000     Test  acc: 53.4000%534/1000  F1=0.5724
 Total: best F1 = 0.6062000000000001 acc = 56.3
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 0 - loss: 0.080765  Train  acc: 44.2179%1323/2992     Test  acc: 51.3000%513/1000  F1=0.5383
+Step: 1 - loss: 0.073137  Train  acc: 54.9131%1643/2992     Test  acc: 55.9000%559/1000  F1=0.5800
+Step: 2 - loss: 0.061537  Train  acc: 65.6417%1964/2992     Test  acc: 62.8000%628/1000  F1=0.6618
+Step: 3 - loss: 0.046179  Train  acc: 76.6377%2293/2992     Test  acc: 55.2000%552/1000  F1=0.5744
+Step: 4 - loss: 0.030670  Train  acc: 86.0628%2575/2992     Test  acc: 61.1000%611/1000  F1=0.6581
+Step: 5 - loss: 0.016470  Train  acc: 94.6524%2832/2992     Test  acc: 55.2000%552/1000  F1=0.6098
+Step: 6 - loss: 0.007261  Train  acc: 98.3623%2943/2992     Test  acc: 58.0000%580/1000  F1=0.6300
+Step: 7 - loss: 0.003172  Train  acc: 99.4987%2977/2992     Test  acc: 59.5000%595/1000  F1=0.6505
+Step: 8 - loss: 0.001349  Train  acc: 99.8329%2987/2992     Test  acc: 59.1000%591/1000  F1=0.6441
+Step: 9 - loss: 0.000757  Train  acc: 99.8663%2988/2992     Test  acc: 59.6000%596/1000  F1=0.6482
+Step: 10 - loss: 0.000754  Train  acc: 99.7995%2986/2992     Test  acc: 60.0000%600/1000  F1=0.6522
+Step: 11 - loss: 0.000531  Train  acc: 99.8997%2989/2992     Test  acc: 59.7000%597/1000  F1=0.6493
+Step: 12 - loss: 0.000625  Train  acc: 99.8663%2988/2992     Test  acc: 60.2000%602/1000  F1=0.6559
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 13 - loss: 0.000482  Train  acc: 99.8997%2989/2992     Test  acc: 60.3000%603/1000  F1=0.6543
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 0 - loss: 0.080457  Train  acc: 44.5856%1334/2992     Test  acc: 51.1000%511/1000  F1=0.5290
+Step: 14 - loss: 0.000515  Train  acc: 99.8663%2988/2992     Test  acc: 61.5000%615/1000  F1=0.6645
+Step: 0 - loss: 0.080457  Train  acc: 44.5856%1334/2992     Test  acc: 51.1000%511/1000  F1=0.5290
+Step: 1 - loss: 0.073913  Train  acc: 53.5428%1602/2992     Test  acc: 54.8000%548/1000  F1=0.5612
+Step: 15 - loss: 0.000823  Train  acc: 99.7995%2986/2992     Test  acc: 59.4000%594/1000  F1=0.6473
+Step: 2 - loss: 0.063479  Train  acc: 63.3356%1895/2992     Test  acc: 63.3000%633/1000  F1=0.6593
+Step: 16 - loss: 0.000636  Train  acc: 99.8997%2989/2992     Test  acc: 60.5000%605/1000  F1=0.6565
+Step: 3 - loss: 0.048600  Train  acc: 75.5348%2260/2992     Test  acc: 58.3000%583/1000  F1=0.6071
+Step: 17 - loss: 0.000299  Train  acc: 99.9666%2991/2992     Test  acc: 59.7000%597/1000  F1=0.6519
+Step: 4 - loss: 0.032242  Train  acc: 85.5281%2559/2992     Test  acc: 62.2000%622/1000  F1=0.6724
+Step: 18 - loss: 0.000342  Train  acc: 99.8997%2989/2992     Test  acc: 61.7000%617/1000  F1=0.6620
+Step: 5 - loss: 0.017345  Train  acc: 94.4184%2825/2992     Test  acc: 58.9000%589/1000  F1=0.6445
+Step: 19 - loss: 0.001485  Train  acc: 99.4652%2976/2992     Test  acc: 50.6000%506/1000  F1=0.5793
+Step: 6 - loss: 0.007662  Train  acc: 98.5628%2949/2992     Test  acc: 61.7000%617/1000  F1=0.6704
+Step: 20 - loss: 0.032476  Train  acc: 84.4586%2527/2992     Test  acc: 59.2000%592/1000  F1=0.6443
+Step: 7 - loss: 0.003001  Train  acc: 99.5655%2979/2992     Test  acc: 61.8000%618/1000  F1=0.6713
+Step: 21 - loss: 0.011336  Train  acc: 94.7861%2836/2992     Test  acc: 58.8000%588/1000  F1=0.6386
+Step: 8 - loss: 0.001584  Train  acc: 99.7660%2985/2992     Test  acc: 63.6000%636/1000  F1=0.6815
+Step: 22 - loss: 0.002276  Train  acc: 99.4652%2976/2992     Test  acc: 57.5000%575/1000  F1=0.6322
+Step: 9 - loss: 0.001126  Train  acc: 99.7660%2985/2992     Test  acc: 61.7000%617/1000  F1=0.6696
+Step: 23 - loss: 0.000638  Train  acc: 99.9332%2990/2992     Test  acc: 58.9000%589/1000  F1=0.6446
+Step: 10 - loss: 0.000800  Train  acc: 99.8329%2987/2992     Test  acc: 62.0000%620/1000  F1=0.6669
+Step: 24 - loss: 0.000432  Train  acc: 99.8997%2989/2992     Test  acc: 56.8000%568/1000  F1=0.6275
+Step: 11 - loss: 0.000569  Train  acc: 99.9666%2991/2992     Test  acc: 61.4000%614/1000  F1=0.6623
+Step: 25 - loss: 0.000379  Train  acc: 99.9332%2990/2992     Test  acc: 58.0000%580/1000  F1=0.6339
+Step: 12 - loss: 0.000332  Train  acc: 99.9332%2990/2992     Test  acc: 61.2000%612/1000  F1=0.6599
+Step: 26 - loss: 0.000356  Train  acc: 99.8997%2989/2992     Test  acc: 58.9000%589/1000  F1=0.6428
+Step: 13 - loss: 0.000337  Train  acc: 99.9332%2990/2992     Test  acc: 62.1000%621/1000  F1=0.6671
+Step: 27 - loss: 0.000342  Train  acc: 99.8663%2988/2992     Test  acc: 57.2000%572/1000  F1=0.6280
+Step: 14 - loss: 0.000391  Train  acc: 99.8997%2989/2992     Test  acc: 63.1000%631/1000  F1=0.6696
+Step: 28 - loss: 0.000285  Train  acc: 99.8997%2989/2992     Test  acc: 57.8000%578/1000  F1=0.6335
+Step: 15 - loss: 0.000412  Train  acc: 99.9332%2990/2992     Test  acc: 60.8000%608/1000  F1=0.6574
+Step: 29 - loss: 0.000186  Train  acc: 99.9666%2991/2992     Test  acc: 58.6000%586/1000  F1=0.6425
+Step: 16 - loss: 0.000225  Train  acc: 99.9666%2991/2992     Test  acc: 59.9000%599/1000  F1=0.6510
+Step: 30 - loss: 0.000163  Train  acc: 99.8997%2989/2992     Test  acc: 58.3000%583/1000  F1=0.6377
+Step: 17 - loss: 0.009321  Train  acc: 95.8222%2867/2992     Test  acc: 53.8000%538/1000  F1=0.5908
+Step: 31 - loss: 0.000153  Train  acc: 99.9666%2991/2992     Test  acc: 58.1000%581/1000  F1=0.6357
+Step: 18 - loss: 0.021906  Train  acc: 89.4385%2676/2992     Test  acc: 58.4000%584/1000  F1=0.6283
+Step: 32 - loss: 0.000123  Train  acc: 99.9666%2991/2992     Test  acc: 60.1000%601/1000  F1=0.6471
+Step: 19 - loss: 0.005864  Train  acc: 98.1283%2936/2992     Test  acc: 56.7000%567/1000  F1=0.6210
+Step: 33 - loss: 0.000170  Train  acc: 99.9666%2991/2992     Test  acc: 58.0000%580/1000  F1=0.6354
+Step: 20 - loss: 0.001256  Train  acc: 99.8663%2988/2992     Test  acc: 57.9000%579/1000  F1=0.6306
+Step: 34 - loss: 0.000087  Train  acc: 99.9666%2991/2992     Test  acc: 57.6000%576/1000  F1=0.6325
+Step: 21 - loss: 0.000582  Train  acc: 99.8663%2988/2992     Test  acc: 58.3000%583/1000  F1=0.6339
+Step: 35 - loss: 0.000096  Train  acc: 99.9666%2991/2992     Test  acc: 57.9000%579/1000  F1=0.6360
+Step: 22 - loss: 0.000508  Train  acc: 99.8997%2989/2992     Test  acc: 59.9000%599/1000  F1=0.6439
+Step: 36 - loss: 0.000074  Train  acc: 100.0000%2992/2992     Test  acc: 56.7000%567/1000  F1=0.6280
+Step: 23 - loss: 0.000285  Train  acc: 99.9666%2991/2992     Test  acc: 58.5000%585/1000  F1=0.6371
+Step: 37 - loss: 0.000036  Train  acc: 100.0000%2992/2992     Test  acc: 57.3000%573/1000  F1=0.6308
+Step: 24 - loss: 0.000246  Train  acc: 99.9666%2991/2992     Test  acc: 58.9000%589/1000  F1=0.6418
+Step: 38 - loss: 0.000024  Train  acc: 100.0000%2992/2992     Test  acc: 57.5000%575/1000  F1=0.6313
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 25 - loss: 0.000200  Train  acc: 99.9666%2991/2992     Test  acc: 55.5000%555/1000  F1=0.6117
+Step: 39 - loss: 0.000021  Train  acc: 100.0000%2992/2992     Test  acc: 57.3000%573/1000  F1=0.6302
+Total: best F1 = 0.66455 acc = 61.5
+Step: 0 - loss: 0.080457  Train  acc: 44.5856%1334/2992     Test  acc: 51.1000%511/1000  F1=0.5290
+Step: 26 - loss: 0.000376  Train  acc: 99.8997%2989/2992     Test  acc: 57.4000%574/1000  F1=0.6250
+Step: 1 - loss: 0.073912  Train  acc: 53.5428%1602/2992     Test  acc: 54.8000%548/1000  F1=0.5612
+Step: 27 - loss: 0.000218  Train  acc: 99.9666%2991/2992     Test  acc: 58.8000%588/1000  F1=0.6372
+Step: 2 - loss: 0.063231  Train  acc: 63.8703%1911/2992     Test  acc: 62.8000%628/1000  F1=0.6523
+Step: 28 - loss: 0.000325  Train  acc: 99.8997%2989/2992     Test  acc: 58.8000%588/1000  F1=0.6405
+Step: 3 - loss: 0.048412  Train  acc: 75.4345%2257/2992     Test  acc: 58.5000%585/1000  F1=0.6059
+Step: 29 - loss: 0.000343  Train  acc: 99.8997%2989/2992     Test  acc: 57.8000%578/1000  F1=0.6350
+Step: 4 - loss: 0.032432  Train  acc: 85.9291%2571/2992     Test  acc: 62.0000%620/1000  F1=0.6639
+Step: 30 - loss: 0.000266  Train  acc: 99.9332%2990/2992     Test  acc: 60.7000%607/1000  F1=0.6506
+Step: 5 - loss: 0.017261  Train  acc: 93.8837%2809/2992     Test  acc: 60.1000%601/1000  F1=0.6572
+Step: 31 - loss: 0.000279  Train  acc: 99.9332%2990/2992     Test  acc: 59.4000%594/1000  F1=0.6433
+Step: 6 - loss: 0.007001  Train  acc: 98.7299%2954/2992     Test  acc: 62.7000%627/1000  F1=0.6710
+Step: 32 - loss: 0.000668  Train  acc: 99.8663%2988/2992     Test  acc: 58.5000%585/1000  F1=0.6336
+Step: 7 - loss: 0.002868  Train  acc: 99.4987%2977/2992     Test  acc: 62.3000%623/1000  F1=0.6720
+Step: 33 - loss: 0.000214  Train  acc: 99.8997%2989/2992     Test  acc: 58.2000%582/1000  F1=0.6336
+Step: 8 - loss: 0.001422  Train  acc: 99.7995%2986/2992     Test  acc: 61.8000%618/1000  F1=0.6640
+Step: 34 - loss: 0.000328  Train  acc: 99.8663%2988/2992     Test  acc: 58.6000%586/1000  F1=0.6372
+Step: 9 - loss: 0.001117  Train  acc: 99.7660%2985/2992     Test  acc: 61.7000%617/1000  F1=0.6630
+Step: 35 - loss: 0.000144  Train  acc: 99.9332%2990/2992     Test  acc: 57.3000%573/1000  F1=0.6234
+Step: 10 - loss: 0.000950  Train  acc: 99.6992%2983/2992     Test  acc: 62.2000%622/1000  F1=0.6663
+Step: 36 - loss: 0.000281  Train  acc: 99.8997%2989/2992     Test  acc: 57.5000%575/1000  F1=0.6280
+Step: 11 - loss: 0.000686  Train  acc: 99.8329%2987/2992     Test  acc: 60.7000%607/1000  F1=0.6563
+Step: 37 - loss: 0.000059  Train  acc: 100.0000%2992/2992     Test  acc: 57.6000%576/1000  F1=0.6259
+Step: 12 - loss: 0.000537  Train  acc: 99.7995%2986/2992     Test  acc: 62.6000%626/1000  F1=0.6683
+Step: 38 - loss: 0.000026  Train  acc: 100.0000%2992/2992     Test  acc: 58.5000%585/1000  F1=0.6332
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 13 - loss: 0.000425  Train  acc: 99.8997%2989/2992     Test  acc: 62.4000%624/1000  F1=0.6688
+Step: 39 - loss: 0.000017  Train  acc: 100.0000%2992/2992     Test  acc: 58.2000%582/1000  F1=0.6314
+Total: best F1 = 0.68155 acc = 63.6
+Step: 0 - loss: 0.080457  Train  acc: 44.5856%1334/2992     Test  acc: 51.1000%511/1000  F1=0.5290
+Step: 14 - loss: 0.000317  Train  acc: 99.9332%2990/2992     Test  acc: 60.2000%602/1000  F1=0.6488
+Step: 1 - loss: 0.073912  Train  acc: 53.5428%1602/2992     Test  acc: 54.8000%548/1000  F1=0.5612
+Step: 15 - loss: 0.000267  Train  acc: 99.9332%2990/2992     Test  acc: 61.2000%612/1000  F1=0.6576
+Step: 2 - loss: 0.063240  Train  acc: 63.9372%1913/2992     Test  acc: 63.6000%636/1000  F1=0.6584
+Step: 16 - loss: 0.000209  Train  acc: 99.9666%2991/2992     Test  acc: 61.4000%614/1000  F1=0.6613
+Step: 3 - loss: 0.048383  Train  acc: 74.6992%2235/2992     Test  acc: 59.0000%590/1000  F1=0.6116
+Step: 17 - loss: 0.000191  Train  acc: 99.9666%2991/2992     Test  acc: 62.4000%624/1000  F1=0.6659
+Step: 4 - loss: 0.032605  Train  acc: 85.1604%2548/2992     Test  acc: 61.9000%619/1000  F1=0.6580
+Step: 18 - loss: 0.000226  Train  acc: 99.9666%2991/2992     Test  acc: 59.7000%597/1000  F1=0.6399
+Step: 5 - loss: 0.017049  Train  acc: 94.3516%2823/2992     Test  acc: 60.2000%602/1000  F1=0.6481
+Step: 19 - loss: 0.001084  Train  acc: 99.6992%2983/2992     Test  acc: 63.3000%633/1000  F1=0.6688
+Step: 6 - loss: 0.007220  Train  acc: 98.8302%2957/2992     Test  acc: 61.9000%619/1000  F1=0.6645
+Step: 20 - loss: 0.035654  Train  acc: 83.1885%2489/2992     Test  acc: 54.8000%548/1000  F1=0.6087
+Step: 7 - loss: 0.002891  Train  acc: 99.4987%2977/2992     Test  acc: 61.8000%618/1000  F1=0.6647
+Step: 21 - loss: 0.011621  Train  acc: 95.0869%2845/2992     Test  acc: 59.7000%597/1000  F1=0.6441
+Step: 8 - loss: 0.001459  Train  acc: 99.8329%2987/2992     Test  acc: 62.6000%626/1000  F1=0.6694
+Step: 22 - loss: 0.002239  Train  acc: 99.6992%2983/2992     Test  acc: 57.3000%573/1000  F1=0.6227
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 9 - loss: 0.001054  Train  acc: 99.7995%2986/2992     Test  acc: 62.5000%625/1000  F1=0.6679
+Step: 23 - loss: 0.000739  Train  acc: 99.9666%2991/2992     Test  acc: 60.2000%602/1000  F1=0.6487
+Step: 0 - loss: 0.080457  Train  acc: 44.5856%1334/2992     Test  acc: 51.1000%511/1000  F1=0.5290
+Step: 10 - loss: 0.000803  Train  acc: 99.7995%2986/2992     Test  acc: 62.3000%623/1000  F1=0.6656
+Step: 24 - loss: 0.000436  Train  acc: 99.9666%2991/2992     Test  acc: 59.9000%599/1000  F1=0.6472
+Step: 1 - loss: 0.073913  Train  acc: 53.5428%1602/2992     Test  acc: 54.8000%548/1000  F1=0.5612
+Step: 11 - loss: 0.000656  Train  acc: 99.8663%2988/2992     Test  acc: 61.5000%615/1000  F1=0.6608
+Step: 25 - loss: 0.000341  Train  acc: 99.9666%2991/2992     Test  acc: 57.2000%572/1000  F1=0.6261
+Step: 2 - loss: 0.063475  Train  acc: 63.3356%1895/2992     Test  acc: 63.4000%634/1000  F1=0.6599
+Step: 12 - loss: 0.000528  Train  acc: 99.8663%2988/2992     Test  acc: 63.9000%639/1000  F1=0.6810
+Step: 26 - loss: 0.000399  Train  acc: 99.9332%2990/2992     Test  acc: 58.1000%581/1000  F1=0.6321
+Step: 3 - loss: 0.048907  Train  acc: 74.8997%2241/2992     Test  acc: 57.2000%572/1000  F1=0.5908
+Step: 13 - loss: 0.000527  Train  acc: 99.8663%2988/2992     Test  acc: 62.6000%626/1000  F1=0.6705
+Step: 27 - loss: 0.000194  Train  acc: 99.9666%2991/2992     Test  acc: 61.2000%612/1000  F1=0.6587
+Step: 4 - loss: 0.032773  Train  acc: 85.2273%2550/2992     Test  acc: 62.0000%620/1000  F1=0.6655
+Step: 14 - loss: 0.000422  Train  acc: 99.8997%2989/2992     Test  acc: 60.6000%606/1000  F1=0.6521
+Step: 28 - loss: 0.000286  Train  acc: 99.9332%2990/2992     Test  acc: 61.6000%616/1000  F1=0.6603
+Step: 5 - loss: 0.017759  Train  acc: 93.9505%2811/2992     Test  acc: 59.9000%599/1000  F1=0.6525
+Step: 15 - loss: 0.000516  Train  acc: 99.8663%2988/2992     Test  acc: 62.4000%624/1000  F1=0.6683
+Step: 29 - loss: 0.000251  Train  acc: 99.9332%2990/2992     Test  acc: 61.4000%614/1000  F1=0.6600
+Step: 6 - loss: 0.007532  Train  acc: 98.4960%2947/2992     Test  acc: 59.8000%598/1000  F1=0.6527
+Step: 16 - loss: 0.000421  Train  acc: 99.8997%2989/2992     Test  acc: 60.7000%607/1000  F1=0.6500
+Step: 30 - loss: 0.000208  Train  acc: 99.9332%2990/2992     Test  acc: 61.7000%617/1000  F1=0.6616
+Step: 7 - loss: 0.002877  Train  acc: 99.6324%2981/2992     Test  acc: 60.5000%605/1000  F1=0.6583
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 8 - loss: 0.001499  Train  acc: 99.7660%2985/2992     Test  acc: 62.2000%622/1000  F1=0.6675
+Step: 0 - loss: 0.080680  Train  acc: 43.8837%1313/2992     Test  acc: 56.9000%569/1000  F1=0.5669
+Step: 9 - loss: 0.001218  Train  acc: 99.8663%2988/2992     Test  acc: 61.1000%611/1000  F1=0.6579
+Step: 1 - loss: 0.073378  Train  acc: 53.3422%1596/2992     Test  acc: 60.9000%609/1000  F1=0.6120
+Step: 10 - loss: 0.000911  Train  acc: 99.8329%2987/2992     Test  acc: 62.5000%625/1000  F1=0.6697
+Step: 2 - loss: 0.062098  Train  acc: 64.0040%1915/2992     Test  acc: 60.1000%601/1000  F1=0.6311
+Step: 11 - loss: 0.000669  Train  acc: 99.9332%2990/2992     Test  acc: 62.1000%621/1000  F1=0.6677
+Step: 3 - loss: 0.045940  Train  acc: 77.3061%2313/2992     Test  acc: 56.6000%566/1000  F1=0.6217
+Step: 12 - loss: 0.000422  Train  acc: 99.8663%2988/2992     Test  acc: 62.0000%620/1000  F1=0.6593
+Step: 4 - loss: 0.029210  Train  acc: 87.1658%2608/2992     Test  acc: 62.4000%624/1000  F1=0.6674
+Step: 13 - loss: 0.000399  Train  acc: 99.9332%2990/2992     Test  acc: 62.6000%626/1000  F1=0.6700
+Step: 5 - loss: 0.014493  Train  acc: 95.7219%2864/2992     Test  acc: 59.0000%590/1000  F1=0.6428
+Step: 14 - loss: 0.000365  Train  acc: 99.9332%2990/2992     Test  acc: 61.0000%610/1000  F1=0.6522
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.6
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 6 - loss: 0.006054  Train  acc: 98.7968%2956/2992     Test  acc: 61.6000%616/1000  F1=0.6557
+Step: 15 - loss: 0.000306  Train  acc: 99.9332%2990/2992     Test  acc: 61.8000%618/1000  F1=0.6643
+Step: 7 - loss: 0.002489  Train  acc: 99.5989%2980/2992     Test  acc: 62.1000%621/1000  F1=0.6672
+Step: 16 - loss: 0.000210  Train  acc: 99.9666%2991/2992     Test  acc: 62.1000%621/1000  F1=0.6637
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.6
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 8 - loss: 0.001207  Train  acc: 99.8329%2987/2992     Test  acc: 60.1000%601/1000  F1=0.6507
+Step: 17 - loss: 0.000329  Train  acc: 99.8997%2989/2992     Test  acc: 60.9000%609/1000  F1=0.6572
+Step: 0 - loss: 0.080457  Train  acc: 44.5856%1334/2992     Test  acc: 51.1000%511/1000  F1=0.5290
+Step: 9 - loss: 0.001030  Train  acc: 99.7660%2985/2992     Test  acc: 61.1000%611/1000  F1=0.6590
+Step: 18 - loss: 0.000216  Train  acc: 99.9666%2991/2992     Test  acc: 62.6000%626/1000  F1=0.6707
+Step: 1 - loss: 0.073913  Train  acc: 53.5428%1602/2992     Test  acc: 54.8000%548/1000  F1=0.5612
+Step: 10 - loss: 0.000624  Train  acc: 99.8663%2988/2992     Test  acc: 61.9000%619/1000  F1=0.6676
+Step: 19 - loss: 0.000211  Train  acc: 99.9666%2991/2992     Test  acc: 62.5000%625/1000  F1=0.6694
+Step: 2 - loss: 0.063479  Train  acc: 63.3356%1895/2992     Test  acc: 63.3000%633/1000  F1=0.6593
+Step: 11 - loss: 0.000423  Train  acc: 99.9332%2990/2992     Test  acc: 61.6000%616/1000  F1=0.6632
+Step: 20 - loss: 0.000271  Train  acc: 99.9332%2990/2992     Test  acc: 62.4000%624/1000  F1=0.6666
+Step: 3 - loss: 0.048600  Train  acc: 75.5348%2260/2992     Test  acc: 58.3000%583/1000  F1=0.6071
+Step: 12 - loss: 0.000400  Train  acc: 99.8997%2989/2992     Test  acc: 61.9000%619/1000  F1=0.6659
+Step: 21 - loss: 0.000228  Train  acc: 99.9332%2990/2992     Test  acc: 62.0000%620/1000  F1=0.6631
+Step: 4 - loss: 0.032242  Train  acc: 85.5281%2559/2992     Test  acc: 62.2000%622/1000  F1=0.6724
+Step: 13 - loss: 0.000771  Train  acc: 99.7995%2986/2992     Test  acc: 61.7000%617/1000  F1=0.6657
+Step: 22 - loss: 0.018240  Train  acc: 90.7754%2716/2992     Test  acc: 51.1000%511/1000  F1=0.5779
+Step: 5 - loss: 0.017345  Train  acc: 94.4184%2825/2992     Test  acc: 58.9000%589/1000  F1=0.6445
+Step: 14 - loss: 0.000882  Train  acc: 99.8329%2987/2992     Test  acc: 57.5000%575/1000  F1=0.6355
+Step: 23 - loss: 0.026178  Train  acc: 86.6310%2592/2992     Test  acc: 55.9000%559/1000  F1=0.6156
+Step: 6 - loss: 0.007662  Train  acc: 98.5628%2949/2992     Test  acc: 61.7000%617/1000  F1=0.6704
+Step: 15 - loss: 0.001023  Train  acc: 99.7995%2986/2992     Test  acc: 59.9000%599/1000  F1=0.6463
+Step: 24 - loss: 0.005236  Train  acc: 98.4626%2946/2992     Test  acc: 56.0000%560/1000  F1=0.6177
+Step: 7 - loss: 0.003001  Train  acc: 99.5655%2979/2992     Test  acc: 61.8000%618/1000  F1=0.6713
+Step: 16 - loss: 0.001125  Train  acc: 99.6992%2983/2992     Test  acc: 54.8000%548/1000  F1=0.5783
+Step: 25 - loss: 0.000973  Train  acc: 99.9332%2990/2992     Test  acc: 56.7000%567/1000  F1=0.6191
+Step: 8 - loss: 0.001584  Train  acc: 99.7660%2985/2992     Test  acc: 63.6000%636/1000  F1=0.6815
+Step: 17 - loss: 0.022347  Train  acc: 89.0374%2664/2992     Test  acc: 55.0000%550/1000  F1=0.6028
+Step: 26 - loss: 0.000587  Train  acc: 99.8997%2989/2992     Test  acc: 58.3000%583/1000  F1=0.6308
+Step: 9 - loss: 0.001126  Train  acc: 99.7660%2985/2992     Test  acc: 61.7000%617/1000  F1=0.6696
+Step: 18 - loss: 0.013821  Train  acc: 93.1150%2786/2992     Test  acc: 57.1000%571/1000  F1=0.6193
+Step: 27 - loss: 0.000340  Train  acc: 99.9332%2990/2992     Test  acc: 59.1000%591/1000  F1=0.6375
+Step: 10 - loss: 0.000800  Train  acc: 99.8329%2987/2992     Test  acc: 62.0000%620/1000  F1=0.6669
+Step: 19 - loss: 0.002659  Train  acc: 99.3650%2973/2992     Test  acc: 58.0000%580/1000  F1=0.6303
+Step: 28 - loss: 0.000292  Train  acc: 99.9332%2990/2992     Test  acc: 59.3000%593/1000  F1=0.6379
+Step: 11 - loss: 0.000569  Train  acc: 99.9666%2991/2992     Test  acc: 61.4000%614/1000  F1=0.6623
+Step: 20 - loss: 0.000718  Train  acc: 99.8663%2988/2992     Test  acc: 56.0000%560/1000  F1=0.6116
+Step: 29 - loss: 0.000188  Train  acc: 100.0000%2992/2992     Test  acc: 59.6000%596/1000  F1=0.6417
+Step: 12 - loss: 0.000332  Train  acc: 99.9332%2990/2992     Test  acc: 61.2000%612/1000  F1=0.6599
+Step: 21 - loss: 0.000390  Train  acc: 99.9666%2991/2992     Test  acc: 58.1000%581/1000  F1=0.6324
+Step: 30 - loss: 0.000143  Train  acc: 100.0000%2992/2992     Test  acc: 59.8000%598/1000  F1=0.6435
+Step: 13 - loss: 0.000337  Train  acc: 99.9332%2990/2992     Test  acc: 62.1000%621/1000  F1=0.6671
+Step: 22 - loss: 0.000402  Train  acc: 99.9332%2990/2992     Test  acc: 58.2000%582/1000  F1=0.6329
+Step: 31 - loss: 0.000116  Train  acc: 100.0000%2992/2992     Test  acc: 60.2000%602/1000  F1=0.6468
+Step: 14 - loss: 0.000391  Train  acc: 99.8997%2989/2992     Test  acc: 63.1000%631/1000  F1=0.6696
+Step: 23 - loss: 0.000367  Train  acc: 99.9332%2990/2992     Test  acc: 58.1000%581/1000  F1=0.6322
+Step: 32 - loss: 0.000191  Train  acc: 99.9332%2990/2992     Test  acc: 59.4000%594/1000  F1=0.6381
+Step: 15 - loss: 0.000412  Train  acc: 99.9332%2990/2992     Test  acc: 60.8000%608/1000  F1=0.6574
+Step: 24 - loss: 0.000250  Train  acc: 99.9666%2991/2992     Test  acc: 58.1000%581/1000  F1=0.6312
+Step: 33 - loss: 0.000124  Train  acc: 99.9666%2991/2992     Test  acc: 59.0000%590/1000  F1=0.6342
+Step: 16 - loss: 0.000225  Train  acc: 99.9666%2991/2992     Test  acc: 59.9000%599/1000  F1=0.6510
+Step: 25 - loss: 0.000312  Train  acc: 99.9332%2990/2992     Test  acc: 58.0000%580/1000  F1=0.6310
+Step: 34 - loss: 0.000142  Train  acc: 99.9332%2990/2992     Test  acc: 59.7000%597/1000  F1=0.6344
+Step: 17 - loss: 0.009321  Train  acc: 95.8222%2867/2992     Test  acc: 53.8000%538/1000  F1=0.5908
+Step: 26 - loss: 0.000151  Train  acc: 99.9666%2991/2992     Test  acc: 58.0000%580/1000  F1=0.6309
+Step: 35 - loss: 0.000087  Train  acc: 99.9666%2991/2992     Test  acc: 59.1000%591/1000  F1=0.6327
+Step: 18 - loss: 0.021906  Train  acc: 89.4385%2676/2992     Test  acc: 58.4000%584/1000  F1=0.6283
+Step: 27 - loss: 0.000298  Train  acc: 99.9332%2990/2992     Test  acc: 58.6000%586/1000  F1=0.6327
+Step: 36 - loss: 0.000163  Train  acc: 99.9332%2990/2992     Test  acc: 59.6000%596/1000  F1=0.6390
+Step: 19 - loss: 0.005864  Train  acc: 98.1283%2936/2992     Test  acc: 56.7000%567/1000  F1=0.6210
+Step: 28 - loss: 0.000285  Train  acc: 99.9332%2990/2992     Test  acc: 57.3000%573/1000  F1=0.6228
+Step: 37 - loss: 0.000134  Train  acc: 99.9332%2990/2992     Test  acc: 58.4000%584/1000  F1=0.6300
+Step: 20 - loss: 0.001256  Train  acc: 99.8663%2988/2992     Test  acc: 57.9000%579/1000  F1=0.6306
+Step: 29 - loss: 0.000329  Train  acc: 99.8997%2989/2992     Test  acc: 58.5000%585/1000  F1=0.6359
+Step: 38 - loss: 0.000057  Train  acc: 100.0000%2992/2992     Test  acc: 59.7000%597/1000  F1=0.6432
+Step: 21 - loss: 0.000582  Train  acc: 99.8663%2988/2992     Test  acc: 58.3000%583/1000  F1=0.6339
+Step: 30 - loss: 0.000847  Train  acc: 99.7995%2986/2992     Test  acc: 56.5000%565/1000  F1=0.6158
+Step: 39 - loss: 0.000029  Train  acc: 100.0000%2992/2992     Test  acc: 60.2000%602/1000  F1=0.6470
+Total: best F1 = 0.67075 acc = 62.6
+Step: 22 - loss: 0.000508  Train  acc: 99.8997%2989/2992     Test  acc: 59.9000%599/1000  F1=0.6439
+Step: 31 - loss: 0.000622  Train  acc: 99.8663%2988/2992     Test  acc: 60.8000%608/1000  F1=0.6537
+Step: 23 - loss: 0.000285  Train  acc: 99.9666%2991/2992     Test  acc: 58.5000%585/1000  F1=0.6371
+Step: 32 - loss: 0.000504  Train  acc: 99.8663%2988/2992     Test  acc: 59.2000%592/1000  F1=0.6397
+Step: 24 - loss: 0.000246  Train  acc: 99.9666%2991/2992     Test  acc: 58.9000%589/1000  F1=0.6418
+Step: 33 - loss: 0.000243  Train  acc: 99.9332%2990/2992     Test  acc: 54.8000%548/1000  F1=0.6006
+Step: 25 - loss: 0.000200  Train  acc: 99.9666%2991/2992     Test  acc: 55.5000%555/1000  F1=0.6117
+Step: 34 - loss: 0.000279  Train  acc: 99.9332%2990/2992     Test  acc: 58.9000%589/1000  F1=0.6345
+Step: 26 - loss: 0.000376  Train  acc: 99.8997%2989/2992     Test  acc: 57.4000%574/1000  F1=0.6250
+Step: 35 - loss: 0.000461  Train  acc: 99.8997%2989/2992     Test  acc: 58.0000%580/1000  F1=0.6262
+Step: 27 - loss: 0.000218  Train  acc: 99.9666%2991/2992     Test  acc: 58.8000%588/1000  F1=0.6372
+Step: 36 - loss: 0.000200  Train  acc: 99.9666%2991/2992     Test  acc: 58.6000%586/1000  F1=0.6341
+Step: 28 - loss: 0.000325  Train  acc: 99.8997%2989/2992     Test  acc: 58.8000%588/1000  F1=0.6405
+Step: 37 - loss: 0.000232  Train  acc: 99.9332%2990/2992     Test  acc: 56.1000%561/1000  F1=0.6150
+Step: 29 - loss: 0.000343  Train  acc: 99.8997%2989/2992     Test  acc: 57.8000%578/1000  F1=0.6350
+Step: 38 - loss: 0.003022  Train  acc: 98.8302%2957/2992     Test  acc: 53.6000%536/1000  F1=0.5908
+Step: 30 - loss: 0.000266  Train  acc: 99.9332%2990/2992     Test  acc: 60.7000%607/1000  F1=0.6506
+Step: 39 - loss: 0.019121  Train  acc: 90.7086%2714/2992     Test  acc: 53.8000%538/1000  F1=0.5966
+Total: best F1 = 0.66765 acc = 61.9
+Step: 31 - loss: 0.000279  Train  acc: 99.9332%2990/2992     Test  acc: 59.4000%594/1000  F1=0.6433
+Step: 32 - loss: 0.000668  Train  acc: 99.8663%2988/2992     Test  acc: 58.5000%585/1000  F1=0.6336
+Step: 33 - loss: 0.000214  Train  acc: 99.8997%2989/2992     Test  acc: 58.2000%582/1000  F1=0.6336
+Step: 34 - loss: 0.000328  Train  acc: 99.8663%2988/2992     Test  acc: 58.6000%586/1000  F1=0.6372
+Step: 35 - loss: 0.000144  Train  acc: 99.9332%2990/2992     Test  acc: 57.3000%573/1000  F1=0.6234
+Step: 36 - loss: 0.000281  Train  acc: 99.8997%2989/2992     Test  acc: 57.5000%575/1000  F1=0.6280
+Step: 37 - loss: 0.000059  Train  acc: 100.0000%2992/2992     Test  acc: 57.6000%576/1000  F1=0.6259
+Step: 38 - loss: 0.000026  Train  acc: 100.0000%2992/2992     Test  acc: 58.5000%585/1000  F1=0.6332
+Step: 39 - loss: 0.000017  Train  acc: 100.0000%2992/2992     Test  acc: 58.2000%582/1000  F1=0.6314
+Total: best F1 = 0.68155 acc = 63.6
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.6
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay         True
+using_pred_emb   True
+pred_emd_dim   64
+language         Chinese
+
+Step: 0 - loss: 0.080457  Train  acc: 44.5856%1334/2992     Test  acc: 51.1000%511/1000  F1=0.5290
+Step: 1 - loss: 0.073913  Train  acc: 53.5428%1602/2992     Test  acc: 54.8000%548/1000  F1=0.5612
+Step: 2 - loss: 0.063475  Train  acc: 63.3356%1895/2992     Test  acc: 63.4000%634/1000  F1=0.6599
+Step: 3 - loss: 0.048907  Train  acc: 74.8997%2241/2992     Test  acc: 57.2000%572/1000  F1=0.5908
+Step: 4 - loss: 0.032773  Train  acc: 85.2273%2550/2992     Test  acc: 62.0000%620/1000  F1=0.6655
+Step: 5 - loss: 0.017759  Train  acc: 93.9505%2811/2992     Test  acc: 59.9000%599/1000  F1=0.6525
+Step: 6 - loss: 0.007532  Train  acc: 98.4960%2947/2992     Test  acc: 59.8000%598/1000  F1=0.6527
+Step: 7 - loss: 0.002877  Train  acc: 99.6324%2981/2992     Test  acc: 60.5000%605/1000  F1=0.6583
+Step: 8 - loss: 0.001499  Train  acc: 99.7660%2985/2992     Test  acc: 62.2000%622/1000  F1=0.6675
+Step: 9 - loss: 0.001218  Train  acc: 99.8663%2988/2992     Test  acc: 61.1000%611/1000  F1=0.6579
+Step: 10 - loss: 0.000911  Train  acc: 99.8329%2987/2992     Test  acc: 62.5000%625/1000  F1=0.6697
+Step: 11 - loss: 0.000669  Train  acc: 99.9332%2990/2992     Test  acc: 62.1000%621/1000  F1=0.6677
+Step: 12 - loss: 0.000422  Train  acc: 99.8663%2988/2992     Test  acc: 62.0000%620/1000  F1=0.6593
+Step: 13 - loss: 0.000399  Train  acc: 99.9332%2990/2992     Test  acc: 62.6000%626/1000  F1=0.6700
+Step: 14 - loss: 0.000365  Train  acc: 99.9332%2990/2992     Test  acc: 61.0000%610/1000  F1=0.6522
+Step: 15 - loss: 0.000306  Train  acc: 99.9332%2990/2992     Test  acc: 61.8000%618/1000  F1=0.6643
+Step: 16 - loss: 0.000210  Train  acc: 99.9666%2991/2992     Test  acc: 62.1000%621/1000  F1=0.6637
+Step: 17 - loss: 0.000329  Train  acc: 99.8997%2989/2992     Test  acc: 60.9000%609/1000  F1=0.6572
+Step: 18 - loss: 0.000216  Train  acc: 99.9666%2991/2992     Test  acc: 62.6000%626/1000  F1=0.6707
+Step: 19 - loss: 0.000211  Train  acc: 99.9666%2991/2992     Test  acc: 62.5000%625/1000  F1=0.6694
+Step: 20 - loss: 0.000271  Train  acc: 99.9332%2990/2992     Test  acc: 62.4000%624/1000  F1=0.6666
+Step: 21 - loss: 0.000228  Train  acc: 99.9332%2990/2992     Test  acc: 62.0000%620/1000  F1=0.6631
+Step: 22 - loss: 0.018240  Train  acc: 90.7754%2716/2992     Test  acc: 51.1000%511/1000  F1=0.5779
+Step: 23 - loss: 0.026178  Train  acc: 86.6310%2592/2992     Test  acc: 55.9000%559/1000  F1=0.6156
+Step: 24 - loss: 0.005236  Train  acc: 98.4626%2946/2992     Test  acc: 56.0000%560/1000  F1=0.6177
+Step: 25 - loss: 0.000973  Train  acc: 99.9332%2990/2992     Test  acc: 56.7000%567/1000  F1=0.6191
+Step: 26 - loss: 0.000587  Train  acc: 99.8997%2989/2992     Test  acc: 58.3000%583/1000  F1=0.6308
+Step: 27 - loss: 0.000340  Train  acc: 99.9332%2990/2992     Test  acc: 59.1000%591/1000  F1=0.6375
+Step: 28 - loss: 0.000292  Train  acc: 99.9332%2990/2992     Test  acc: 59.3000%593/1000  F1=0.6379
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.6
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+----------args----------
+EmbedSize      64
+Steps          40
+learningRate   0.001
+dropout        0.6
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 0 - loss: 0.080853  Train  acc: 44.6524%1336/2992     Test  acc: 54.4000%544/1000  F1=0.5668
+Step: 0 - loss: 0.080853  Train  acc: 44.6524%1336/2992     Test  acc: 54.4000%544/1000  F1=0.5668
+Step: 1 - loss: 0.073680  Train  acc: 55.5147%1661/2992     Test  acc: 63.0000%630/1000  F1=0.6487
+Step: 1 - loss: 0.073680  Train  acc: 55.5147%1661/2992     Test  acc: 63.0000%630/1000  F1=0.6487
+Step: 2 - loss: 0.060048  Train  acc: 67.7473%2027/2992     Test  acc: 62.4000%624/1000  F1=0.6362
+Step: 2 - loss: 0.060048  Train  acc: 67.7473%2027/2992     Test  acc: 62.4000%624/1000  F1=0.6362
+Step: 3 - loss: 0.043143  Train  acc: 78.4091%2346/2992     Test  acc: 58.3000%583/1000  F1=0.6163
+Step: 3 - loss: 0.042974  Train  acc: 78.7433%2356/2992     Test  acc: 58.6000%586/1000  F1=0.6172
+Step: 4 - loss: 0.025525  Train  acc: 89.3048%2672/2992     Test  acc: 60.7000%607/1000  F1=0.6502
+Step: 4 - loss: 0.025183  Train  acc: 89.7059%2684/2992     Test  acc: 62.0000%620/1000  F1=0.6574
+Step: 5 - loss: 0.011377  Train  acc: 96.9586%2901/2992     Test  acc: 58.0000%580/1000  F1=0.6292
+Step: 5 - loss: 0.011480  Train  acc: 96.8249%2897/2992     Test  acc: 56.9000%569/1000  F1=0.6125
+Step: 6 - loss: 0.005845  Train  acc: 99.0307%2963/2992     Test  acc: 57.5000%575/1000  F1=0.6354
+Step: 6 - loss: 0.005372  Train  acc: 99.1310%2966/2992     Test  acc: 55.7000%557/1000  F1=0.6250
+Step: 7 - loss: 0.002134  Train  acc: 99.7326%2984/2992     Test  acc: 60.7000%607/1000  F1=0.6550
+Step: 7 - loss: 0.002031  Train  acc: 99.7326%2984/2992     Test  acc: 60.1000%601/1000  F1=0.6524
+Step: 8 - loss: 0.001128  Train  acc: 99.7660%2985/2992     Test  acc: 60.6000%606/1000  F1=0.6549
+Step: 8 - loss: 0.001159  Train  acc: 99.7660%2985/2992     Test  acc: 61.6000%616/1000  F1=0.6627
+Step: 9 - loss: 0.000720  Train  acc: 99.8329%2987/2992     Test  acc: 59.9000%599/1000  F1=0.6490
+Step: 9 - loss: 0.000742  Train  acc: 99.8329%2987/2992     Test  acc: 60.7000%607/1000  F1=0.6544
+Step: 10 - loss: 0.000524  Train  acc: 99.8663%2988/2992     Test  acc: 59.7000%597/1000  F1=0.6524
+Step: 10 - loss: 0.000489  Train  acc: 99.8663%2988/2992     Test  acc: 60.3000%603/1000  F1=0.6561
+Step: 11 - loss: 0.000699  Train  acc: 99.7995%2986/2992     Test  acc: 62.1000%621/1000  F1=0.6656
+Step: 11 - loss: 0.000572  Train  acc: 99.8329%2987/2992     Test  acc: 59.3000%593/1000  F1=0.6445
+Step: 12 - loss: 0.000530  Train  acc: 99.8997%2989/2992     Test  acc: 60.3000%603/1000  F1=0.6532
+Step: 12 - loss: 0.000405  Train  acc: 99.9332%2990/2992     Test  acc: 60.7000%607/1000  F1=0.6571
+Step: 13 - loss: 0.000620  Train  acc: 99.8997%2989/2992     Test  acc: 60.1000%601/1000  F1=0.6502
+Step: 13 - loss: 0.000392  Train  acc: 99.9332%2990/2992     Test  acc: 59.0000%590/1000  F1=0.6426
+Step: 14 - loss: 0.000542  Train  acc: 99.8997%2989/2992     Test  acc: 61.6000%616/1000  F1=0.6626
+Step: 14 - loss: 0.000555  Train  acc: 99.8663%2988/2992     Test  acc: 60.4000%604/1000  F1=0.6507
+Step: 15 - loss: 0.000348  Train  acc: 99.8997%2989/2992     Test  acc: 61.0000%610/1000  F1=0.6560
+Step: 15 - loss: 0.000422  Train  acc: 99.9332%2990/2992     Test  acc: 60.9000%609/1000  F1=0.6562
+Step: 16 - loss: 0.000376  Train  acc: 99.9332%2990/2992     Test  acc: 60.7000%607/1000  F1=0.6539
+Step: 16 - loss: 0.000358  Train  acc: 99.9332%2990/2992     Test  acc: 60.6000%606/1000  F1=0.6510
+Step: 17 - loss: 0.000186  Train  acc: 99.9666%2991/2992     Test  acc: 60.8000%608/1000  F1=0.6554
+Step: 17 - loss: 0.000182  Train  acc: 99.9666%2991/2992     Test  acc: 59.7000%597/1000  F1=0.6473
+Step: 18 - loss: 0.000223  Train  acc: 99.9666%2991/2992     Test  acc: 57.8000%578/1000  F1=0.6359
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 0 - loss: 0.080853  Train  acc: 44.6524%1336/2992     Test  acc: 54.4000%544/1000  F1=0.5668
+Step: 0 - loss: 0.080853  Train  acc: 44.6524%1336/2992     Test  acc: 54.4000%544/1000  F1=0.5668
+Step: 1 - loss: 0.073680  Train  acc: 55.5147%1661/2992     Test  acc: 63.0000%630/1000  F1=0.6487
+Step: 1 - loss: 0.073680  Train  acc: 55.5147%1661/2992     Test  acc: 63.0000%630/1000  F1=0.6487
+Step: 2 - loss: 0.060048  Train  acc: 67.7473%2027/2992     Test  acc: 62.4000%624/1000  F1=0.6362
+Step: 2 - loss: 0.060048  Train  acc: 67.7473%2027/2992     Test  acc: 62.4000%624/1000  F1=0.6362
+Step: 3 - loss: 0.042974  Train  acc: 78.7433%2356/2992     Test  acc: 58.6000%586/1000  F1=0.6172
+Step: 3 - loss: 0.042974  Train  acc: 78.7433%2356/2992     Test  acc: 58.6000%586/1000  F1=0.6172
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 4 - loss: 0.025183  Train  acc: 89.7059%2684/2992     Test  acc: 62.0000%620/1000  F1=0.6574
+Step: 0 - loss: 0.080853  Train  acc: 44.6524%1336/2992     Test  acc: 54.4000%544/1000  F1=0.5668
+Step: 5 - loss: 0.011480  Train  acc: 96.8249%2897/2992     Test  acc: 56.9000%569/1000  F1=0.6125
+Step: 6 - loss: 0.005372  Train  acc: 99.1310%2966/2992     Test  acc: 55.7000%557/1000  F1=0.6250
+Step: 1 - loss: 0.073680  Train  acc: 55.5147%1661/2992     Test  acc: 63.0000%630/1000  F1=0.6487
+Step: 7 - loss: 0.002031  Train  acc: 99.7326%2984/2992     Test  acc: 60.1000%601/1000  F1=0.6524
+Step: 2 - loss: 0.060048  Train  acc: 67.7473%2027/2992     Test  acc: 62.4000%624/1000  F1=0.6362
+Step: 3 - loss: 0.043143  Train  acc: 78.4091%2346/2992     Test  acc: 58.3000%583/1000  F1=0.6163
+Step: 8 - loss: 0.001159  Train  acc: 99.7660%2985/2992     Test  acc: 61.6000%616/1000  F1=0.6627
+Step: 4 - loss: 0.025525  Train  acc: 89.3048%2672/2992     Test  acc: 60.7000%607/1000  F1=0.6502
+Step: 9 - loss: 0.000742  Train  acc: 99.8329%2987/2992     Test  acc: 60.7000%607/1000  F1=0.6544
+Step: 5 - loss: 0.011377  Train  acc: 96.9586%2901/2992     Test  acc: 58.0000%580/1000  F1=0.6292
+Step: 10 - loss: 0.000489  Train  acc: 99.8663%2988/2992     Test  acc: 60.3000%603/1000  F1=0.6561
+Step: 6 - loss: 0.005845  Train  acc: 99.0307%2963/2992     Test  acc: 57.5000%575/1000  F1=0.6354
+Step: 11 - loss: 0.000572  Train  acc: 99.8329%2987/2992     Test  acc: 59.3000%593/1000  F1=0.6445
+Step: 7 - loss: 0.002134  Train  acc: 99.7326%2984/2992     Test  acc: 60.7000%607/1000  F1=0.6550
+Step: 12 - loss: 0.000405  Train  acc: 99.9332%2990/2992     Test  acc: 60.7000%607/1000  F1=0.6571
+Step: 8 - loss: 0.001128  Train  acc: 99.7660%2985/2992     Test  acc: 60.6000%606/1000  F1=0.6549
+Step: 13 - loss: 0.000392  Train  acc: 99.9332%2990/2992     Test  acc: 59.0000%590/1000  F1=0.6426
+Step: 9 - loss: 0.000720  Train  acc: 99.8329%2987/2992     Test  acc: 59.9000%599/1000  F1=0.6490
+Step: 14 - loss: 0.000555  Train  acc: 99.8663%2988/2992     Test  acc: 60.4000%604/1000  F1=0.6507
+Step: 10 - loss: 0.000524  Train  acc: 99.8663%2988/2992     Test  acc: 59.7000%597/1000  F1=0.6524
+Step: 15 - loss: 0.000422  Train  acc: 99.9332%2990/2992     Test  acc: 60.9000%609/1000  F1=0.6562
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 0 - loss: 0.080562  Train  acc: 44.6190%1335/2992     Test  acc: 53.0000%530/1000  F1=0.5520
+Step: 0 - loss: 0.080562  Train  acc: 44.6190%1335/2992     Test  acc: 53.0000%530/1000  F1=0.5520
+Step: 1 - loss: 0.073570  Train  acc: 54.4786%1630/2992     Test  acc: 58.6000%586/1000  F1=0.6125
+Step: 1 - loss: 0.073570  Train  acc: 54.4786%1630/2992     Test  acc: 58.6000%586/1000  F1=0.6125
+Step: 2 - loss: 0.062176  Train  acc: 64.2045%1921/2992     Test  acc: 55.6000%556/1000  F1=0.6155
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 2 - loss: 0.062176  Train  acc: 64.2045%1921/2992     Test  acc: 55.6000%556/1000  F1=0.6155
+Step: 3 - loss: 0.047129  Train  acc: 75.9693%2273/2992     Test  acc: 58.2000%582/1000  F1=0.6109
+Step: 0 - loss: 0.080562  Train  acc: 44.6190%1335/2992     Test  acc: 53.0000%530/1000  F1=0.5520
+Step: 3 - loss: 0.047155  Train  acc: 76.3369%2284/2992     Test  acc: 58.6000%586/1000  F1=0.6149
+Step: 4 - loss: 0.032190  Train  acc: 85.0602%2545/2992     Test  acc: 62.1000%621/1000  F1=0.6646
+Step: 1 - loss: 0.073570  Train  acc: 54.4786%1630/2992     Test  acc: 58.6000%586/1000  F1=0.6125
+Step: 4 - loss: 0.032432  Train  acc: 85.4947%2558/2992     Test  acc: 62.8000%628/1000  F1=0.6698
+Step: 5 - loss: 0.017822  Train  acc: 93.1484%2787/2992     Test  acc: 58.0000%580/1000  F1=0.6369
+Step: 2 - loss: 0.062176  Train  acc: 64.2045%1921/2992     Test  acc: 55.6000%556/1000  F1=0.6155
+Step: 5 - loss: 0.018284  Train  acc: 92.9813%2782/2992     Test  acc: 59.0000%590/1000  F1=0.6451
+Step: 6 - loss: 0.007486  Train  acc: 98.4960%2947/2992     Test  acc: 58.5000%585/1000  F1=0.6446
+Step: 3 - loss: 0.047155  Train  acc: 76.3369%2284/2992     Test  acc: 58.6000%586/1000  F1=0.6149
+Step: 6 - loss: 0.007643  Train  acc: 98.2286%2939/2992     Test  acc: 58.9000%589/1000  F1=0.6427
+Step: 7 - loss: 0.003290  Train  acc: 99.5321%2978/2992     Test  acc: 59.9000%599/1000  F1=0.6530
+Step: 4 - loss: 0.032432  Train  acc: 85.4947%2558/2992     Test  acc: 62.8000%628/1000  F1=0.6698
+Step: 7 - loss: 0.003003  Train  acc: 99.6658%2982/2992     Test  acc: 58.2000%582/1000  F1=0.6389
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+clip_grad      True
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 8 - loss: 0.001545  Train  acc: 99.7660%2985/2992     Test  acc: 60.0000%600/1000  F1=0.6502
+Step: 5 - loss: 0.018194  Train  acc: 92.8810%2779/2992     Test  acc: 58.1000%581/1000  F1=0.6340
+Step: 8 - loss: 0.001511  Train  acc: 99.7660%2985/2992     Test  acc: 60.6000%606/1000  F1=0.6552
+Step: 0 - loss: 0.080562  Train  acc: 44.6190%1335/2992     Test  acc: 53.0000%530/1000  F1=0.5520
+Step: 9 - loss: 0.001059  Train  acc: 99.7995%2986/2992     Test  acc: 56.0000%560/1000  F1=0.6129
+Step: 6 - loss: 0.007899  Train  acc: 98.2286%2939/2992     Test  acc: 58.6000%586/1000  F1=0.6410
+Step: 9 - loss: 0.000940  Train  acc: 99.8329%2987/2992     Test  acc: 56.6000%566/1000  F1=0.6141
+Step: 1 - loss: 0.073570  Train  acc: 54.4786%1630/2992     Test  acc: 58.6000%586/1000  F1=0.6125
+Step: 10 - loss: 0.000911  Train  acc: 99.7326%2984/2992     Test  acc: 59.5000%595/1000  F1=0.6401
+Step: 7 - loss: 0.003138  Train  acc: 99.5989%2980/2992     Test  acc: 58.9000%589/1000  F1=0.6401
+Step: 10 - loss: 0.000948  Train  acc: 99.7326%2984/2992     Test  acc: 59.5000%595/1000  F1=0.6402
+Step: 2 - loss: 0.062176  Train  acc: 64.2045%1921/2992     Test  acc: 55.6000%556/1000  F1=0.6155
+Step: 11 - loss: 0.000999  Train  acc: 99.7660%2985/2992     Test  acc: 60.2000%602/1000  F1=0.6471
+Step: 8 - loss: 0.001493  Train  acc: 99.6992%2983/2992     Test  acc: 59.2000%592/1000  F1=0.6365
+Step: 11 - loss: 0.000862  Train  acc: 99.7660%2985/2992     Test  acc: 58.8000%588/1000  F1=0.6248
+Step: 3 - loss: 0.047129  Train  acc: 75.9693%2273/2992     Test  acc: 58.2000%582/1000  F1=0.6109
+Step: 12 - loss: 0.000727  Train  acc: 99.7995%2986/2992     Test  acc: 58.2000%582/1000  F1=0.6251
+Step: 9 - loss: 0.000938  Train  acc: 99.7995%2986/2992     Test  acc: 57.8000%578/1000  F1=0.6235
+Step: 12 - loss: 0.000690  Train  acc: 99.8329%2987/2992     Test  acc: 57.8000%578/1000  F1=0.6181
+Step: 4 - loss: 0.031994  Train  acc: 85.2607%2551/2992     Test  acc: 62.1000%621/1000  F1=0.6662
+Step: 13 - loss: 0.000630  Train  acc: 99.8329%2987/2992     Test  acc: 58.6000%586/1000  F1=0.6249
+Step: 10 - loss: 0.000710  Train  acc: 99.7995%2986/2992     Test  acc: 60.7000%607/1000  F1=0.6514
+Step: 13 - loss: 0.000565  Train  acc: 99.8663%2988/2992     Test  acc: 58.8000%588/1000  F1=0.6197
+Step: 5 - loss: 0.018041  Train  acc: 93.0816%2785/2992     Test  acc: 57.6000%576/1000  F1=0.6297
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.6
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.6
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+clip_grad      True
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 0 - loss: 0.080765  Train  acc: 44.2179%1323/2992     Test  acc: 51.3000%513/1000  F1=0.5383
+Step: 0 - loss: 0.080765  Train  acc: 44.2179%1323/2992     Test  acc: 51.3000%513/1000  F1=0.5383
+Step: 1 - loss: 0.073137  Train  acc: 54.9131%1643/2992     Test  acc: 55.9000%559/1000  F1=0.5800
+Step: 1 - loss: 0.073137  Train  acc: 54.9131%1643/2992     Test  acc: 55.9000%559/1000  F1=0.5800
+Step: 2 - loss: 0.061537  Train  acc: 65.6417%1964/2992     Test  acc: 62.8000%628/1000  F1=0.6618
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.6
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 2 - loss: 0.061537  Train  acc: 65.6417%1964/2992     Test  acc: 62.8000%628/1000  F1=0.6618
+Step: 3 - loss: 0.046179  Train  acc: 76.6377%2293/2992     Test  acc: 55.2000%552/1000  F1=0.5744
+Step: 3 - loss: 0.046179  Train  acc: 76.6377%2293/2992     Test  acc: 55.2000%552/1000  F1=0.5744
+Step: 0 - loss: 0.080765  Train  acc: 44.2179%1323/2992     Test  acc: 51.3000%513/1000  F1=0.5383
+Step: 4 - loss: 0.030670  Train  acc: 86.0628%2575/2992     Test  acc: 61.1000%611/1000  F1=0.6581
+Step: 4 - loss: 0.030506  Train  acc: 86.0294%2574/2992     Test  acc: 59.9000%599/1000  F1=0.6496
+Step: 1 - loss: 0.073137  Train  acc: 54.9131%1643/2992     Test  acc: 55.9000%559/1000  F1=0.5800
+Step: 5 - loss: 0.016470  Train  acc: 94.6524%2832/2992     Test  acc: 55.2000%552/1000  F1=0.6098
+Step: 5 - loss: 0.016149  Train  acc: 94.4853%2827/2992     Test  acc: 57.2000%572/1000  F1=0.6278
+Step: 2 - loss: 0.061537  Train  acc: 65.6417%1964/2992     Test  acc: 62.8000%628/1000  F1=0.6618
+Step: 6 - loss: 0.007261  Train  acc: 98.3623%2943/2992     Test  acc: 58.0000%580/1000  F1=0.6300
+Step: 6 - loss: 0.007363  Train  acc: 98.2955%2941/2992     Test  acc: 58.1000%581/1000  F1=0.6236
+Step: 3 - loss: 0.046117  Train  acc: 76.7045%2295/2992     Test  acc: 56.7000%567/1000  F1=0.6000
+Step: 7 - loss: 0.003172  Train  acc: 99.4987%2977/2992     Test  acc: 59.5000%595/1000  F1=0.6505
+Step: 7 - loss: 0.003557  Train  acc: 99.4987%2977/2992     Test  acc: 59.5000%595/1000  F1=0.6456
+Step: 4 - loss: 0.030000  Train  acc: 85.8289%2568/2992     Test  acc: 61.4000%614/1000  F1=0.6603
+Step: 8 - loss: 0.001349  Train  acc: 99.8329%2987/2992     Test  acc: 59.1000%591/1000  F1=0.6441
+Step: 8 - loss: 0.001491  Train  acc: 99.7995%2986/2992     Test  acc: 60.4000%604/1000  F1=0.6558
+Step: 5 - loss: 0.015968  Train  acc: 94.5521%2829/2992     Test  acc: 57.6000%576/1000  F1=0.6352
+Step: 9 - loss: 0.000757  Train  acc: 99.8663%2988/2992     Test  acc: 59.6000%596/1000  F1=0.6482
+Step: 9 - loss: 0.000883  Train  acc: 99.8329%2987/2992     Test  acc: 59.3000%593/1000  F1=0.6428
+Step: 6 - loss: 0.006824  Train  acc: 98.4960%2947/2992     Test  acc: 59.2000%592/1000  F1=0.6414
+Step: 10 - loss: 0.000754  Train  acc: 99.7995%2986/2992     Test  acc: 60.0000%600/1000  F1=0.6522
+Step: 10 - loss: 0.000749  Train  acc: 99.8329%2987/2992     Test  acc: 60.1000%601/1000  F1=0.6530
+Step: 7 - loss: 0.003236  Train  acc: 99.6324%2981/2992     Test  acc: 58.8000%588/1000  F1=0.6439
+Step: 11 - loss: 0.000531  Train  acc: 99.8997%2989/2992     Test  acc: 59.7000%597/1000  F1=0.6493
+Step: 11 - loss: 0.000532  Train  acc: 99.8663%2988/2992     Test  acc: 59.9000%599/1000  F1=0.6537
+Step: 8 - loss: 0.001483  Train  acc: 99.7660%2985/2992     Test  acc: 59.3000%593/1000  F1=0.6467
+Step: 12 - loss: 0.000625  Train  acc: 99.8663%2988/2992     Test  acc: 60.2000%602/1000  F1=0.6559
+Step: 12 - loss: 0.000541  Train  acc: 99.8663%2988/2992     Test  acc: 61.1000%611/1000  F1=0.6659
+Step: 9 - loss: 0.000833  Train  acc: 99.8663%2988/2992     Test  acc: 59.5000%595/1000  F1=0.6497
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     1
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 0 - loss: 0.080765  Train  acc: 44.2179%1323/2992     Test  acc: 51.3000%513/1000  F1=0.5383
+Step: 0 - loss: 0.080765  Train  acc: 44.2179%1323/2992     Test  acc: 51.3000%513/1000  F1=0.5383
+Step: 1 - loss: 0.073137  Train  acc: 54.9131%1643/2992     Test  acc: 55.9000%559/1000  F1=0.5800
+Step: 1 - loss: 0.073137  Train  acc: 54.9131%1643/2992     Test  acc: 55.9000%559/1000  F1=0.5800
+Step: 2 - loss: 0.061537  Train  acc: 65.6417%1964/2992     Test  acc: 62.8000%628/1000  F1=0.6618
+Step: 2 - loss: 0.061537  Train  acc: 65.6417%1964/2992     Test  acc: 62.8000%628/1000  F1=0.6618
+Step: 3 - loss: 0.046179  Train  acc: 76.6377%2293/2992     Test  acc: 55.2000%552/1000  F1=0.5744
+Step: 3 - loss: 0.046117  Train  acc: 76.7045%2295/2992     Test  acc: 56.7000%567/1000  F1=0.6000
+Step: 4 - loss: 0.030670  Train  acc: 86.0628%2575/2992     Test  acc: 61.1000%611/1000  F1=0.6581
+Step: 4 - loss: 0.030000  Train  acc: 85.8289%2568/2992     Test  acc: 61.4000%614/1000  F1=0.6603
+Step: 5 - loss: 0.016470  Train  acc: 94.6524%2832/2992     Test  acc: 55.2000%552/1000  F1=0.6098
+Step: 5 - loss: 0.015968  Train  acc: 94.5521%2829/2992     Test  acc: 57.6000%576/1000  F1=0.6352
+Step: 6 - loss: 0.007261  Train  acc: 98.3623%2943/2992     Test  acc: 58.0000%580/1000  F1=0.6300
+Step: 6 - loss: 0.006824  Train  acc: 98.4960%2947/2992     Test  acc: 59.2000%592/1000  F1=0.6414
+Step: 7 - loss: 0.003172  Train  acc: 99.4987%2977/2992     Test  acc: 59.5000%595/1000  F1=0.6505
+Step: 7 - loss: 0.003236  Train  acc: 99.6324%2981/2992     Test  acc: 58.8000%588/1000  F1=0.6439
+Step: 8 - loss: 0.001349  Train  acc: 99.8329%2987/2992     Test  acc: 59.1000%591/1000  F1=0.6441
+Step: 8 - loss: 0.001483  Train  acc: 99.7660%2985/2992     Test  acc: 59.3000%593/1000  F1=0.6467
+Step: 9 - loss: 0.000757  Train  acc: 99.8663%2988/2992     Test  acc: 59.6000%596/1000  F1=0.6482
+Step: 9 - loss: 0.000833  Train  acc: 99.8663%2988/2992     Test  acc: 59.5000%595/1000  F1=0.6497
+Step: 10 - loss: 0.000754  Train  acc: 99.7995%2986/2992     Test  acc: 60.0000%600/1000  F1=0.6522
+Step: 10 - loss: 0.000732  Train  acc: 99.8663%2988/2992     Test  acc: 61.3000%613/1000  F1=0.6636
+Step: 11 - loss: 0.000531  Train  acc: 99.8997%2989/2992     Test  acc: 59.7000%597/1000  F1=0.6493
+Step: 11 - loss: 0.000574  Train  acc: 99.8663%2988/2992     Test  acc: 60.8000%608/1000  F1=0.6615
+Step: 12 - loss: 0.000625  Train  acc: 99.8663%2988/2992     Test  acc: 60.2000%602/1000  F1=0.6559
+Step: 12 - loss: 0.000506  Train  acc: 99.8997%2989/2992     Test  acc: 60.3000%603/1000  F1=0.6593
+Step: 13 - loss: 0.000482  Train  acc: 99.8997%2989/2992     Test  acc: 60.3000%603/1000  F1=0.6543
+Step: 13 - loss: 0.000286  Train  acc: 99.9666%2991/2992     Test  acc: 61.0000%610/1000  F1=0.6612
+Step: 14 - loss: 0.000515  Train  acc: 99.8663%2988/2992     Test  acc: 61.5000%615/1000  F1=0.6645
+Step: 14 - loss: 0.000338  Train  acc: 99.9332%2990/2992     Test  acc: 61.0000%610/1000  F1=0.6624
+Step: 15 - loss: 0.000823  Train  acc: 99.7995%2986/2992     Test  acc: 59.4000%594/1000  F1=0.6473
+Step: 15 - loss: 0.000227  Train  acc: 99.9666%2991/2992     Test  acc: 61.0000%610/1000  F1=0.6590
+Step: 16 - loss: 0.000636  Train  acc: 99.8997%2989/2992     Test  acc: 60.5000%605/1000  F1=0.6565
+Step: 16 - loss: 0.000244  Train  acc: 99.9666%2991/2992     Test  acc: 61.7000%617/1000  F1=0.6669
+Step: 17 - loss: 0.000299  Train  acc: 99.9666%2991/2992     Test  acc: 59.7000%597/1000  F1=0.6519
+Step: 17 - loss: 0.000316  Train  acc: 99.9332%2990/2992     Test  acc: 60.8000%608/1000  F1=0.6565
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 18 - loss: 0.000342  Train  acc: 99.8997%2989/2992     Test  acc: 61.7000%617/1000  F1=0.6620
+Step: 18 - loss: 0.000335  Train  acc: 99.9332%2990/2992     Test  acc: 61.2000%612/1000  F1=0.6584
+Step: 0 - loss: 0.080866  Train  acc: 45.1872%1352/2992     Test  acc: 49.5000%495/1000  F1=0.5147
+Step: 19 - loss: 0.001485  Train  acc: 99.4652%2976/2992     Test  acc: 50.6000%506/1000  F1=0.5793
+Step: 19 - loss: 0.000156  Train  acc: 99.9666%2991/2992     Test  acc: 62.3000%623/1000  F1=0.6655
+Step: 1 - loss: 0.073435  Train  acc: 54.1444%1620/2992     Test  acc: 57.2000%572/1000  F1=0.5968
+Step: 20 - loss: 0.032476  Train  acc: 84.4586%2527/2992     Test  acc: 59.2000%592/1000  F1=0.6443
+Step: 20 - loss: 0.017997  Train  acc: 91.5441%2739/2992     Test  acc: 56.0000%560/1000  F1=0.6021
+Step: 21 - loss: 0.011336  Train  acc: 94.7861%2836/2992     Test  acc: 58.8000%588/1000  F1=0.6386
+Step: 2 - loss: 0.060798  Train  acc: 66.6444%1994/2992     Test  acc: 64.9000%649/1000  F1=0.6843
+Step: 21 - loss: 0.025862  Train  acc: 86.6979%2594/2992     Test  acc: 57.7000%577/1000  F1=0.6303
+Step: 22 - loss: 0.002276  Train  acc: 99.4652%2976/2992     Test  acc: 57.5000%575/1000  F1=0.6322
+Step: 3 - loss: 0.043993  Train  acc: 78.8102%2358/2992     Test  acc: 59.3000%593/1000  F1=0.6295
+Step: 22 - loss: 0.005317  Train  acc: 98.2620%2940/2992     Test  acc: 56.5000%565/1000  F1=0.6260
+Step: 23 - loss: 0.000638  Train  acc: 99.9332%2990/2992     Test  acc: 58.9000%589/1000  F1=0.6446
+Step: 23 - loss: 0.001132  Train  acc: 99.8329%2987/2992     Test  acc: 59.2000%592/1000  F1=0.6379
+Step: 4 - loss: 0.026995  Train  acc: 88.0682%2635/2992     Test  acc: 61.3000%613/1000  F1=0.6528
+Step: 24 - loss: 0.000432  Train  acc: 99.8997%2989/2992     Test  acc: 56.8000%568/1000  F1=0.6275
+Step: 24 - loss: 0.000508  Train  acc: 99.8997%2989/2992     Test  acc: 56.4000%564/1000  F1=0.6198
+Step: 5 - loss: 0.012084  Train  acc: 96.4906%2887/2992     Test  acc: 56.1000%561/1000  F1=0.5988
+Step: 25 - loss: 0.000379  Train  acc: 99.9332%2990/2992     Test  acc: 58.0000%580/1000  F1=0.6339
+Step: 25 - loss: 0.000353  Train  acc: 99.9332%2990/2992     Test  acc: 58.8000%588/1000  F1=0.6350
+Step: 6 - loss: 0.004900  Train  acc: 98.9973%2962/2992     Test  acc: 58.2000%582/1000  F1=0.6227
+Step: 26 - loss: 0.000356  Train  acc: 99.8997%2989/2992     Test  acc: 58.9000%589/1000  F1=0.6428
+Step: 26 - loss: 0.000229  Train  acc: 99.9332%2990/2992     Test  acc: 58.7000%587/1000  F1=0.6336
+Step: 7 - loss: 0.002083  Train  acc: 99.7326%2984/2992     Test  acc: 59.0000%590/1000  F1=0.6404
+Step: 27 - loss: 0.000342  Train  acc: 99.8663%2988/2992     Test  acc: 57.2000%572/1000  F1=0.6280
+Step: 27 - loss: 0.000159  Train  acc: 100.0000%2992/2992     Test  acc: 57.8000%578/1000  F1=0.6276
+Step: 8 - loss: 0.001016  Train  acc: 99.8329%2987/2992     Test  acc: 58.8000%588/1000  F1=0.6338
+Step: 28 - loss: 0.000285  Train  acc: 99.8997%2989/2992     Test  acc: 57.8000%578/1000  F1=0.6335
+Step: 28 - loss: 0.000119  Train  acc: 100.0000%2992/2992     Test  acc: 58.5000%585/1000  F1=0.6321
+Step: 9 - loss: 0.000598  Train  acc: 99.8997%2989/2992     Test  acc: 57.9000%579/1000  F1=0.6213
+Step: 29 - loss: 0.000186  Train  acc: 99.9666%2991/2992     Test  acc: 58.6000%586/1000  F1=0.6425
+Total: best F1 = 0.66455 acc = 61.5
+Step: 29 - loss: 0.000095  Train  acc: 100.0000%2992/2992     Test  acc: 59.0000%590/1000  F1=0.6367
+Total: best F1 = 0.6669 acc = 61.7
+Step: 10 - loss: 0.000608  Train  acc: 99.8663%2988/2992     Test  acc: 58.4000%584/1000  F1=0.6277
+Step: 11 - loss: 0.000438  Train  acc: 99.8997%2989/2992     Test  acc: 59.1000%591/1000  F1=0.6458
+Step: 12 - loss: 0.000645  Train  acc: 99.8329%2987/2992     Test  acc: 60.1000%601/1000  F1=0.6411
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 13 - loss: 0.000383  Train  acc: 99.8997%2989/2992     Test  acc: 59.8000%598/1000  F1=0.6390
+Step: 0 - loss: 0.080866  Train  acc: 45.1872%1352/2992     Test  acc: 49.5000%495/1000  F1=0.5147
+Step: 14 - loss: 0.000197  Train  acc: 99.9332%2990/2992     Test  acc: 59.7000%597/1000  F1=0.6396
+Step: 1 - loss: 0.073435  Train  acc: 54.1444%1620/2992     Test  acc: 57.2000%572/1000  F1=0.5968
+Step: 15 - loss: 0.000150  Train  acc: 99.9666%2991/2992     Test  acc: 58.9000%589/1000  F1=0.6330
+Step: 2 - loss: 0.060874  Train  acc: 66.6444%1994/2992     Test  acc: 63.6000%636/1000  F1=0.6676
+Step: 16 - loss: 0.000881  Train  acc: 99.7326%2984/2992     Test  acc: 58.4000%584/1000  F1=0.6251
+Step: 3 - loss: 0.044966  Train  acc: 78.5094%2349/2992     Test  acc: 58.6000%586/1000  F1=0.6244
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+clip_grad      True
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 17 - loss: 0.023543  Train  acc: 88.7366%2655/2992     Test  acc: 53.1000%531/1000  F1=0.5766
+Step: 4 - loss: 0.027097  Train  acc: 88.7032%2654/2992     Test  acc: 59.2000%592/1000  F1=0.6292
+Step: 0 - loss: 0.080866  Train  acc: 45.1872%1352/2992     Test  acc: 49.5000%495/1000  F1=0.5147
+Step: 18 - loss: 0.010076  Train  acc: 95.3877%2854/2992     Test  acc: 59.1000%591/1000  F1=0.6220
+Step: 5 - loss: 0.014647  Train  acc: 95.3877%2854/2992     Test  acc: 54.8000%548/1000  F1=0.5887
+Step: 1 - loss: 0.073435  Train  acc: 54.1444%1620/2992     Test  acc: 57.2000%572/1000  F1=0.5968
+Step: 19 - loss: 0.001688  Train  acc: 99.6324%2981/2992     Test  acc: 59.8000%598/1000  F1=0.6398
+Step: 6 - loss: 0.005374  Train  acc: 98.9305%2960/2992     Test  acc: 58.4000%584/1000  F1=0.6191
+Step: 2 - loss: 0.060874  Train  acc: 66.6444%1994/2992     Test  acc: 63.6000%636/1000  F1=0.6676
+Step: 20 - loss: 0.000586  Train  acc: 99.9332%2990/2992     Test  acc: 59.4000%594/1000  F1=0.6334
+Step: 7 - loss: 0.002124  Train  acc: 99.6992%2983/2992     Test  acc: 60.0000%600/1000  F1=0.6452
+Step: 3 - loss: 0.044966  Train  acc: 78.5094%2349/2992     Test  acc: 58.6000%586/1000  F1=0.6244
+Step: 21 - loss: 0.000230  Train  acc: 99.9666%2991/2992     Test  acc: 60.2000%602/1000  F1=0.6396
+Step: 8 - loss: 0.001030  Train  acc: 99.8329%2987/2992     Test  acc: 59.9000%599/1000  F1=0.6448
+Step: 4 - loss: 0.027097  Train  acc: 88.7032%2654/2992     Test  acc: 59.2000%592/1000  F1=0.6292
+Step: 22 - loss: 0.000146  Train  acc: 100.0000%2992/2992     Test  acc: 59.9000%599/1000  F1=0.6384
+Step: 9 - loss: 0.000558  Train  acc: 99.8663%2988/2992     Test  acc: 58.4000%584/1000  F1=0.6288
+Step: 5 - loss: 0.014647  Train  acc: 95.3877%2854/2992     Test  acc: 54.8000%548/1000  F1=0.5887
+Step: 23 - loss: 0.000110  Train  acc: 100.0000%2992/2992     Test  acc: 59.8000%598/1000  F1=0.6350
+Step: 10 - loss: 0.000575  Train  acc: 99.8663%2988/2992     Test  acc: 59.4000%594/1000  F1=0.6387
+Step: 6 - loss: 0.005374  Train  acc: 98.9305%2960/2992     Test  acc: 58.4000%584/1000  F1=0.6191
+Step: 24 - loss: 0.000086  Train  acc: 100.0000%2992/2992     Test  acc: 59.6000%596/1000  F1=0.6344
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.6
+batchSize      13
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+clip_grad      True
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 7 - loss: 0.002124  Train  acc: 99.6992%2983/2992     Test  acc: 60.0000%600/1000  F1=0.6452
+Step: 25 - loss: 0.000069  Train  acc: 100.0000%2992/2992     Test  acc: 59.6000%596/1000  F1=0.6351
+Step: 0 - loss: 0.080866  Train  acc: 45.1872%1352/2992     Test  acc: 49.5000%495/1000  F1=0.5147
+Step: 26 - loss: 0.000055  Train  acc: 100.0000%2992/2992     Test  acc: 59.4000%594/1000  F1=0.6333
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.6
+batchSize      13
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 1 - loss: 0.073435  Train  acc: 54.1444%1620/2992     Test  acc: 57.2000%572/1000  F1=0.5968
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.6
+batchSize      13
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 27 - loss: 0.000041  Train  acc: 100.0000%2992/2992     Test  acc: 59.4000%594/1000  F1=0.6337
+Step: 0 - loss: 0.080866  Train  acc: 45.1872%1352/2992     Test  acc: 49.5000%495/1000  F1=0.5147
+Step: 2 - loss: 0.060874  Train  acc: 66.6444%1994/2992     Test  acc: 63.6000%636/1000  F1=0.6676
+Step: 0 - loss: 0.080866  Train  acc: 45.1872%1352/2992     Test  acc: 49.5000%495/1000  F1=0.5147
+Step: 28 - loss: 0.000030  Train  acc: 100.0000%2992/2992     Test  acc: 59.2000%592/1000  F1=0.6290
+Step: 1 - loss: 0.073435  Train  acc: 54.1444%1620/2992     Test  acc: 57.2000%572/1000  F1=0.5968
+Step: 3 - loss: 0.044966  Train  acc: 78.5094%2349/2992     Test  acc: 58.6000%586/1000  F1=0.6244
+Step: 1 - loss: 0.073435  Train  acc: 54.1444%1620/2992     Test  acc: 57.2000%572/1000  F1=0.5968
+Step: 29 - loss: 0.000025  Train  acc: 100.0000%2992/2992     Test  acc: 59.2000%592/1000  F1=0.6316
+Total: best F1 = 0.6843 acc = 64.9
+Step: 2 - loss: 0.060874  Train  acc: 66.6444%1994/2992     Test  acc: 63.6000%636/1000  F1=0.6676
+Step: 4 - loss: 0.027097  Train  acc: 88.7032%2654/2992     Test  acc: 59.2000%592/1000  F1=0.6292
+Step: 2 - loss: 0.060798  Train  acc: 66.6444%1994/2992     Test  acc: 64.9000%649/1000  F1=0.6843
+Step: 3 - loss: 0.044966  Train  acc: 78.5094%2349/2992     Test  acc: 58.6000%586/1000  F1=0.6244
+Step: 5 - loss: 0.014647  Train  acc: 95.3877%2854/2992     Test  acc: 54.8000%548/1000  F1=0.5887
+Step: 3 - loss: 0.043993  Train  acc: 78.8102%2358/2992     Test  acc: 59.3000%593/1000  F1=0.6295
+Step: 4 - loss: 0.027097  Train  acc: 88.7032%2654/2992     Test  acc: 59.2000%592/1000  F1=0.6292
+Step: 6 - loss: 0.005374  Train  acc: 98.9305%2960/2992     Test  acc: 58.4000%584/1000  F1=0.6191
+Step: 4 - loss: 0.026995  Train  acc: 88.0682%2635/2992     Test  acc: 61.3000%613/1000  F1=0.6528
+Step: 5 - loss: 0.014647  Train  acc: 95.3877%2854/2992     Test  acc: 54.8000%548/1000  F1=0.5887
+Step: 7 - loss: 0.002124  Train  acc: 99.6992%2983/2992     Test  acc: 60.0000%600/1000  F1=0.6452
+Step: 5 - loss: 0.012084  Train  acc: 96.4906%2887/2992     Test  acc: 56.1000%561/1000  F1=0.5988
+Step: 6 - loss: 0.005374  Train  acc: 98.9305%2960/2992     Test  acc: 58.4000%584/1000  F1=0.6191
+Step: 8 - loss: 0.001030  Train  acc: 99.8329%2987/2992     Test  acc: 59.9000%599/1000  F1=0.6448
+Step: 6 - loss: 0.004900  Train  acc: 98.9973%2962/2992     Test  acc: 58.2000%582/1000  F1=0.6227
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.6
+batchSize      14
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 7 - loss: 0.002083  Train  acc: 99.7326%2984/2992     Test  acc: 59.0000%590/1000  F1=0.6404
+Step: 0 - loss: 0.074977  Train  acc: 43.7166%1308/2992     Test  acc: 48.2000%482/1000  F1=0.4962
+Step: 8 - loss: 0.001016  Train  acc: 99.8329%2987/2992     Test  acc: 58.8000%588/1000  F1=0.6338
+Step: 1 - loss: 0.068548  Train  acc: 54.0441%1617/2992     Test  acc: 57.5000%575/1000  F1=0.5988
+Step: 9 - loss: 0.000598  Train  acc: 99.8997%2989/2992     Test  acc: 57.9000%579/1000  F1=0.6213
+Step: 2 - loss: 0.056784  Train  acc: 65.8088%1969/2992     Test  acc: 61.7000%617/1000  F1=0.6478
+Step: 10 - loss: 0.000608  Train  acc: 99.8663%2988/2992     Test  acc: 58.4000%584/1000  F1=0.6277
+Step: 3 - loss: 0.041579  Train  acc: 77.9078%2331/2992     Test  acc: 61.1000%611/1000  F1=0.6567
+Step: 11 - loss: 0.000438  Train  acc: 99.8997%2989/2992     Test  acc: 59.1000%591/1000  F1=0.6458
+Step: 4 - loss: 0.024849  Train  acc: 88.6698%2653/2992     Test  acc: 62.1000%621/1000  F1=0.6611
+Step: 12 - loss: 0.000645  Train  acc: 99.8329%2987/2992     Test  acc: 60.1000%601/1000  F1=0.6411
+Step: 5 - loss: 0.012305  Train  acc: 95.9559%2871/2992     Test  acc: 55.3000%553/1000  F1=0.5798
+Step: 13 - loss: 0.000383  Train  acc: 99.8997%2989/2992     Test  acc: 59.8000%598/1000  F1=0.6390
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.6
+batchSize      14
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 6 - loss: 0.004922  Train  acc: 98.8302%2957/2992     Test  acc: 58.0000%580/1000  F1=0.6089
+Step: 14 - loss: 0.000197  Train  acc: 99.9332%2990/2992     Test  acc: 59.7000%597/1000  F1=0.6396
+Step: 0 - loss: 0.074977  Train  acc: 43.7166%1308/2992     Test  acc: 48.2000%482/1000  F1=0.4962
+Step: 7 - loss: 0.002064  Train  acc: 99.6992%2983/2992     Test  acc: 59.0000%590/1000  F1=0.6316
+Step: 1 - loss: 0.068548  Train  acc: 54.0441%1617/2992     Test  acc: 57.5000%575/1000  F1=0.5988
+Step: 15 - loss: 0.000150  Train  acc: 99.9666%2991/2992     Test  acc: 58.9000%589/1000  F1=0.6330
+Step: 8 - loss: 0.000986  Train  acc: 99.7995%2986/2992     Test  acc: 59.5000%595/1000  F1=0.6396
+Step: 2 - loss: 0.056790  Train  acc: 65.4412%1958/2992     Test  acc: 63.6000%636/1000  F1=0.6676
+Step: 16 - loss: 0.000881  Train  acc: 99.7326%2984/2992     Test  acc: 58.4000%584/1000  F1=0.6251
+Step: 9 - loss: 0.000551  Train  acc: 99.8997%2989/2992     Test  acc: 59.0000%590/1000  F1=0.6331
+Step: 3 - loss: 0.041511  Train  acc: 77.9078%2331/2992     Test  acc: 59.8000%598/1000  F1=0.6379
+Step: 17 - loss: 0.023543  Train  acc: 88.7366%2655/2992     Test  acc: 53.1000%531/1000  F1=0.5766
+Step: 10 - loss: 0.000510  Train  acc: 99.8997%2989/2992     Test  acc: 59.6000%596/1000  F1=0.6379
+Step: 4 - loss: 0.024993  Train  acc: 88.5695%2650/2992     Test  acc: 63.3000%633/1000  F1=0.6754
+Step: 18 - loss: 0.010076  Train  acc: 95.3877%2854/2992     Test  acc: 59.1000%591/1000  F1=0.6220
+Step: 11 - loss: 0.000314  Train  acc: 99.9332%2990/2992     Test  acc: 59.3000%593/1000  F1=0.6377
+Step: 5 - loss: 0.012057  Train  acc: 96.2901%2881/2992     Test  acc: 56.7000%567/1000  F1=0.6020
+Step: 19 - loss: 0.001688  Train  acc: 99.6324%2981/2992     Test  acc: 59.8000%598/1000  F1=0.6398
+Step: 12 - loss: 0.000323  Train  acc: 99.9332%2990/2992     Test  acc: 59.1000%591/1000  F1=0.6353
+Step: 6 - loss: 0.004901  Train  acc: 99.0642%2964/2992     Test  acc: 58.6000%586/1000  F1=0.6285
+Step: 20 - loss: 0.000586  Train  acc: 99.9332%2990/2992     Test  acc: 59.4000%594/1000  F1=0.6334
+Step: 13 - loss: 0.000201  Train  acc: 99.9666%2991/2992     Test  acc: 58.9000%589/1000  F1=0.6344
+Step: 7 - loss: 0.001957  Train  acc: 99.6992%2983/2992     Test  acc: 59.9000%599/1000  F1=0.6479
+Step: 21 - loss: 0.000230  Train  acc: 99.9666%2991/2992     Test  acc: 60.2000%602/1000  F1=0.6396
+Step: 14 - loss: 0.000201  Train  acc: 99.9332%2990/2992     Test  acc: 59.7000%597/1000  F1=0.6421
+Step: 8 - loss: 0.000967  Train  acc: 99.7995%2986/2992     Test  acc: 60.7000%607/1000  F1=0.6511
+Step: 22 - loss: 0.000146  Train  acc: 100.0000%2992/2992     Test  acc: 59.9000%599/1000  F1=0.6384
+Step: 15 - loss: 0.000159  Train  acc: 99.9666%2991/2992     Test  acc: 59.4000%594/1000  F1=0.6361
+Step: 9 - loss: 0.000588  Train  acc: 99.8663%2988/2992     Test  acc: 59.0000%590/1000  F1=0.6361
+Step: 23 - loss: 0.000110  Train  acc: 100.0000%2992/2992     Test  acc: 59.8000%598/1000  F1=0.6350
+Step: 16 - loss: 0.000157  Train  acc: 99.9666%2991/2992     Test  acc: 60.2000%602/1000  F1=0.6427
+Step: 10 - loss: 0.000570  Train  acc: 99.8663%2988/2992     Test  acc: 60.0000%600/1000  F1=0.6503
+Step: 17 - loss: 0.000205  Train  acc: 99.9332%2990/2992     Test  acc: 59.0000%590/1000  F1=0.6303
+Step: 24 - loss: 0.000086  Train  acc: 100.0000%2992/2992     Test  acc: 59.6000%596/1000  F1=0.6344
+Step: 11 - loss: 0.000298  Train  acc: 99.9332%2990/2992     Test  acc: 59.7000%597/1000  F1=0.6459
+Step: 18 - loss: 0.000228  Train  acc: 99.9332%2990/2992     Test  acc: 59.6000%596/1000  F1=0.6375
+Step: 25 - loss: 0.000069  Train  acc: 100.0000%2992/2992     Test  acc: 59.6000%596/1000  F1=0.6351
+Step: 12 - loss: 0.000429  Train  acc: 99.8663%2988/2992     Test  acc: 59.8000%598/1000  F1=0.6410
+Step: 19 - loss: 0.000138  Train  acc: 99.9666%2991/2992     Test  acc: 62.1000%621/1000  F1=0.6537
+Step: 26 - loss: 0.000055  Train  acc: 100.0000%2992/2992     Test  acc: 59.4000%594/1000  F1=0.6333
+Step: 13 - loss: 0.000335  Train  acc: 99.8997%2989/2992     Test  acc: 59.1000%591/1000  F1=0.6358
+Step: 20 - loss: 0.023165  Train  acc: 87.8676%2629/2992     Test  acc: 59.5000%595/1000  F1=0.6195
+Step: 27 - loss: 0.000041  Train  acc: 100.0000%2992/2992     Test  acc: 59.4000%594/1000  F1=0.6337
+Step: 14 - loss: 0.000234  Train  acc: 99.8997%2989/2992     Test  acc: 58.5000%585/1000  F1=0.6289
+Step: 21 - loss: 0.014231  Train  acc: 92.9479%2781/2992     Test  acc: 59.4000%594/1000  F1=0.6386
+Step: 28 - loss: 0.000030  Train  acc: 100.0000%2992/2992     Test  acc: 59.2000%592/1000  F1=0.6290
+Step: 15 - loss: 0.000214  Train  acc: 99.8663%2988/2992     Test  acc: 60.3000%603/1000  F1=0.6460
+Step: 22 - loss: 0.002243  Train  acc: 99.2647%2970/2992     Test  acc: 59.0000%590/1000  F1=0.6391
+Step: 29 - loss: 0.000025  Train  acc: 100.0000%2992/2992     Test  acc: 59.2000%592/1000  F1=0.6316
+Total: best F1 = 0.6843 acc = 64.9
+Step: 16 - loss: 0.000114  Train  acc: 99.9666%2991/2992     Test  acc: 60.1000%601/1000  F1=0.6388
+Step: 23 - loss: 0.000726  Train  acc: 99.8663%2988/2992     Test  acc: 59.9000%599/1000  F1=0.6445
+Step: 17 - loss: 0.000189  Train  acc: 99.9332%2990/2992     Test  acc: 58.9000%589/1000  F1=0.6314
+Step: 24 - loss: 0.000255  Train  acc: 99.9666%2991/2992     Test  acc: 59.4000%594/1000  F1=0.6399
+Step: 18 - loss: 0.000143  Train  acc: 99.9332%2990/2992     Test  acc: 59.8000%598/1000  F1=0.6384
+Step: 25 - loss: 0.000202  Train  acc: 99.9332%2990/2992     Test  acc: 60.4000%604/1000  F1=0.6483
+Step: 19 - loss: 0.000056  Train  acc: 100.0000%2992/2992     Test  acc: 60.0000%600/1000  F1=0.6388
+Step: 26 - loss: 0.000133  Train  acc: 100.0000%2992/2992     Test  acc: 60.2000%602/1000  F1=0.6462
+Step: 20 - loss: 0.000038  Train  acc: 100.0000%2992/2992     Test  acc: 59.1000%591/1000  F1=0.6321
+Step: 27 - loss: 0.000099  Train  acc: 100.0000%2992/2992     Test  acc: 59.8000%598/1000  F1=0.6418
+Step: 21 - loss: 0.000019  Train  acc: 100.0000%2992/2992     Test  acc: 59.3000%593/1000  F1=0.6310
+Step: 28 - loss: 0.000081  Train  acc: 100.0000%2992/2992     Test  acc: 59.9000%599/1000  F1=0.6431
+Step: 22 - loss: 0.000015  Train  acc: 100.0000%2992/2992     Test  acc: 59.5000%595/1000  F1=0.6329
+Step: 29 - loss: 0.000066  Train  acc: 100.0000%2992/2992     Test  acc: 60.0000%600/1000  F1=0.6435
+Total: best F1 = 0.6611 acc = 62.1
+Step: 23 - loss: 0.000013  Train  acc: 100.0000%2992/2992     Test  acc: 59.9000%599/1000  F1=0.6354
+Step: 24 - loss: 0.000011  Train  acc: 100.0000%2992/2992     Test  acc: 59.4000%594/1000  F1=0.6309
+Step: 25 - loss: 0.000009  Train  acc: 100.0000%2992/2992     Test  acc: 59.6000%596/1000  F1=0.6325
+Step: 26 - loss: 0.000008  Train  acc: 100.0000%2992/2992     Test  acc: 58.8000%588/1000  F1=0.6264
+Step: 27 - loss: 0.022808  Train  acc: 90.0401%2694/2992     Test  acc: 55.9000%559/1000  F1=0.5905
+Step: 28 - loss: 0.023406  Train  acc: 87.7005%2624/2992     Test  acc: 56.5000%565/1000  F1=0.6141
+Step: 29 - loss: 0.003605  Train  acc: 99.0642%2964/2992     Test  acc: 56.3000%563/1000  F1=0.6108
+Total: best F1 = 0.6754 acc = 63.3
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.6
+batchSize      12
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       False
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.6
+batchSize      12
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 0 - loss: 0.087395  Train  acc: 44.3850%1328/2992     Test  acc: 51.9000%519/1000  F1=0.5392
+Step: 0 - loss: 0.087395  Train  acc: 44.3850%1328/2992     Test  acc: 51.9000%519/1000  F1=0.5392
+Step: 1 - loss: 0.079168  Train  acc: 54.6123%1634/2992     Test  acc: 58.5000%585/1000  F1=0.6108
+Step: 1 - loss: 0.079184  Train  acc: 54.6457%1635/2992     Test  acc: 58.9000%589/1000  F1=0.6146
+Step: 2 - loss: 0.065148  Train  acc: 66.1430%1979/2992     Test  acc: 61.7000%617/1000  F1=0.6478
+Step: 2 - loss: 0.064451  Train  acc: 66.3770%1986/2992     Test  acc: 62.3000%623/1000  F1=0.6539
+Step: 3 - loss: 0.047676  Train  acc: 78.0080%2334/2992     Test  acc: 59.3000%593/1000  F1=0.6438
+Step: 3 - loss: 0.046001  Train  acc: 79.1778%2369/2992     Test  acc: 60.2000%602/1000  F1=0.6524
+Step: 4 - loss: 0.027772  Train  acc: 89.2045%2669/2992     Test  acc: 61.0000%610/1000  F1=0.6618
+Step: 4 - loss: 0.026384  Train  acc: 90.0067%2693/2992     Test  acc: 60.8000%608/1000  F1=0.6615
+Step: 5 - loss: 0.012866  Train  acc: 96.6243%2891/2992     Test  acc: 57.6000%576/1000  F1=0.6163
+Step: 5 - loss: 0.012314  Train  acc: 96.5909%2890/2992     Test  acc: 59.4000%594/1000  F1=0.6369
+Step: 6 - loss: 0.004998  Train  acc: 99.0642%2964/2992     Test  acc: 59.1000%591/1000  F1=0.6277
+Step: 6 - loss: 0.004629  Train  acc: 99.2981%2971/2992     Test  acc: 61.0000%610/1000  F1=0.6480
+Step: 7 - loss: 0.001969  Train  acc: 99.6992%2983/2992     Test  acc: 60.3000%603/1000  F1=0.6515
+Step: 7 - loss: 0.001845  Train  acc: 99.7660%2985/2992     Test  acc: 61.3000%613/1000  F1=0.6667
+Step: 8 - loss: 0.000977  Train  acc: 99.8329%2987/2992     Test  acc: 60.1000%601/1000  F1=0.6477
+Step: 8 - loss: 0.000971  Train  acc: 99.8329%2987/2992     Test  acc: 61.2000%612/1000  F1=0.6562
+Step: 9 - loss: 0.000567  Train  acc: 99.9332%2990/2992     Test  acc: 59.7000%597/1000  F1=0.6453
+Step: 9 - loss: 0.000591  Train  acc: 99.8997%2989/2992     Test  acc: 60.5000%605/1000  F1=0.6508
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 10 - loss: 0.000429  Train  acc: 99.9332%2990/2992     Test  acc: 60.1000%601/1000  F1=0.6477
+Step: 10 - loss: 0.000741  Train  acc: 99.8329%2987/2992     Test  acc: 60.5000%605/1000  F1=0.6547
+Step: 0 - loss: 0.080866  Train  acc: 45.1872%1352/2992     Test  acc: 49.5000%495/1000  F1=0.5147
+Step: 11 - loss: 0.000437  Train  acc: 99.8663%2988/2992     Test  acc: 60.4000%604/1000  F1=0.6411
+Step: 11 - loss: 0.000476  Train  acc: 99.8663%2988/2992     Test  acc: 61.0000%610/1000  F1=0.6610
+Step: 1 - loss: 0.073435  Train  acc: 54.1444%1620/2992     Test  acc: 57.2000%572/1000  F1=0.5968
+Step: 12 - loss: 0.000509  Train  acc: 99.9332%2990/2992     Test  acc: 59.2000%592/1000  F1=0.6448
+Step: 12 - loss: 0.000856  Train  acc: 99.7660%2985/2992     Test  acc: 59.9000%599/1000  F1=0.6528
+Step: 2 - loss: 0.060798  Train  acc: 66.6444%1994/2992     Test  acc: 64.9000%649/1000  F1=0.6843
+Step: 13 - loss: 0.000305  Train  acc: 99.9666%2991/2992     Test  acc: 58.9000%589/1000  F1=0.6374
+Step: 13 - loss: 0.000700  Train  acc: 99.8663%2988/2992     Test  acc: 59.6000%596/1000  F1=0.6400
+Step: 3 - loss: 0.043993  Train  acc: 78.8102%2358/2992     Test  acc: 59.3000%593/1000  F1=0.6295
+Step: 14 - loss: 0.000406  Train  acc: 99.9332%2990/2992     Test  acc: 60.3000%603/1000  F1=0.6482
+Step: 14 - loss: 0.000434  Train  acc: 99.8997%2989/2992     Test  acc: 60.5000%605/1000  F1=0.6503
+Step: 4 - loss: 0.026995  Train  acc: 88.0682%2635/2992     Test  acc: 61.3000%613/1000  F1=0.6528
+Step: 15 - loss: 0.000413  Train  acc: 99.8663%2988/2992     Test  acc: 59.5000%595/1000  F1=0.6414
+Step: 15 - loss: 0.000411  Train  acc: 99.9666%2991/2992     Test  acc: 59.5000%595/1000  F1=0.6414
+Step: 5 - loss: 0.012084  Train  acc: 96.4906%2887/2992     Test  acc: 56.1000%561/1000  F1=0.5988
+Step: 16 - loss: 0.006114  Train  acc: 97.4933%2917/2992     Test  acc: 50.0000%500/1000  F1=0.4557
+Step: 16 - loss: 0.000242  Train  acc: 100.0000%2992/2992     Test  acc: 60.9000%609/1000  F1=0.6488
+Step: 6 - loss: 0.004900  Train  acc: 98.9973%2962/2992     Test  acc: 58.2000%582/1000  F1=0.6227
+Step: 17 - loss: 0.032031  Train  acc: 85.9960%2573/2992     Test  acc: 51.9000%519/1000  F1=0.5863
+Step: 17 - loss: 0.000397  Train  acc: 99.9332%2990/2992     Test  acc: 60.5000%605/1000  F1=0.6533
+Step: 7 - loss: 0.002083  Train  acc: 99.7326%2984/2992     Test  acc: 59.0000%590/1000  F1=0.6404
+Step: 18 - loss: 0.006276  Train  acc: 97.7941%2926/2992     Test  acc: 61.4000%614/1000  F1=0.6567
+Step: 18 - loss: 0.000230  Train  acc: 99.9666%2991/2992     Test  acc: 60.3000%603/1000  F1=0.6459
+Step: 8 - loss: 0.001016  Train  acc: 99.8329%2987/2992     Test  acc: 58.8000%588/1000  F1=0.6338
+Step: 19 - loss: 0.000948  Train  acc: 99.9332%2990/2992     Test  acc: 60.6000%606/1000  F1=0.6503
+Step: 19 - loss: 0.012184  Train  acc: 94.9532%2841/2992     Test  acc: 54.0000%540/1000  F1=0.5848
+Step: 9 - loss: 0.000598  Train  acc: 99.8997%2989/2992     Test  acc: 57.9000%579/1000  F1=0.6213
+Step: 20 - loss: 0.000331  Train  acc: 99.9332%2990/2992     Test  acc: 60.4000%604/1000  F1=0.6462
+Step: 20 - loss: 0.027070  Train  acc: 88.1350%2637/2992     Test  acc: 57.8000%578/1000  F1=0.6225
+Step: 10 - loss: 0.000608  Train  acc: 99.8663%2988/2992     Test  acc: 58.4000%584/1000  F1=0.6277
+Step: 21 - loss: 0.000181  Train  acc: 99.9666%2991/2992     Test  acc: 59.9000%599/1000  F1=0.6413
+Step: 21 - loss: 0.004385  Train  acc: 98.6297%2951/2992     Test  acc: 58.2000%582/1000  F1=0.6231
+Step: 11 - loss: 0.000438  Train  acc: 99.8997%2989/2992     Test  acc: 59.1000%591/1000  F1=0.6458
+Step: 22 - loss: 0.000124  Train  acc: 100.0000%2992/2992     Test  acc: 60.5000%605/1000  F1=0.6452
+Step: 22 - loss: 0.000658  Train  acc: 99.9666%2991/2992     Test  acc: 56.2000%562/1000  F1=0.5974
+Step: 12 - loss: 0.000645  Train  acc: 99.8329%2987/2992     Test  acc: 60.1000%601/1000  F1=0.6411
+Step: 23 - loss: 0.000098  Train  acc: 100.0000%2992/2992     Test  acc: 60.1000%601/1000  F1=0.6412
+Step: 23 - loss: 0.000214  Train  acc: 100.0000%2992/2992     Test  acc: 56.7000%567/1000  F1=0.6047
+Step: 13 - loss: 0.000383  Train  acc: 99.8997%2989/2992     Test  acc: 59.8000%598/1000  F1=0.6390
+Step: 24 - loss: 0.000078  Train  acc: 100.0000%2992/2992     Test  acc: 60.1000%601/1000  F1=0.6423
+Step: 24 - loss: 0.000139  Train  acc: 100.0000%2992/2992     Test  acc: 56.7000%567/1000  F1=0.6033
+Step: 14 - loss: 0.000197  Train  acc: 99.9332%2990/2992     Test  acc: 59.7000%597/1000  F1=0.6396
+Step: 25 - loss: 0.000065  Train  acc: 100.0000%2992/2992     Test  acc: 60.1000%601/1000  F1=0.6409
+Step: 25 - loss: 0.000106  Train  acc: 100.0000%2992/2992     Test  acc: 56.8000%568/1000  F1=0.6048
+Step: 15 - loss: 0.000150  Train  acc: 99.9666%2991/2992     Test  acc: 58.9000%589/1000  F1=0.6330
+Step: 26 - loss: 0.000054  Train  acc: 100.0000%2992/2992     Test  acc: 60.4000%604/1000  F1=0.6444
+Step: 26 - loss: 0.000084  Train  acc: 100.0000%2992/2992     Test  acc: 56.5000%565/1000  F1=0.6033
+Step: 16 - loss: 0.000881  Train  acc: 99.7326%2984/2992     Test  acc: 58.4000%584/1000  F1=0.6251
+Step: 27 - loss: 0.000046  Train  acc: 100.0000%2992/2992     Test  acc: 60.0000%600/1000  F1=0.6400
+Step: 27 - loss: 0.000064  Train  acc: 100.0000%2992/2992     Test  acc: 56.3000%563/1000  F1=0.6005
+Step: 17 - loss: 0.023543  Train  acc: 88.7366%2655/2992     Test  acc: 53.1000%531/1000  F1=0.5766
+Step: 28 - loss: 0.000039  Train  acc: 100.0000%2992/2992     Test  acc: 60.6000%606/1000  F1=0.6463
+Step: 28 - loss: 0.000049  Train  acc: 100.0000%2992/2992     Test  acc: 56.8000%568/1000  F1=0.6112
+Step: 18 - loss: 0.010076  Train  acc: 95.3877%2854/2992     Test  acc: 59.1000%591/1000  F1=0.6220
+Step: 29 - loss: 0.000033  Train  acc: 100.0000%2992/2992     Test  acc: 60.4000%604/1000  F1=0.6429
+Total: best F1 = 0.6617999999999999 acc = 61.0
+Step: 19 - loss: 0.001688  Train  acc: 99.6324%2981/2992     Test  acc: 59.8000%598/1000  F1=0.6398
+Step: 29 - loss: 0.000037  Train  acc: 100.0000%2992/2992     Test  acc: 56.2000%562/1000  F1=0.6014
+Total: best F1 = 0.66675 acc = 61.3
+Step: 20 - loss: 0.000586  Train  acc: 99.9332%2990/2992     Test  acc: 59.4000%594/1000  F1=0.6334
+Step: 21 - loss: 0.000230  Train  acc: 99.9666%2991/2992     Test  acc: 60.2000%602/1000  F1=0.6396
+Step: 22 - loss: 0.000146  Train  acc: 100.0000%2992/2992     Test  acc: 59.9000%599/1000  F1=0.6384
+Step: 23 - loss: 0.000110  Train  acc: 100.0000%2992/2992     Test  acc: 59.8000%598/1000  F1=0.6350
+Step: 24 - loss: 0.000086  Train  acc: 100.0000%2992/2992     Test  acc: 59.6000%596/1000  F1=0.6344
+Step: 25 - loss: 0.000069  Train  acc: 100.0000%2992/2992     Test  acc: 59.6000%596/1000  F1=0.6351
+Step: 26 - loss: 0.000055  Train  acc: 100.0000%2992/2992     Test  acc: 59.4000%594/1000  F1=0.6333
+Step: 27 - loss: 0.000041  Train  acc: 100.0000%2992/2992     Test  acc: 59.4000%594/1000  F1=0.6337
+Step: 28 - loss: 0.000030  Train  acc: 100.0000%2992/2992     Test  acc: 59.2000%592/1000  F1=0.6290
+Step: 29 - loss: 0.000025  Train  acc: 100.0000%2992/2992     Test  acc: 59.2000%592/1000  F1=0.6316
+Total: best F1 = 0.6843 acc = 64.9
+----------args----------
+EmbedSize      64
+Steps          30
+learningRate   0.001
+dropout        0.5
+batchSize      13
+wordCutOff     0
+hiddenSize     100
+hiddenNum      1
+lr_decay       True
+clip_grad      False
+using_pred_emb True
+pred_emd_dim   64
+language       Chinese
+
+Step: 0 - loss: 0.080951  Train  acc: 44.8195%1341/2992     Test  acc: 51.5000%515/1000  F1=0.5388
+Step: 1 - loss: 0.073919  Train  acc: 54.2112%1622/2992     Test  acc: 57.9000%579/1000  F1=0.6004
+Step: 2 - loss: 0.061180  Train  acc: 66.1096%1978/2992     Test  acc: 63.2000%632/1000  F1=0.6651
+Step: 3 - loss: 0.043928  Train  acc: 78.2754%2342/2992     Test  acc: 58.9000%589/1000  F1=0.6287
+Step: 4 - loss: 0.026461  Train  acc: 88.5695%2650/2992     Test  acc: 61.4000%614/1000  F1=0.6489
+Step: 5 - loss: 0.012452  Train  acc: 95.9893%2872/2992     Test  acc: 56.1000%561/1000  F1=0.5905
+Step: 6 - loss: 0.005627  Train  acc: 98.9305%2960/2992     Test  acc: 61.9000%619/1000  F1=0.6682
+Step: 7 - loss: 0.002683  Train  acc: 99.6324%2981/2992     Test  acc: 62.0000%620/1000  F1=0.6673
+Step: 8 - loss: 0.001049  Train  acc: 99.8329%2987/2992     Test  acc: 61.3000%613/1000  F1=0.6604
+Step: 9 - loss: 0.000539  Train  acc: 99.9332%2990/2992     Test  acc: 60.6000%606/1000  F1=0.6523
+Step: 10 - loss: 0.000515  Train  acc: 99.8663%2988/2992     Test  acc: 61.1000%611/1000  F1=0.6599
+Step: 11 - loss: 0.000355  Train  acc: 99.8997%2989/2992     Test  acc: 61.4000%614/1000  F1=0.6620
+Step: 12 - loss: 0.000345  Train  acc: 99.8997%2989/2992     Test  acc: 61.2000%612/1000  F1=0.6578

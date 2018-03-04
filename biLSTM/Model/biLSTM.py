@@ -10,6 +10,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import Embedding
+import random
+random.seed(23)
+torch.manual_seed(23)
 from Embedding import ConstEmbedding
 
 class Model(nn.Module):
@@ -21,32 +24,19 @@ class Model(nn.Module):
         if args.using_pred_emb:
             path = ''
             if args.using_English_data:
-                if self.EmbedSize == 25:
-                    path = args.pred_embedding_25_path
-                elif self.EmbedSize == 50:
-                    path = args.pred_embedding_50_path
-                elif args.pred_emd_dim == 100:
-                    self.EmbedSize = 100
-                    path = args.pred_embedding_100_path
-                elif args.pred_emd_dim == 200:
-                    self.EmbedSize = 200
-                    path = args.pred_embedding_200_path
+                path = args.save_pred_emd_path
             elif args.using_Chinese_data:
-                self.EmbedSize = 64
-                path = args.chn_pred_embedding_64_path
-
-            load_emb_text = Embedding.load_predtrained_emb_avg(path, args.wordAlpha.string2id, padding=True)
-            load_emb_topic = Embedding.load_predtrained_emb_avg(path, args.topicAlpha.string2id, padding=False)
-            self.embeddingTopic = ConstEmbedding(load_emb_topic)
-            self.embeddingText = ConstEmbedding(load_emb_text)
-            # self.embeddingTopic = nn.Embedding(args.topicWordNum, self.EmbedSize)
-            # self.embeddingText = nn.Embedding(args.wordNum, self.EmbedSize)
-            # load_emb_text = Embedding.load_predtrained_emb_avg(path, args.wordAlpha.string2id, padding=True)
-            # load_emb_topic = Embedding.load_predtrained_emb_avg(path, args.topicAlpha.string2id, padding=False)
-            # self.embeddingTopic.weight.data.copy_(load_emb_topic)
-            # self.embeddingText.weight.data.copy_(load_emb_text)
-            # self.embeddingText.weight.requires_grad = False
-            # self.embeddingTopic.weight.requires_grad = False
+                path = args.save_pred_emd_path
+            load_emb_text = Embedding.load_predtrained_emb_zero(path, args.wordAlpha.string2id, padding=True)
+            load_emb_topic = Embedding.load_predtrained_emb_zero(path, args.topicAlpha.string2id, padding=False)
+            # self.embeddingTopic = ConstEmbedding(load_emb_topic)
+            # self.embeddingText = ConstEmbedding(load_emb_text)
+            # self.embeddingTopic = nn.Embedding(args.topicWordNum, self.EmbedSize, sparse=True)
+            # self.embeddingText = nn.Embedding(args.wordNum, self.EmbedSize, sparse=True)
+            self.embeddingTopic = nn.Embedding(args.topicWordNum, self.EmbedSize)
+            self.embeddingText = nn.Embedding(args.wordNum, self.EmbedSize)
+            self.embeddingTopic.weight.data.copy_(load_emb_topic)
+            self.embeddingText.weight.data.copy_(load_emb_text)
         self.biLSTM = nn.LSTM(
             self.EmbedSize,
             args.hiddenSize,
