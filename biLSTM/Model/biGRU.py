@@ -21,8 +21,8 @@ class Model(nn.Module):
         self.embed_size = args.embed_size
         self.label_size = args.label_size
         self.topic_word_num = args.topic_word_num
-        self.biLSTM_hidden_size = args.biLSTM_hidden_size
-        self.biLSTM_hidden_num = args.biLSTM_hidden_num
+        self.biGRU_hidden_size = args.biLSTM_hidden_size
+        self.biGRU_hidden_num = args.biLSTM_hidden_num
         self.save_pred_emd_path = args.save_pred_emd_path
         self.word_num = args.word_num
         self.dropout = args.dropout
@@ -45,14 +45,14 @@ class Model(nn.Module):
             self.embeddingText.weight.data.copy_(load_emb_text)
         self.biLSTM = nn.LSTM(
             self.embed_size,
-            self.biLSTM_hidden_size,
+            self.biGRU_hidden_size,
             dropout=self.dropout,
-            num_layers=self.biLSTM_hidden_num,
+            num_layers=self.biGRU_hidden_num,
             batch_first=True,
             bidirectional=True
         )
-        self.linear1 = nn.Linear(self.biLSTM_hidden_size * 4, self.biLSTM_hidden_size // 2)
-        self.linear2 = nn.Linear(self.biLSTM_hidden_size // 2, self.label_size)
+        self.linear1 = nn.Linear(self.biGRU_hidden_size * 4, self.biGRU_hidden_size // 2)
+        self.linear2 = nn.Linear(self.biGRU_hidden_size // 2, self.label_size)
 
     def forward(self, topic, text):
         topic = self.embeddingText(topic)

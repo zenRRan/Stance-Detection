@@ -124,7 +124,7 @@ class refresh_chn_data:
     def getText(self):
         return self.newlist
 
-data = ['。。。...，，，,,,輸入簡體字,點下面繁體字按鈕進行在線轉換']
+# data = ['。。。...，，，,,,輸入簡體字,點下面繁體字按鈕進行在線轉換']
 
 
 # 转换繁体到简体

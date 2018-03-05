@@ -14,6 +14,8 @@ from torch.autograd import Variable
 import Reader
 from HyperParams import HyperParams
 from Model import biLSTM
+from Model import biGRU
+from Model import CNN
 import random
 from Evaluate import Eval
 from Common import unk_key
@@ -65,23 +67,23 @@ class Labeler:
                 else:
                     self.topic_stat_dic[word] += 1
 
-        self.HyperParams.wordAlpha.from_string(unk_key)
-        self.HyperParams.wordAlpha.from_string(padding_key)
+        self.HyperParams.word_alpha.from_string(unk_key)
+        self.HyperParams.word_alpha.from_string(padding_key)
 
-        self.word_stat_dic[unk_key] = self.HyperParams.wordCutOff + 1
-        self.word_stat_dic[padding_key] = self.HyperParams.wordCutOff + 1
+        self.word_stat_dic[unk_key] = self.HyperParams.word_cut_off + 1
+        self.word_stat_dic[padding_key] = self.HyperParams.word_cut_off + 1
 
-        self.HyperParams.wordAlpha.initial(self.word_stat_dic, self.HyperParams.wordCutOff)
-        self.HyperParams.labelAlpha.initial(self.label_stat_dic)
-        self.HyperParams.topicAlpha.initial(self.topic_stat_dic)
+        self.HyperParams.word_alpha.initial(self.word_stat_dic, self.HyperParams.word_cut_off)
+        self.HyperParams.label_alpha.initial(self.label_stat_dic)
+        self.HyperParams.topic_alpha.initial(self.topic_stat_dic)
 
-        self.padID = self.HyperParams.wordAlpha.from_string(padding_key)
-        self.unkID = self.HyperParams.wordAlpha.from_string(unk_key)
+        self.padID = self.HyperParams.word_alpha.from_string(padding_key)
+        self.unkID = self.HyperParams.word_alpha.from_string(unk_key)
 
-        self.HyperParams.wordNum = self.HyperParams.wordAlpha.m_size
-        self.HyperParams.labelSize = self.HyperParams.labelAlpha.m_size
-        self.HyperParams.topicWordNum = self.HyperParams.topicAlpha.m_size
-        # print(self.HyperParams.labelAlpha.id2string)
+        self.HyperParams.word_num = self.HyperParams.word_alpha.m_size
+        self.HyperParams.label_size = self.HyperParams.label_alpha.m_size
+        self.HyperParams.topic_word_num = self.HyperParams.topic_alpha.m_size
+        # print(self.HyperParams.label_alpha.id2string)
         # print(self.label_stat_dic)
         print("Created over")
 
@@ -89,42 +91,42 @@ class Labeler:
         # print("label: ", self.HyperParams.labelSize)
 
     def seq2id(self, seqs):
-        idList = []
-        maxLen = 0
+        id_list = []
+        max_len = 0
 
         for seq in seqs:
-            maxLen = max(maxLen, len(seq))
+            max_len = max(max_len, len(seq))
         for seq in seqs:
             id = []
             for word in seq:
-                degit = self.HyperParams.wordAlpha.from_string(word)
+                degit = self.HyperParams.word_alpha.from_string(word)
                 if degit >= 0:
                     id.append(degit)
                 else:
                     id.append(self.unkID)
-            for _ in range(maxLen-len(seq)):
+            for _ in range(max_len-len(seq)):
                 id.append(self.padID)
-            idList.append(id)
-        return idList
+            id_list.append(id)
+        return id_list
 
     def label2id(self, labels):
-        idList = []
+        id_list = []
         for label in labels:
-            id = self.HyperParams.labelAlpha.from_string(label)
+            id = self.HyperParams.label_alpha.from_string(label)
             if id != -1:
-                idList.append(id)
+                id_list.append(id)
             else:
                 print("Wrong: label2id id = -1!")
                 return []
 
-        return idList
+        return id_list
 
-    def processingRawStanceData(self, textList):
+    def processingRawStanceData(self, text_list):
         topics = []
         texts = []
         labels = []
         if self.HyperParams.using_English_data:
-            for line in textList:
+            for line in text_list:
                 if line[0] == self.topics[0]:
                     topics.append(line[0])
                     texts.append(line[1:-1])
@@ -149,7 +151,7 @@ class Labeler:
                     print("wrong: def -> processingRawStanceData"+'\n'+' '.join(line))
                     return -1
         else:
-            for line in textList:
+            for line in text_list:
                 self.i += 1
                 # if not(line[-1] == 'favor' or line[-1] == 'against' or line[-1] == 'none'):
                     # print(self.i, line[-1])
@@ -181,45 +183,58 @@ class Labeler:
         return topics, texts, labels
 
     def cutSentFromText(self, text):
-        newText = []
+        new_text = []
         for line in text:
-            newText.append(line[:self.HyperParams.setSentlen])
-        return newText
+            new_text.append(line[:self.HyperParams.set_sent_len])
+        return new_text
 
-    def train(self, trainFile, devFile=None, testFile=None):
+    def train(self, train_file, dev_file=None, test_file=None):
 
-        readerTrain = Reader.reader(trainFile, language='chn')
-        readerTest = Reader.reader(testFile, language='chn')
+        reader_train = Reader.reader(train_file, language='chn')
+        reader_test = Reader.reader(test_file, language='chn')
 
-        sentsTrain = readerTrain.getWholeText()
-        sentsTest = readerTest.getWholeText()
+        sents_train = reader_train.getWholeText()
+        sents_test = reader_test.getWholeText()
 
         # sentsTrain = self.cutSentFromText(sentsTrain)
         # sentsTest = self.cutSentFromText(sentsTest)
 
-        self.HyperParams.trainLen = len(sentsTrain)
-        self.HyperParams.testLen = len(sentsTest)
+        self.HyperParams.train_len = len(sents_train)
+        self.HyperParams.test_len = len(sents_test)
 
         if self.HyperParams.using_English_data:
-            readerDev = Reader.reader(devFile, language='eng')
-            sentsDev = readerDev.getWholeText()
-            sentsDev = self.cutSentFromText(sentsDev)
-            self.HyperParams.devLen = len(sentsDev)
+            reader_dev = Reader.reader(dev_file, language='eng')
+            sents_dev = reader_dev.getWholeText()
+            sents_dev = self.cutSentFromText(sents_dev)
+            self.HyperParams.dev_den = len(sents_dev)
 
         if self.HyperParams.using_English_data:
-            self.createAlphabet(sentsTrain+sentsDev)
+            self.createAlphabet(sents_train+sents_dev)
         else:
-            self.createAlphabet(sentsTrain)
-        self.HyperParams.topicSize = len(self.topics)
+            self.createAlphabet(sents_train)
+        self.HyperParams.topic_size = len(self.topics)
 
         args = self.HyperParams.args()
 
         print(args)
 
-        LearningRate = self.HyperParams.learningRate
+        lr = self.HyperParams.lr
         Steps = self.HyperParams.Steps
 
-        model = biLSTM.Model(self.HyperParams)
+        model = None
+        if self.HyperParams.biLSTM:
+            print("using biLSTM...")
+            model = biLSTM.Model(self.HyperParams)
+        if self.HyperParams.biGRU:
+            print("using biGRU...")
+            model = biGRU.Model(self.HyperParams)
+        if self.HyperParams.CNN:
+            print("using CNN...")
+            model = CNN.Model(self.HyperParams)
+        if model == None:
+            print("please select a model!")
+            return
+
         # print(model)
         # param = [i for i in model.parameters() if i.requires_grad]
         # param = [i for i in model.parameters() if i.sparse]
@@ -227,13 +242,25 @@ class Labeler:
         # Optimizer = oprim.Adam(param, lr=LearningRate)
         # SparseOprimizer = oprim.SparseAdam(sparseParam)
         # model.
-        Optimizer = oprim.Adam(model.parameters(), lr=LearningRate, weight_decay=self.HyperParams.decay)
+        # Optimizer = oprim.Adam(model.parameters(), lr=LearningRate, weight_decay=self.HyperParams.decay)
+
+        Optimizer = None
+        if self.HyperParams.Adam:
+            Optimizer = oprim.Adam(model.parameters(), lr=lr)
+        if self.HyperParams.SGD:
+            Optimizer = oprim.SGD(model.parameters(), lr=lr)
+        if Optimizer == None:
+            print("please select a model!")
+            return
+
+
+
         def accuracy(model, sents):
             pred_right_num_idx = 0
             pred_num_idx = 1
             gold_num_idx = 2
 
-            evalList = [[0, 0, 0] for _ in range(self.HyperParams.labelSize)]
+            evalList = [[0, 0, 0] for _ in range(self.HyperParams.label_size)]
 
             topic, text, label = self.processingRawStanceData(sents)
             topic = self.seq2id(topic)
@@ -280,28 +307,28 @@ class Labeler:
             textBatchlist.append(text[end:len(text)])
             return textBatchlist
 
-        file = open(self.HyperParams.writeFileName, 'a+')
+        file = open(self.HyperParams.write_file_name, 'a+')
         file.write(args)
         file.close()
 
-        sentsTrain = sentsTrain
+        sents_train = sents_train
         if self.HyperParams.using_English_data:
-            sentsDev = sentsDev
-        sentsTest = sentsTest
-        batchSize = self.HyperParams.batchSize
+            sents_dev = sents_dev
+        sents_test = sents_test
+        batch_size = self.HyperParams.batch_size
 
         best_F1 = 0
         best_acc = 0
         for step in range(Steps):
-            file = open(self.HyperParams.writeFileName, 'a+')
-            totalLoss = torch.Tensor([0])
+            file = open(self.HyperParams.write_file_name, 'a+')
+            total_loss = torch.Tensor([0])
             cnt = 0
-            trainCorrect = 0
-            random.shuffle(sentsTrain)
-            textBatchList = getTextBatchList(sentsTrain, batchSize)
+            train_correct = 0
+            random.shuffle(sents_train)
+            text_batch_list = getTextBatchList(sents_train, batch_size)
 
 
-            for batch in textBatchList:
+            for batch in text_batch_list:
                 model.train()
                 Optimizer.zero_grad()
                 # SparseOprimizer.zero_grad()
@@ -327,56 +354,56 @@ class Labeler:
                 if cnt % 500 == 0:
                     print(cnt)
 
-                totalLoss += Loss.data
-                trainCorrect += (torch.max(Y, 1)[1].view(label.size()).data == label.data).sum()
+                total_loss += Loss.data
+                train_correct += (torch.max(Y, 1)[1].view(label.size()).data == label.data).sum()
             if self.HyperParams.lr_decay:
-                adjust_learning_rate(Optimizer, self.HyperParams.learningRate / (1 + (step + 1) * self.HyperParams.decay))
+                adjust_learning_rate(Optimizer, self.HyperParams.lr / (1 + (step*3.01 + 1) * self.HyperParams.decay))
 
-            totalLoss /= len(sentsTrain)
-            TrainAcc = float(trainCorrect)/len(sentsTrain) * 100
+            total_loss /= len(sents_train)
+            train_acc = float(train_correct)/len(sents_train) * 100
 
-            FAVOR_index = self.HyperParams.labelAlpha.string2id["favor"]
-            AGAINST_index = self.HyperParams.labelAlpha.string2id["against"]
+            FAVOR_index = self.HyperParams.label_alpha.string2id["favor"]
+            AGAINST_index = self.HyperParams.label_alpha.string2id["against"]
             if self.HyperParams.using_English_data:
-                DevAcc, DevCorrect, DevNum, P_R_F1_dev_list =  accuracy(model, sentsDev)
-            TestAcc, TestCorrect, TestNum, P_R_F1_test_list = accuracy(model, sentsTest)
+                dev_acc, dev_correct, dev_num, P_R_F1_dev_list =  accuracy(model, sents_dev)
+            test_acc, test_correct, test_num, P_R_F1_test_list = accuracy(model, sents_test)
             if self.HyperParams.using_English_data:
                 dev_mean_F1 = (P_R_F1_dev_list[FAVOR_index][2] + P_R_F1_dev_list[AGAINST_index][2]) / 2
             test_mean_F1 = (P_R_F1_test_list[FAVOR_index][2] + P_R_F1_test_list[AGAINST_index][2]) / 2
 
             if best_F1 < test_mean_F1:
                 best_F1 = test_mean_F1
-                best_acc = TestAcc
+                best_acc = test_acc
             if self.HyperParams.using_Chinese_data:
                 output = "Step: {} - loss: {:.6f}  Train  acc: {:.4f}%{}/{}     Test  acc: {:.4f}%{}/{}  F1={:.4f}".format(step,
-                                                                                                                           totalLoss.numpy()[0],
-                                                                                                                           TrainAcc,
-                                                                                                                           trainCorrect,
-                                                                                                                           len(sentsTrain),
-                                                                                                                           TestAcc,
-                                                                                                                           TestCorrect,
-                                                                                                                           int(TestNum),
+                                                                                                                           total_loss.numpy()[0],
+                                                                                                                           train_acc,
+                                                                                                                           train_correct,
+                                                                                                                           len(sents_train),
+                                                                                                                           test_acc,
+                                                                                                                           test_correct,
+                                                                                                                           int(test_num),
                                                                                                                            test_mean_F1)
             else:
                 output = "Step: {} - loss: {:.6f}  Train  acc: {:.4f}%{}/{}     Dev  acc: {:.4f}%{}/{}     Test  acc: {:.4f}%{}/{}  F1={:.4f}".format(
                     step,
-                    totalLoss.numpy()[0],
-                    TrainAcc,
-                    trainCorrect,
-                    len(sentsTrain),
-                    DevAcc,
-                    DevCorrect,
-                    int(DevNum),
-                    TestAcc,
-                    TestCorrect,
-                    int(TestNum),
+                    total_loss.numpy()[0],
+                    train_acc,
+                    train_correct,
+                    len(sents_train),
+                    dev_acc,
+                    dev_correct,
+                    int(dev_num),
+                    test_acc,
+                    test_correct,
+                    int(test_num),
                     test_mean_F1)
 
             print(output)
             file.write(output+"\n")
             file.close()
 
-        file = open(self.HyperParams.writeFileName, 'a+')
+        file = open(self.HyperParams.write_file_name, 'a+')
         output = 'Total: best F1 = ' + str(best_F1) + ' acc = ' + str(best_acc)
         print(output)
         file.write(output + "\n")
@@ -394,6 +421,6 @@ def adjust_learning_rate(optimizer, lr):
 
 l = Labeler()
 if l.HyperParams.using_English_data:
-    l.train(l.HyperParams.trainFile, l.HyperParams.devFile, l.HyperParams.testFile)
+    l.train(l.HyperParams.train_file, l.HyperParams.dev_file, l.HyperParams.test_file)
 else:
-    l.train(l.HyperParams.trainFile, testFile=l.HyperParams.testFile)
+    l.train(l.HyperParams.train_file, test_file=l.HyperParams.test_file)

@@ -11,19 +11,25 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.nn.init as init
 
-class CNN(nn.Module):
+class Model(nn.Module):
 
     def __init__(self, args):
         super(CNN, self).__init__()
-        self.embedings = nn.Embedding(args.wordNum, args.EmbedSize)
+        self.dropout = args.dropout
+        self.word_num = args.word_num
+        self.embed_size = args.embed_size
+        self.kernel_num = args.kernel_num
+        self.kernel_sizes = args.kernel_sizes
+        self.label_size = args.label_size
 
+        self.embeddings = nn.Embedding(self.word_num, self.embed_size)
         self.convs = nn.ModuleList(
-            [nn.Conv2d(1, args.kernelNum, (K, args.EmbedSize), padding=(K // 2, 0)) for K in args.kernelSizes])
-        self.linear = nn.Linear(len(args.kernelSizes)*args.kernelNum, args.labelSize)
-        self.dropout = nn.Dropout(args.dropout)
+            [nn.Conv2d(1, self.kernel_num, (K, self.embed_size), padding=(K // 2, 0)) for K in self.kernel_sizes])
+        self.linear = nn.Linear(len(self.kernel_sizes)*self.kernel_num, self.label_size)
+        self.dropout = nn.Dropout(self.dropout)
 
     def forward(self, input):
-        out = self.embedings(input)
+        out = self.embeddings(input)
         out = F.tanh(out)
         l = []
         out = out.unsqueeze(1)

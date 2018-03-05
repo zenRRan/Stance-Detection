@@ -11,89 +11,108 @@ import collections
 
 class HyperParams:
     def __init__(self):
-        self.maxSentlen = 0
-        self.setSentlen = 1
-        self.labelSize = 0
-        self.EmbedSize = 64
+        self.max_sent_len = 0
+        self.set_sent_len = 1
+        self.label_size = 0
+        self.embed_size = 64
         self.Steps = 30
-        self.learningRate = 0.001
+        self.lr = 0.001
         self.dropout = 0.5
-        self.wordNum = 0
-        self.topicSize = 0
-        self.batchSize = 13
-        self.wordCutOff = 0
+        self.word_num = 0
+        self.topic_size = 0
+        self.batch_size = 13
+        self.word_cut_off = 0
         self.using_pred_emb = True
         self.using_Chinese_data =True
         self.using_English_data = False
-        self.topicWordNum = 0
+        self.topic_word_num = 0
         self.pred_emd_dim = 64
-        self.decay = 1e-7
+        self.decay = 1e-8
         self.lr_decay = True
         self.clip_grad = False
 
         #biLSTM
-        self.hiddenSize = 100
-        self.hiddenNum = 1
+        self.biLSTM = True
+        self.biLSTM_hidden_size = 120
+        self.biLSTM_hidden_num = 1
+
+        #biGRU
+        self.biGRU = False
+        self.biGRU_hidden_size = 100
+        self.biGRU_hidden_num = 1
 
         #CNN
+        self.CNN = False
         self.kernelSizes = [2, 3, 4]
         self.kernelNum = 100
+
+        #Optimizer
+        self.Adam = True
+        self.SGD = False
 
         lg = ''
         if self.using_English_data:
             lg = '英文'
         else:
             lg = '中文'
-        self.mainAddress = 'D:/语料/立场检测/'
-        self.trainFile = self.mainAddress + lg + "/train.sd"
+        self.main_address = 'D:/语料/立场检测/'
+        self.train_file = self.main_address + lg + "/train.sd"
         if self.using_English_data:
-            self.devFile = self.mainAddress + lg + "/dev.sd"
-        self.testFile = self.mainAddress + lg + "/test.sd"
+            self.dev_file = self.main_address + lg + "/dev.sd"
+        self.test_file = self.main_address + lg + "/test.sd"
         if self.using_English_data:
-            self.writeFileName = '../eng_data.txt'
+            self.write_file_name = '../eng_data.txt'
         else:
-            self.writeFileName = '../test_data.txt'
+            self.write_file_name = '../test_data.txt'
 
         eng_pred_embedding_path_list = ['D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.25d.txt',
                                         'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.50d.txt',
                                         'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.100d.txt',
                                         'D:/Pred_Emdding/glove.twitter.27B/glove.twitter.27B.200d.txt']
-        self.Eng_pred_embedding_path = eng_pred_embedding_path_list[1]
+        self.eng_pred_embedding_path = eng_pred_embedding_path_list[1]
         self.chn_pred_embedding_path = 'D:/Pred_Emdding/news12g_bdbk20g_nov90g_dim64.txt'
 
         self.save_pred_emd_path = '../Data/Chinese/pred_emd.txt'
         if self.using_English_data:
             self.save_pred_emd_path = self.Eng_pred_embedding_path
 
-        self.trainLen = 0
-        self.devLen = 0
-        self.testLen = 0
+        self.train_len = 0
+        self.dev_len = 0
+        self.test_len = 0
 
-        self.wordAlpha = Alphabet()
-        self.labelAlpha = Alphabet()
-        self.topicAlpha = Alphabet()
+        self.word_alpha = Alphabet()
+        self.label_alpha = Alphabet()
+        self.topic_alpha = Alphabet()
 
     def args(self):
         args = "----------args----------\n"
-        # args += "labelSize      " + str(self.labelSize) + '\n'
-        args += "EmbedSize      " + str(self.EmbedSize) + '\n'
-        args += "Steps          " + str(self.Steps) + '\n'
-        args += "learningRate   " + str(self.learningRate) + '\n'
-        args += "dropout        " + str(self.dropout) + '\n'
-        args += "batchSize      " + str(self.batchSize) + '\n'
-        # args += "wordNum        " + str(self.wordNum) + '\n'
-        args += "wordCutOff     " + str(self.wordCutOff) + '\n'
-        # args += "topicSize      " + str(self.topicSize) + '\n'
-        args += "hiddenSize     " + str(self.hiddenSize) + '\n'
-        args += "hiddenNum      " + str(self.hiddenNum) + '\n'
-        # args += "trainLen       " + str(self.trainLen) + '\n'
-        # args += "devLen         " + str(self.devLen) + '\n'
-        # args += "setSentlen     " + str(self.setSentlen) + '\n'
-        args += "lr_decay       " + str(self.lr_decay) + '\n'
-        args += "clip_grad      " + str(self.clip_grad) + '\n'
-        args += "using_pred_emb " + str(self.using_pred_emb) + '\n'
+        # args += "label_size=" + str(self.label_size) + '\n'
+        args += "embed_size=" + str(self.embed_size) + '\n'
+        args += "Steps=" + str(self.Steps) + '\n'
+        args += "lr=" + str(self.lr) + '\n'
+        args += "dropout=" + str(self.dropout) + '\n'
+        args += "batch_size=" + str(self.batch_size) + '\n'
+        # args += "word_num        " + str(self.word_num) + '\n'
+        args += "word_cut_off=" + str(self.word_cut_off) + '\n'
+        # args += "topic_size=" + str(self.topic_size) + '\n'
+        if self.biLSTM:
+            args += "biLSTM_hidden_size=" + str(self.biLSTM_hidden_size) + '\n'
+            args += "biLSTM_hidden_num=" + str(self.biLSTM_hidden_num) + '\n'
+        if self.biGRU:
+            args += "biGRU_hidden_size=" + str(self.biGRU_hidden_size) + '\n'
+            args += "biGRU_hidden_num=" + str(self.biGRU_hidden_num) + '\n'
+        if self.SGD:
+            args += "Optimizer=" + str(self.SGD) + '\n'
+        if self.Adam:
+            args += "Optimizer=" + str(self.Adam) + '\n'
+        # args += "train_len=" + str(self.train_len) + '\n'
+        # args += "dev_len=" + str(self.dev_len) + '\n'
+        # args += "set_sent_len=" + str(self.set_sent_len) + '\n'
+        args += "lr_decay=" + str(self.lr_decay) + '\n'
+        args += "clip_grad=" + str(self.clip_grad) + '\n'
+        args += "using_pred_emb=" + str(self.using_pred_emb) + '\n'
         if self.using_pred_emb:
-            args += "pred_emd_dim   " + str(self.pred_emd_dim) + '\n'
+            args += "pred_emd_dim=" + str(self.pred_emd_dim) + '\n'
         lg = ''
         if self.using_Chinese_data:
             lg = "Chinese"
